@@ -1,0 +1,94 @@
+import { EnvelopeSimple, MapPin } from "@phosphor-icons/react/dist/ssr";
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { ContactForm } from "@/components/contact-form";
+import { Reveal } from "@/components/reveal";
+import { SiteFooter } from "@/components/site-footer";
+import { WhatsAppLink } from "@/components/whatsapp-link";
+import { localizeHref, localizeReactNode, type Locale } from "@/lib/i18n";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Neem contact op met Astrid Sanders, leefstijlcoach in Den Bosch. Stuur een bericht, mail of app — of vraag direct een gratis gezondheidscheck aan.",
+  alternates: {
+    canonical: "/contact/",
+    languages: {
+      "nl-NL": "/contact/",
+      en: "/en/contact/",
+    },
+  },
+};
+
+export function ContactPageContent({ locale }: { locale: Locale }) {
+  const content = (
+    <div lang={locale}>
+      <main id="main-content">
+        <section className="section" aria-labelledby="contact-title">
+          <div className="shell contact-layout">
+            <Reveal>
+              <h1 id="contact-title">Contact</h1>
+              <p className="page-lead">
+                Heb je een vraag over leefstijlcoaching, of wil je eerst iets meer vertellen over
+                jouw situatie? Stuur een bericht via het formulier, dan neemt Astrid persoonlijk
+                contact met je op.
+              </p>
+              <p>
+                Wil je liever direct een kort en vrijblijvend telefoongesprek? Vraag dan de gratis
+                gezondheidscheck aan — je laat alleen je naam, telefoonnummer en voorkeursmoment
+                achter.
+              </p>
+              <Link
+                className="button cta-inline"
+                href={localizeHref("/gratis-gezondheidscheck/", locale)}
+              >
+                Gratis gezondheidscheck aanvragen
+              </Link>
+
+              <div className="contact-visual">
+                <Image
+                  src="/images/generated/contact-hero.webp"
+                  alt="Astrid Sanders schrijft persoonlijk een antwoord op een contactvraag"
+                  fill
+                  priority
+                  sizes="(max-width: 900px) 100vw, 46vw"
+                />
+              </div>
+
+              <div className="contact-details">
+                <div className="site-footer__location">
+                  <EnvelopeSimple size={22} weight="regular" aria-hidden="true" />
+                  <p>
+                    <a href="mailto:astrid@astridsanders.com">astrid@astridsanders.com</a>
+                  </p>
+                </div>
+                <div className="site-footer__location">
+                  <MapPin size={22} weight="regular" aria-hidden="true" />
+                  <p>Den Bosch en online door heel Nederland</p>
+                </div>
+                <WhatsAppLink locale={locale} compact />
+              </div>
+            </Reveal>
+
+            <Reveal className="contact-panel" delay={0.08}>
+              <h2>Stuur een bericht</h2>
+              <p>
+                Beschrijf kort je vraag of situatie. Astrid reageert meestal binnen twee werkdagen.
+              </p>
+              <ContactForm locale={locale} />
+            </Reveal>
+          </div>
+        </section>
+      </main>
+
+      <SiteFooter locale={locale} />
+    </div>
+  );
+
+  return localizeReactNode(content, locale);
+}
+
+export default function ContactPage() {
+  return <ContactPageContent locale="nl" />;
+}
