@@ -310,7 +310,15 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
           title="Patiënten doorverwijzen naar aanvullende leefstijlcoaching"
           paragraphs={[
             "Begeleidt u patiënten met reuma of artrose die naast hun reguliere behandeling ondersteuning nodig hebben bij duurzame leefstijlverandering?",
-            "Astrid Sanders biedt persoonlijke leefstijlcoaching rondom: voeding, beweging, slaap, stress, herstel en gedragsverandering.",
+            "Astrid Sanders biedt persoonlijke leefstijlcoaching rondom:",
+            [
+              "Voeding",
+              "Beweging",
+              "Slaap",
+              "Stress",
+              "Herstel",
+              "Gedragsverandering",
+            ],
             "De begeleiding helpt patiënten om algemene leefstijladviezen te vertalen naar haalbare dagelijkse gewoonten.",
             "Leefstijlcoaching is aanvullend op reguliere zorg. Astrid stelt geen diagnose, wijzigt geen medicatie en neemt de rol van huisarts, reumatoloog, fysiotherapeut of diëtist niet over.",
             "De begeleiding is beschikbaar in Den Bosch en omgeving en online door heel Nederland.",
@@ -319,10 +327,11 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
             src: "/images/generated/zorgprofessionals-hero.webp",
             alt: "Astrid Sanders overlegt met twee zorgprofessionals over aanvullende leefstijlbegeleiding",
           }}
-          ctaLabel="Patiënt doorverwijzen"
+          ctaLabel="Bespreek een samenwerking"
+          secondaryCtaLabel="Patiënt doorverwijzen"
         />
 
-        {/* Section 2: referral criteria — two-column patient profile and support needs */}
+        {/* Section 2: referral criteria, two-column patient profile and support needs */}
         <section className="section recognition-section" aria-labelledby="referral-fit-title">
           <div className="shell">
             <div className="recognition-intro">
@@ -520,7 +529,7 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
           </div>
         </section>
 
-        {/* Section 6: why collaborate with Astrid — experience plus professional credentials */}
+        {/* Section 6: why collaborate with Astrid, experience plus professional credentials */}
         <section className="section story-section" aria-labelledby="why-astrid-title">
           <div className="shell story-layout">
             <Reveal className="story-heading">
@@ -604,6 +613,10 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
           locale={locale}
           title="Veelgestelde vragen voor zorgprofessionals"
           faqs={faqs}
+          formKind="contact"
+          formTitle="Bespreek een samenwerking"
+          formDescription="Beschrijf kort uw vraag over samenwerking of een mogelijke doorverwijzing. Astrid neemt persoonlijk contact met u op."
+          contactContext="zorgprofessionals"
         />
       </main>
 

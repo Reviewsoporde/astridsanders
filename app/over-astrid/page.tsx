@@ -63,7 +63,7 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
         />
 
         <section className="section" aria-labelledby="story-title">
-          <div className="shell story-layout">
+          <div className="shell story-layout story-layout--two-column">
             <Reveal className="story-heading">
               <h2 id="story-title">Mijn verhaal</h2>
             </Reveal>
@@ -99,11 +99,14 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
                 </a>{" "}
                 ontdekte ik hoe groot de invloed van leefstijl kan zijn. Ik besloot mijn leefstijl
                 volledig om te gooien en stap voor stap gezonder te gaan leven. Na enkele weken
-                begon ik verschil te merken. Mijn energie nam toe, mijn klachten verminderden en
-                uiteindelijk kon ik, in overleg met mijn reumatoloog, mijn medicatie volledig
-                afbouwen.
+                begon ik verschil te merken. Mijn energie nam toe en mijn klachten verminderden.
+                Onder begeleiding van mijn reumatoloog kon mijn medicatie vervolgens stap voor
+                stap worden aangepast.
               </p>
-              <p className="story-copy__important">Die ervaring veranderde mijn leven.</p>
+              <p className="story-copy__important">
+                Die ervaring veranderde mijn leven. Dit is mijn persoonlijke ervaring en geen
+                garantie dat anderen hetzelfde resultaat bereiken.
+              </p>
 
               <h2>Waarom ik leefstijlcoach ben geworden</h2>
               <p>
@@ -133,33 +136,6 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
               <p>Iedereen is anders. Daarom is ieder traject persoonlijk en afgestemd op jouw situatie.</p>
             </Reveal>
 
-            <Reveal className="authority-panel" delay={0.08}>
-              <div>
-                <h3>Mijn begeleiding</h3>
-                <p>Mijn begeleiding richt zich voornamelijk op mensen met:</p>
-                <ul className="check-list">
-                  {focusGroups.map((item) => (
-                    <li key={item}>
-                      <Check size={18} weight="bold" aria-hidden="true" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p>
-                  Samen kijken we welke leefstijlveranderingen passen bij jouw situatie. Mijn
-                  coaching is bedoeld als aanvulling op de reguliere zorg en helpt je om duurzame
-                  veranderingen vol te houden.
-                </p>
-              </div>
-              <a
-                className="text-link"
-                href="https://www.omroepbrabant.nl/nieuws/6000617/biefstuk-eruit-peulvruchten-erin-astrid-werd-noodgedwongen-vegan"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Bekijk het interview bij Omroep Brabant
-              </a>
-            </Reveal>
           </div>
         </section>
 
@@ -177,6 +153,45 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
                 </Reveal>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="section" aria-labelledby="guidance-title">
+          <div className="shell contact-layout">
+            <Reveal>
+              <h2 id="guidance-title">Mijn begeleiding</h2>
+              <p>Mijn begeleiding richt zich voornamelijk op mensen met:</p>
+              <ul className="check-list">
+                {focusGroups.map((item) => (
+                  <li key={item}>
+                    <Check size={18} weight="bold" aria-hidden="true" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p>
+                Samen kijken we welke leefstijlveranderingen passen bij jouw situatie. Mijn
+                coaching is bedoeld als aanvulling op de reguliere zorg en helpt je om duurzame
+                veranderingen vol te houden.
+              </p>
+              <a
+                className="text-link"
+                href="https://www.omroepbrabant.nl/nieuws/6000617/biefstuk-eruit-peulvruchten-erin-astrid-werd-noodgedwongen-vegan"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Bekijk het interview bij Omroep Brabant
+              </a>
+            </Reveal>
+
+            <Reveal className="recognition-media" delay={0.08}>
+              <Image
+                src="/images/generated/about-astrid.webp"
+                alt="Astrid Sanders in een rustige, natuurlijke omgeving"
+                fill
+                sizes="(max-width: 900px) 100vw, 46vw"
+              />
+            </Reveal>
           </div>
         </section>
 
@@ -211,7 +226,9 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
               </div>
               <div className="health-check-panel__heading">
                 <Leaf size={30} weight="regular" aria-hidden="true" />
-                <h3 id="gezondheidscheck">Gratis gezondheidscheck aanvragen</h3>
+                <p className="health-check-panel__title" id="gezondheidscheck">
+                  Gratis gezondheidscheck aanvragen
+                </p>
                 <p>
                   Laat je naam, telefoonnummer en voorkeursmoment achter. Astrid neemt persoonlijk
                   contact met je op voor een kort en vrijblijvend telefoongesprek.

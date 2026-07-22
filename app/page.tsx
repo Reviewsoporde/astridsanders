@@ -324,9 +324,6 @@ export function HomePageContent({ locale }: { locale: Locale }) {
                 </Link>
                 <WhatsAppLink locale={locale} />
               </div>
-              <p className="hero__cta-note">
-                Een kort en vrijblijvend telefoongesprek — geen medische beoordeling.
-              </p>
             </Reveal>
 
             <Reveal className="hero__visual-wrap" delay={0.08}>
@@ -621,7 +618,7 @@ export function HomePageContent({ locale }: { locale: Locale }) {
           <div className="shell">
             <div className="pricing-intro">
               <Reveal className="section-heading section-heading--narrow">
-                <h2 id="pricing-title">Pakketten en tarieven</h2>
+                <h2 id="pricing-title">Tarieven</h2>
                 <p>
                   Begin laagdrempelig met de gratis gezondheidscheck. Daarna kies je pas welke vorm
                   van begeleiding past bij jouw situatie en tempo.
@@ -631,7 +628,9 @@ export function HomePageContent({ locale }: { locale: Locale }) {
               <Reveal className="pricing-spotlight">
                 <div>
                   <p className="pricing-spotlight__kicker">Start met helderheid</p>
-                  <h3>Twijfel je wat je nodig hebt? Begin met een kort gesprek.</h3>
+                  <p className="pricing-spotlight__title">
+                    Twijfel je wat je nodig hebt? Begin met een kort gesprek.
+                  </p>
                   <p>
                     We bespreken je klachten, je dagelijkse gewoonten en wat je al hebt geprobeerd.
                     Zo weet je welke vervolgstap logisch is voordat je ergens aan vastzit.
@@ -794,7 +793,9 @@ export function HomePageContent({ locale }: { locale: Locale }) {
               </div>
               <div className="health-check-panel__heading">
                 <Leaf size={30} weight="regular" aria-hidden="true" />
-                <h3 id="gezondheidscheck">Gratis gezondheidscheck aanvragen</h3>
+                <p className="health-check-panel__title" id="gezondheidscheck">
+                  Gratis gezondheidscheck aanvragen
+                </p>
                 <p>
                   Laat je naam, telefoonnummer en voorkeursmoment achter. Astrid neemt persoonlijk
                   contact met je op voor een kort en vrijblijvend telefoongesprek.

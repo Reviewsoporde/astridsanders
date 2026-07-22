@@ -169,8 +169,6 @@ const englishTranslations: Record<string, string> = {
     "No quick fix or standard plan, but guidance tailored to your situation, abilities and goals.",
   "Astrid Sanders wandelt langs een rustig Scandinavisch meer":
     "Astrid Sanders walking beside a calm Scandinavian lake",
-  "Een kort en vrijblijvend telefoongesprek — geen medische beoordeling.":
-    "A short, informal phone call — not a medical assessment.",
   "Gratis gezondheidscheck aanvragen": "Request a free health check",
   "Portret van Astrid Sanders, leefstijlcoach in Den Bosch":
     "Portrait of Astrid Sanders, lifestyle coach in Den Bosch",

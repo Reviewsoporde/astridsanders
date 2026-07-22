@@ -11,7 +11,7 @@ import { localizeHref, localizeReactNode, type Locale } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Neem contact op met Astrid Sanders, leefstijlcoach in Den Bosch. Stuur een bericht, mail of app — of vraag direct een gratis gezondheidscheck aan.",
+    "Neem contact op met Astrid Sanders, leefstijlcoach in Den Bosch. Stuur een bericht, mail of app, of vraag direct een gratis gezondheidscheck aan.",
   alternates: {
     canonical: "/contact/",
     languages: {
@@ -36,7 +36,7 @@ export function ContactPageContent({ locale }: { locale: Locale }) {
               </p>
               <p>
                 Wil je liever direct een kort en vrijblijvend telefoongesprek? Vraag dan de gratis
-                gezondheidscheck aan — je laat alleen je naam, telefoonnummer en voorkeursmoment
+                gezondheidscheck aan. Je laat alleen je naam, telefoonnummer en voorkeursmoment
                 achter.
               </p>
               <Link

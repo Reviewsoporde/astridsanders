@@ -241,4 +241,9 @@ export const onlineTranslations: Record<string, string> = {
     "This depends on your health insurer, employer, registration and personal situation.",
   "Controleer vooraf of vergoeding mogelijk is. Hierover wordt geen vaste belofte gedaan voordat Astrid’s registratie- en vergoedingsmogelijkheden definitief zijn bevestigd.":
     "Check in advance whether reimbursement is possible. No firm promise is made about this until Astrid’s registration and reimbursement options have been definitively confirmed.",
+  "Vraag een gratis gezondheidscheck aan": "Request a free health check",
+  "Wil je bespreken of online leefstijlcoaching bij jouw situatie past?":
+    "Would you like to discuss whether online lifestyle coaching suits your situation?",
+  "Laat je naam, telefoonnummer en voorkeursmoment achter. Ik neem persoonlijk contact met je op om te horen wat er speelt en om te bekijken welke eerste stap passend kan zijn.":
+    "Leave your name, phone number and preferred time. I will contact you personally to hear what is going on and consider a suitable first step.",
 };

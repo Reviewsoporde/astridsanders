@@ -5,6 +5,7 @@ import { FormEvent, useState } from "react";
 import type { Locale } from "@/lib/i18n";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
+export type ContactFormContext = "contact" | "business" | "zorgprofessionals";
 
 const copy = {
   nl: {
@@ -51,14 +52,60 @@ const copy = {
   },
 } satisfies Record<Locale, Record<string, string>>;
 
+const contextCopy: Record<
+  Locale,
+  Record<ContactFormContext, Partial<Record<keyof (typeof copy)["nl"], string>>>
+> = {
+  nl: {
+    contact: {},
+    business: {
+      success:
+        "Dank u wel voor uw aanvraag. Astrid neemt zo snel mogelijk contact met u op.",
+      message: "Wat kan Astrid voor uw organisatie betekenen?",
+      messagePlaceholder:
+        "Beschrijf kort uw organisatie, vraag en de gewenste vorm van begeleiding.",
+      privacy:
+        "Uw gegevens worden alleen gebruikt om contact met u op te nemen over uw aanvraag.",
+      emailSubject: "Zakelijke aanvraag via astridsanders.com",
+    },
+    zorgprofessionals: {
+      success:
+        "Dank u wel voor uw bericht. Astrid neemt zo snel mogelijk contact met u op.",
+      message: "Welke samenwerking of doorverwijzing wilt u bespreken?",
+      messagePlaceholder:
+        "Beschrijf kort uw vraag. Deel geen medische of persoonlijke informatie zonder toestemming van de patiënt.",
+      privacy:
+        "Uw gegevens worden alleen gebruikt om contact met u op te nemen over uw bericht.",
+      emailSubject: "Samenwerking of doorverwijzing via astridsanders.com",
+    },
+  },
+  en: {
+    contact: {},
+    business: {
+      message: "What can Astrid do for your organisation?",
+      messagePlaceholder:
+        "Briefly describe your organisation, question and preferred form of support.",
+      emailSubject: "Business enquiry via astridsanders.com",
+    },
+    zorgprofessionals: {
+      message: "Which collaboration or referral would you like to discuss?",
+      messagePlaceholder:
+        "Briefly describe your question. Do not share medical or personal information without the patient's consent.",
+      emailSubject: "Collaboration or referral via astridsanders.com",
+    },
+  },
+};
+
 export function ContactForm({
   locale = "nl",
+  context = "contact",
 }: {
   locale?: Locale;
+  context?: ContactFormContext;
 }) {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [message, setMessage] = useState("");
-  const labels = copy[locale];
+  const labels = { ...copy[locale], ...contextCopy[locale][context] };
   const emailHref = `mailto:astrid@astridsanders.com?subject=${encodeURIComponent(labels.emailSubject)}`;
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -80,6 +127,7 @@ export function ContactForm({
           email: formData.get("email"),
           phone: formData.get("phone"),
           message: formData.get("message"),
+          context,
         }),
         signal: controller.signal,
       });

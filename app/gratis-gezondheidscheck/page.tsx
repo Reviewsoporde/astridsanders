@@ -59,7 +59,9 @@ export function GezondheidscheckPageContent({
               </div>
               <div className="health-check-panel__heading">
                 <Leaf size={30} weight="regular" aria-hidden="true" />
-                <h3 id="gezondheidscheck">Gratis gezondheidscheck aanvragen</h3>
+                <p className="health-check-panel__title" id="gezondheidscheck">
+                  Gratis gezondheidscheck aanvragen
+                </p>
                 <p>
                   Laat je naam, telefoonnummer en voorkeursmoment achter. Astrid neemt persoonlijk
                   contact met je op voor een kort en vrijblijvend telefoongesprek.

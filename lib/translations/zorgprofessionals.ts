@@ -6,8 +6,11 @@ export const zorgprofessionalsTranslations: Record<string, string> = {
     "Referring patients to complementary lifestyle coaching",
   "Begeleidt u patiënten met reuma of artrose die naast hun reguliere behandeling ondersteuning nodig hebben bij duurzame leefstijlverandering?":
     "Do you treat patients with rheumatism or osteoarthritis who need support with lasting lifestyle change alongside their regular treatment?",
-  "Astrid Sanders biedt persoonlijke leefstijlcoaching rondom: voeding, beweging, slaap, stress, herstel en gedragsverandering.":
-    "Astrid Sanders offers personal lifestyle coaching around: nutrition, movement, sleep, stress, recovery and behaviour change.",
+  "Astrid Sanders biedt persoonlijke leefstijlcoaching rondom:":
+    "Astrid Sanders offers personal lifestyle coaching around:",
+  Beweging: "Movement",
+  Stress: "Stress",
+  Herstel: "Recovery",
   "De begeleiding helpt patiënten om algemene leefstijladviezen te vertalen naar haalbare dagelijkse gewoonten.":
     "The coaching helps patients translate general lifestyle advice into achievable daily habits.",
   "Leefstijlcoaching is aanvullend op reguliere zorg. Astrid stelt geen diagnose, wijzigt geen medicatie en neemt de rol van huisarts, reumatoloog, fysiotherapeut of diëtist niet over.":
@@ -17,6 +20,8 @@ export const zorgprofessionalsTranslations: Record<string, string> = {
   "Astrid Sanders overlegt met twee zorgprofessionals over aanvullende leefstijlbegeleiding":
     "Astrid Sanders consulting with two healthcare professionals about complementary lifestyle support",
   "Patiënt doorverwijzen": "Refer a patient",
+  "Beschrijf kort uw vraag over samenwerking of een mogelijke doorverwijzing. Astrid neemt persoonlijk contact met u op.":
+    "Briefly describe your question about collaboration or a possible referral. Astrid will contact you personally.",
 
   // Section 2: referral criteria
   "Voor welke patiënten kan leefstijlcoaching relevant zijn?":

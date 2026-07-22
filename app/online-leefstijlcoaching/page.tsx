@@ -506,6 +506,12 @@ export function OnlineCoachingPageContent({ locale }: { locale: Locale }) {
           title="Veelgestelde vragen over online leefstijlcoaching"
           faqs={faqs}
           locale={locale}
+          formTitle="Vraag een gratis gezondheidscheck aan"
+          formHeadingLevel="h2"
+          formDescription={[
+            "Wil je bespreken of online leefstijlcoaching bij jouw situatie past?",
+            "Laat je naam, telefoonnummer en voorkeursmoment achter. Ik neem persoonlijk contact met je op om te horen wat er speelt en om te bekijken welke eerste stap passend kan zijn.",
+          ]}
         />
       </main>
 

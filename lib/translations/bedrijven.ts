@@ -10,8 +10,7 @@ export const bedrijvenTranslations: Record<string, string> = {
     "Yet full diaries, prolonged sitting, irregular eating and insufficient rest often make it difficult to change anything structurally.",
   "Astrid Sanders ondersteunt organisaties, teams en individuele medewerkers met praktische leefstijlcoaching rondom:":
     "Astrid Sanders supports organisations, teams and individual employees with practical lifestyle coaching around:",
-  "Voeding · Beweging · Slaap · Stress · Herstel · Gedragsverandering":
-    "Nutrition · Movement · Sleep · Stress · Recovery · Behaviour change",
+  Stress: "Stress",
   "De begeleiding kan bestaan uit individuele coaching, groepscoaching, workshops of een leefstijlgerichte gezondheidscheck.":
     "The coaching can consist of individual coaching, group coaching, workshops or a lifestyle-focused health check.",
   "Online begeleiding is beschikbaar door heel Nederland. Workshops en andere zakelijke sessies kunnen in overleg op locatie plaatsvinden.":
@@ -19,6 +18,9 @@ export const bedrijvenTranslations: Record<string, string> = {
   "Astrid Sanders begeleidt een praktische leefstijlworkshop voor medewerkers":
     "Astrid Sanders leading a practical lifestyle workshop for employees",
   "Bespreek de mogelijkheden": "Discuss the options",
+  "Vraag informatie aan": "Request information",
+  "Vertel kort wat uw organisatie nodig heeft. Astrid neemt persoonlijk contact op om de mogelijkheden te bespreken.":
+    "Briefly describe what your organisation needs. Astrid will contact you personally to discuss the options.",
 
   // Employability section
   "Gezonde gewoonten ondersteunen duurzame inzetbaarheid":

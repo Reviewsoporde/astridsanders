@@ -23,9 +23,12 @@ export const overAstridTranslations: Record<string, string> = {
     "So I went looking for solutions myself. Among other things, I tried fasting, acupuncture, the Wim Hof method, orthomolecular therapy, supplements, yoga and various eating patterns. Although some things helped temporarily, I kept searching for an approach that truly suited me.",
   "Via het wetenschappelijk onderbouwde": "Through the scientifically substantiated ",
   "Plants for Health-programma": "Plants for Health programme",
-  "ontdekte ik hoe groot de invloed van leefstijl kan zijn. Ik besloot mijn leefstijl volledig om te gooien en stap voor stap gezonder te gaan leven. Na enkele weken begon ik verschil te merken. Mijn energie nam toe, mijn klachten verminderden en uiteindelijk kon ik, in overleg met mijn reumatoloog, mijn medicatie volledig afbouwen.":
-    "I discovered how great the influence of lifestyle can be. I decided to completely overhaul my lifestyle and become healthier step by step. After a few weeks I began to notice a difference. My energy increased, my symptoms lessened and eventually, in consultation with my rheumatologist, I was able to phase out my medication completely.",
-  "Die ervaring veranderde mijn leven.": "That experience changed my life.",
+  "ontdekte ik hoe groot de invloed van leefstijl kan zijn. Ik besloot mijn leefstijl volledig om te gooien en stap voor stap gezonder te gaan leven. Na enkele weken begon ik verschil te merken. Mijn energie nam toe en mijn klachten verminderden. Onder begeleiding van mijn reumatoloog kon mijn medicatie vervolgens stap voor stap worden aangepast.":
+    "I discovered how significant lifestyle can be. I decided to overhaul my lifestyle and become healthier step by step. After a few weeks I began to notice a difference. My energy increased and my symptoms decreased. Under my rheumatologist's supervision, my medication could then be adjusted step by step.",
+  "Die ervaring veranderde mijn leven. Dit is mijn persoonlijke ervaring en geen garantie dat anderen hetzelfde resultaat bereiken.":
+    "That experience changed my life. This is my personal experience and does not guarantee that others will achieve the same result.",
+  "Astrid Sanders in een rustige, natuurlijke omgeving":
+    "Astrid Sanders in a calm, natural setting",
 
   // Why I became a lifestyle coach
   "Waarom ik leefstijlcoach ben geworden": "Why I became a lifestyle coach",

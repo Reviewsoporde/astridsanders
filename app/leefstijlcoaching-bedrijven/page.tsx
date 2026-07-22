@@ -427,7 +427,14 @@ export function BedrijvenPageContent({ locale }: { locale: Locale }) {
             "Gezonde gewoonten ondersteunen medewerkers om bewuster om te gaan met energie, werkdruk, herstel en dagelijks functioneren.",
             "Toch is het door volle agenda’s, langdurig zitten, onregelmatige voeding en onvoldoende rust vaak moeilijk om structureel iets te veranderen.",
             "Astrid Sanders ondersteunt organisaties, teams en individuele medewerkers met praktische leefstijlcoaching rondom:",
-            "Voeding · Beweging · Slaap · Stress · Herstel · Gedragsverandering",
+            [
+              "Voeding",
+              "Beweging",
+              "Slaap",
+              "Stress",
+              "Herstel",
+              "Gedragsverandering",
+            ],
             "De begeleiding kan bestaan uit individuele coaching, groepscoaching, workshops of een leefstijlgerichte gezondheidscheck.",
             "Online begeleiding is beschikbaar door heel Nederland. Workshops en andere zakelijke sessies kunnen in overleg op locatie plaatsvinden.",
           ]}
@@ -436,6 +443,7 @@ export function BedrijvenPageContent({ locale }: { locale: Locale }) {
             alt: "Astrid Sanders begeleidt een praktische leefstijlworkshop voor medewerkers",
           }}
           ctaLabel="Bespreek de mogelijkheden"
+          secondaryCtaLabel="Vraag informatie aan"
         />
 
         <section className="section recognition-section" aria-labelledby="employability-title">
@@ -655,6 +663,10 @@ export function BedrijvenPageContent({ locale }: { locale: Locale }) {
           title="Veelgestelde vragen over leefstijlcoaching voor bedrijven"
           faqs={faqs}
           locale={locale}
+          formKind="contact"
+          formTitle="Bespreek de mogelijkheden"
+          formDescription="Vertel kort wat uw organisatie nodig heeft. Astrid neemt persoonlijk contact op om de mogelijkheden te bespreken."
+          contactContext="business"
         />
       </main>
 

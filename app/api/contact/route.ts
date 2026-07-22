@@ -6,6 +6,7 @@ type ContactRequest = {
   email?: unknown;
   phone?: unknown;
   message?: unknown;
+  context?: unknown;
 };
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -26,6 +27,11 @@ export async function POST(request: Request) {
   const email = typeof body.email === "string" ? body.email.trim() : "";
   const phone = typeof body.phone === "string" ? body.phone.trim() : "";
   const message = typeof body.message === "string" ? body.message.trim() : "";
+  const allowedContexts = new Set(["contact", "business", "zorgprofessionals"]);
+  const context =
+    typeof body.context === "string" && allowedContexts.has(body.context)
+      ? body.context
+      : "contact";
 
   if (
     name.length < 2 ||
@@ -63,7 +69,7 @@ export async function POST(request: Request) {
         email,
         phone,
         message,
-        source: "astridsanders.com/contact",
+        source: `astridsanders.com/${context}`,
         submittedAt: new Date().toISOString(),
       }),
       cache: "no-store",

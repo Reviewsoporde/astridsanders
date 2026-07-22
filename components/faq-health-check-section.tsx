@@ -1,5 +1,6 @@
 import { Leaf } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
+import { ContactForm, type ContactFormContext } from "@/components/contact-form";
 import { FAQList } from "@/components/faq-list";
 import { HealthCheckForm } from "@/components/health-check-form";
 import { Reveal } from "@/components/reveal";
@@ -15,9 +16,24 @@ type FaqHealthCheckSectionProps = {
   title: string;
   faqs: FAQ[];
   locale?: Locale;
+  formKind?: "health-check" | "contact";
+  formTitle?: string;
+  formDescription?: string | string[];
+  formHeadingLevel?: "h2" | "p";
+  contactContext?: ContactFormContext;
 };
 
-export function FaqHealthCheckSection({ title, faqs, locale = "nl" }: FaqHealthCheckSectionProps) {
+export function FaqHealthCheckSection({
+  title,
+  faqs,
+  locale = "nl",
+  formKind = "health-check",
+  formTitle = "Gratis gezondheidscheck aanvragen",
+  formDescription =
+    "Laat je naam, telefoonnummer en voorkeursmoment achter. Astrid neemt persoonlijk contact met je op voor een kort en vrijblijvend telefoongesprek.",
+  formHeadingLevel = "p",
+  contactContext = "contact",
+}: FaqHealthCheckSectionProps) {
   const localizedFaqs = localizeValue(faqs, locale);
   const faqSchema = {
     "@context": "https://schema.org",
@@ -53,14 +69,29 @@ export function FaqHealthCheckSection({ title, faqs, locale = "nl" }: FaqHealthC
           </div>
           <div className="health-check-panel__heading">
             <Leaf size={30} weight="regular" aria-hidden="true" />
-            <h3 id="gezondheidscheck">Gratis gezondheidscheck aanvragen</h3>
-            <p>
-              Laat je naam, telefoonnummer en voorkeursmoment achter. Astrid neemt persoonlijk
-              contact met je op voor een kort en vrijblijvend telefoongesprek.
-            </p>
+            {formHeadingLevel === "h2" ? (
+              <h2 className="health-check-panel__title" id="gezondheidscheck">
+                {formTitle}
+              </h2>
+            ) : (
+              <p className="health-check-panel__title" id="gezondheidscheck">
+                {formTitle}
+              </p>
+            )}
+            {Array.isArray(formDescription) ? (
+              formDescription.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
+            ) : (
+              <p>{formDescription}</p>
+            )}
           </div>
-          <HealthCheckForm locale={locale} />
-          <WhatsAppLink locale={locale} compact className="health-check-panel__whatsapp" />
+          {formKind === "contact" ? (
+            <ContactForm locale={locale} context={contactContext} />
+          ) : (
+            <>
+              <HealthCheckForm locale={locale} />
+              <WhatsAppLink locale={locale} compact className="health-check-panel__whatsapp" />
+            </>
+          )}
         </Reveal>
       </div>
 

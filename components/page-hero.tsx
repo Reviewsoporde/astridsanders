@@ -7,13 +7,14 @@ import { translateText, type Locale } from "@/lib/i18n";
 
 type PageHeroProps = {
   title: string;
-  paragraphs: string[];
+  paragraphs: Array<string | string[]>;
   image: {
     src: string;
     alt: string;
     mobilePosition?: string;
   };
   ctaLabel?: string;
+  secondaryCtaLabel?: string;
   locale?: Locale;
 };
 
@@ -22,6 +23,7 @@ export function PageHero({
   paragraphs,
   image,
   ctaLabel = "Gratis gezondheidscheck aanvragen",
+  secondaryCtaLabel,
   locale = "nl",
 }: PageHeroProps) {
   const [lead, ...details] = paragraphs;
@@ -31,12 +33,18 @@ export function PageHero({
       <div className="shell hero__grid">
         <Reveal className="hero__copy">
           <h1 id="hero-title">{title}</h1>
-          {lead ? <p className="hero__lead">{lead}</p> : null}
+          {typeof lead === "string" ? <p className="hero__lead">{lead}</p> : null}
           <div className="hero__actions">
             <Link className="button" href="#gezondheidscheck">
               {translateText(ctaLabel, locale)}
             </Link>
-            <WhatsAppLink locale={locale} />
+            {secondaryCtaLabel ? (
+              <Link className="button button--secondary" href="#gezondheidscheck">
+                {translateText(secondaryCtaLabel, locale)}
+              </Link>
+            ) : (
+              <WhatsAppLink locale={locale} />
+            )}
           </div>
         </Reveal>
 
@@ -62,9 +70,17 @@ export function PageHero({
 
       {details.length ? (
         <div className="shell hero__context hero__context--sub">
-          {details.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
+          {details.map((detail) =>
+            Array.isArray(detail) ? (
+              <ul className="hero__context-list" key={detail.join("|")}>
+                {detail.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            ) : (
+              <p key={detail}>{detail}</p>
+            ),
+          )}
         </div>
       ) : null}
     </section>
