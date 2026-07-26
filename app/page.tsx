@@ -275,7 +275,7 @@ export function HomePageContent({ locale }: { locale: Locale }) {
             <Reveal className="hero__visual-wrap" delay={0.08}>
               <div className="hero__visual">
                 <Image
-                  src="/images/generated/home-hero-v2.webp"
+                  src="/images/generated/home-hero-v3.webp"
                   alt="Astrid Sanders wandelt langs een rustig Scandinavisch meer"
                   fill
                   priority
