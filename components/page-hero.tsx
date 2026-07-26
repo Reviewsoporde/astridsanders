@@ -11,7 +11,6 @@ type PageHeroProps = {
   image: {
     src: string;
     alt: string;
-    position?: string;
     mobilePosition?: string;
   };
   ctaLabel?: string;
@@ -86,12 +85,11 @@ export function PageHero({
               priority
               sizes="(max-width: 900px) 100vw, (max-width: 1428px) calc(100vw - 48px), 1380px"
               style={
-                {
-                  ...(image.position ? { "--hero-object-position": image.position } : {}),
-                  ...(image.mobilePosition
-                    ? { "--hero-object-position-mobile": image.mobilePosition }
-                    : {}),
-                } as CSSProperties
+                image.mobilePosition
+                  ? ({
+                      "--hero-object-position-mobile": image.mobilePosition,
+                    } as CSSProperties)
+                  : undefined
               }
             />
           </div>
