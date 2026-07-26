@@ -60,7 +60,7 @@ const pricing: Plan[] = [
     kicker: "Traject",
     description:
       "Zes persoonlijke coachingssessies verspreid over twaalf weken, gericht op het opbouwen en volhouden van gezondere gewoonten.",
-    price: "€750",
+    price: "€749",
     features: [
       "Zes persoonlijke sessies",
       "Rustig opbouwen over twaalf weken",

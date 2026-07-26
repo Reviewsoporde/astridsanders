@@ -68,11 +68,13 @@ const copy = {
 type HealthCheckFormClientProps = {
   interest?: HealthCheckInterest;
   locale?: Locale;
+  compact?: boolean;
 };
 
 export function HealthCheckFormClient({
   interest,
   locale = "nl",
+  compact = false,
 }: HealthCheckFormClientProps) {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [message, setMessage] = useState("");
@@ -138,7 +140,11 @@ export function HealthCheckFormClient({
   }
 
   return (
-    <form className="health-form" onSubmit={handleSubmit} aria-busy={status === "submitting"}>
+    <form
+      className={compact ? "health-form health-form--compact" : "health-form"}
+      onSubmit={handleSubmit}
+      aria-busy={status === "submitting"}
+    >
       <ul className="form-badge">
         {badge.map((item) => (
           <li key={item}>
@@ -181,12 +187,14 @@ export function HealthCheckFormClient({
           minLength={8}
           maxLength={30}
           pattern="[+]?[0-9 ().-]{8,30}"
-          aria-describedby="phone-hint"
+          aria-describedby={compact ? undefined : "phone-hint"}
           placeholder={labels.phonePlaceholder as string}
         />
-        <small id="phone-hint" className="field-hint">
-          {labels.phoneHint as string}
-        </small>
+        {compact ? null : (
+          <small id="phone-hint" className="field-hint">
+            {labels.phoneHint as string}
+          </small>
+        )}
       </div>
 
       <fieldset className="field">
@@ -205,22 +213,24 @@ export function HealthCheckFormClient({
         {status === "submitting" ? (labels.submitting as string) : (labels.submit as string)}
       </button>
 
-      <p className="form-privacy">{labels.privacy as string}</p>
+      {compact ? null : <p className="form-privacy">{labels.privacy as string}</p>}
 
-      <p className="form-direct-contact">
-        {labels.directContact as string}{" "}
-        <a href={emailHref}>{labels.emailAction as string}</a>{" "}
-        {labels.orSeparator as string}{" "}
-        <a
-          className="form-direct-contact__whatsapp"
-          href={whatsAppHref(locale)}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <WhatsappLogo size={17} weight="fill" aria-hidden="true" />
-          {labels.whatsappAction as string}
-        </a>
-      </p>
+      {compact ? null : (
+        <p className="form-direct-contact">
+          {labels.directContact as string}{" "}
+          <a href={emailHref}>{labels.emailAction as string}</a>{" "}
+          {labels.orSeparator as string}{" "}
+          <a
+            className="form-direct-contact__whatsapp"
+            href={whatsAppHref(locale)}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <WhatsappLogo size={17} weight="fill" aria-hidden="true" />
+            {labels.whatsappAction as string}
+          </a>
+        </p>
+      )}
 
       {message ? (
         <div className={`form-message form-message--${status}`} role={status === "error" ? "alert" : "status"}>

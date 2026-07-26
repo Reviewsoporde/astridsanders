@@ -1,5 +1,5 @@
 param(
-  [string]$SourcePath = (Join-Path $PSScriptRoot "..\public\brand\identity\astrid-sanders-monogram.png"),
+  [string]$SourcePath = (Join-Path $PSScriptRoot "..\public\brand\identity\astrid-sanders-monogram-updated.png"),
   [string]$AppDirectory = (Join-Path $PSScriptRoot "..\app")
 )
 

@@ -1,5 +1,5 @@
 param(
-  [string]$SourcePath = (Join-Path $PSScriptRoot "..\new_logo_design_identity.png"),
+  [string]$SourcePath = (Join-Path $PSScriptRoot "..\new_logo_updated_design.png"),
   [string]$OutputDirectory = (Join-Path $PSScriptRoot "..\public\brand\identity")
 )
 
@@ -48,7 +48,8 @@ function Export-TransparentLogoCrop {
     [System.Drawing.Rectangle]$Bounds,
     [string]$Destination,
     [int]$Padding = 12,
-    [switch]$Square
+    [switch]$Square,
+    [switch]$ClearBottomLeftDecoration
   )
 
   $crop = New-Object System.Drawing.Bitmap(
@@ -87,7 +88,12 @@ function Export-TransparentLogoCrop {
         ($blueDelta * $blueDelta)
       )
 
-      if ($distance -le $transparentDistance) {
+      $clearBoardDecoration =
+        $ClearBottomLeftDecoration -and
+        $x -lt 145 -and
+        $y -gt (395 + [int][Math]::Round($x * 0.42))
+
+      if ($clearBoardDecoration -or $distance -le $transparentDistance) {
         $alpha = 0
       } elseif ($distance -ge $opaqueDistance) {
         $alpha = 255
@@ -174,20 +180,27 @@ $source = [System.Drawing.Bitmap]::FromFile($resolvedSource)
 try {
   Export-TransparentLogoCrop `
     -Source $source `
+    -Bounds (New-Object System.Drawing.Rectangle(270, 0, 920, 450)) `
+    -Destination (Join-Path $resolvedOutput "astrid-sanders-logo-centered-updated.png") `
+    -Padding 14 `
+    -ClearBottomLeftDecoration
+
+  Export-TransparentLogoCrop `
+    -Source $source `
     -Bounds (New-Object System.Drawing.Rectangle(35, 525, 570, 235)) `
-    -Destination (Join-Path $resolvedOutput "astrid-sanders-logo-horizontal.png") `
+    -Destination (Join-Path $resolvedOutput "astrid-sanders-logo-horizontal-updated.png") `
     -Padding 14
 
   Export-TransparentLogoCrop `
     -Source $source `
-    -Bounds (New-Object System.Drawing.Rectangle(700, 515, 260, 285)) `
-    -Destination (Join-Path $resolvedOutput "astrid-sanders-logo-stacked.png") `
+    -Bounds (New-Object System.Drawing.Rectangle(705, 515, 220, 245)) `
+    -Destination (Join-Path $resolvedOutput "astrid-sanders-logo-stacked-updated.png") `
     -Padding 16
 
   Export-TransparentLogoCrop `
     -Source $source `
-    -Bounds (New-Object System.Drawing.Rectangle(1060, 525, 300, 270)) `
-    -Destination (Join-Path $resolvedOutput "astrid-sanders-monogram.png") `
+    -Bounds (New-Object System.Drawing.Rectangle(1090, 540, 225, 200)) `
+    -Destination (Join-Path $resolvedOutput "astrid-sanders-monogram-updated.png") `
     -Padding 18 `
     -Square
 } finally {

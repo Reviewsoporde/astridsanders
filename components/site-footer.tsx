@@ -67,10 +67,10 @@ export function SiteFooter({ locale = "nl" }: { locale?: Locale }) {
           >
             <Image
               className="site-footer__logo"
-              src="/brand/identity/astrid-sanders-logo-stacked.png"
+              src="/brand/identity/astrid-sanders-logo-stacked-updated.png"
               alt=""
-              width={254}
-              height={268}
+              width={230}
+              height={258}
               sizes="158px"
             />
           </Link>

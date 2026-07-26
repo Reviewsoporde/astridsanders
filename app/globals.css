@@ -5,9 +5,9 @@
 
   /*
    * Palette roles are mapped from the melnoakes.com reference onto Astrid's own
-   * brand (pine green + terracotta, sampled from the logo). Where the reference
-   * uses a saturated coral as its band colour, we use pine; where it uses warm
-   * gold as the secondary accent, we use terracotta.
+   * brand (deep burgundy + raspberry, shared by the updated logo). Where the
+   * reference uses a saturated coral as its band colour, we use raspberry; its
+   * warmer secondary notes map to the logo's softer rose tones.
    * Contrast against --page is verified: --text 14.0:1, --text-soft 8.8:1,
    * --muted 5.3:1, --accent 4.8:1. Cream on --brand is 10.5:1, on --accent 4.8:1.
    */
@@ -46,7 +46,7 @@
   --radius-card: 4px;
   --radius-media: 4px;
   --radius-control: 3px;
-  --header-height: 78px;
+  --header-height: 112px;
   --shell-width: min(calc(100% - 48px), 1380px);
   --space-2xs: 4px;
   --space-xs: 8px;
@@ -537,7 +537,7 @@ strong {
 
 /* Condenses and separates itself from the page once the user leaves the top. */
 .site-header.is-scrolled {
-  --header-height: 68px;
+  --header-height: 80px;
 
   border-bottom-color: color-mix(in srgb, var(--line) 72%, transparent);
   background: color-mix(in srgb, var(--page) 94%, transparent);
@@ -561,7 +561,7 @@ strong {
 
 .wordmark {
   display: inline-flex;
-  width: clamp(188px, 16vw, 224px);
+  width: clamp(172px, 14vw, 204px);
   align-items: center;
   flex: 0 0 auto;
   transition: transform 280ms var(--ease-out);
@@ -569,10 +569,11 @@ strong {
 }
 
 .site-header.is-scrolled .wordmark {
-  transform: scale(0.92);
+  transform: scale(0.72);
 }
 
 .wordmark__image {
+  display: block;
   width: 100%;
   height: auto;
 }
@@ -1185,17 +1186,36 @@ strong {
 
 .hero--full .hero__copy {
   width: var(--shell-width);
-  margin-inline: auto;
-  padding: 0 0 clamp(44px, 6vw, 88px);
+  margin-right: auto;
+  margin-left: 0;
+  padding: 0 0 clamp(44px, 6vw, 88px) clamp(24px, 4vw, 56px);
 }
 
 .hero--full .hero__copy h1 {
-  max-width: 17ch;
+  max-width: 100%;
   font-size: clamp(2.9rem, 4.6vw, 4.2rem);
 }
 
 .hero--full .hero__lead {
-  max-width: 46ch;
+  max-width: 100%;
+}
+
+.hero--full .hero__actions {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero__form-card {
+  display: none;
+}
+
+.hero__form-card-title {
+  margin: 0 0 var(--space-md);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: 0;
 }
 
 .hero--full .hero__visual::after {
@@ -1207,6 +1227,50 @@ strong {
 .hero--full .hero__context {
   margin-top: 0;
   padding-block: clamp(28px, 4vw, 48px) var(--space-xl);
+}
+
+/* Below this width there's no room for a floating form card beside the
+   photo, so it's dropped and the CTA buttons remain the path to the form
+   further down the page. */
+@media (min-width: 1180px) {
+  .hero--full .hero__copy h1 {
+    max-width: 26ch;
+  }
+
+  .hero--full .hero__lead {
+    max-width: 50ch;
+  }
+
+  .hero__form-card {
+    display: block;
+    grid-area: 1 / 1;
+    position: relative;
+    z-index: var(--z-content);
+    align-self: center;
+    justify-self: end;
+    width: min(380px, 32%);
+    margin-right: clamp(24px, 4vw, 64px);
+    padding: clamp(24px, 2vw, 30px);
+    border: 1px solid rgb(255 255 255 / 75%);
+    border-radius: var(--radius-card);
+    /*
+     * Mostly-opaque cream, not a generic frosted-glass smear: legibility can't
+     * depend on how light or dark the photo happens to be behind the card, and
+     * a warm near-solid surface reads as this site's own card, not stock SaaS
+     * glass. The blur keeps just enough transparency to feel photo-anchored.
+     */
+    background: linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--accent-ink) 96%, transparent) 0%,
+      color-mix(in srgb, var(--accent-ink) 90%, transparent) 100%
+    );
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    box-shadow:
+      0 24px 56px rgb(53 16 31 / 34%),
+      0 0 0 1px color-mix(in srgb, var(--accent) 16%, transparent),
+      inset 0 1px 0 rgb(255 255 255 / 80%);
+  }
 }
 
 .hero--sub .hero__grid {
@@ -2388,7 +2452,7 @@ strong {
 }
 
 .mission-quote {
-  max-width: 760px;
+  max-width: 1380px;
   margin-inline: auto;
   text-align: center;
 }
@@ -2406,10 +2470,17 @@ strong {
 .mission-quote__text {
   margin-bottom: var(--space-lg);
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2.6vw, 2.15rem);
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
   font-weight: 400;
-  line-height: 1.45;
-  text-wrap: balance;
+  line-height: 1.4;
+}
+
+.mission-quote__line {
+  display: block;
+}
+
+.mission-quote__line + .mission-quote__line {
+  margin-top: 0.25em;
 }
 
 .mission-quote__attribution {
@@ -2648,6 +2719,11 @@ strong {
   display: grid;
   padding-block: var(--space-lg);
   gap: var(--space-md);
+}
+
+.health-form--compact {
+  padding: 0;
+  gap: var(--space-sm);
 }
 
 .field {
@@ -3362,7 +3438,7 @@ strong {
   }
 
   :root {
-    --header-height: 70px;
+    --header-height: 94px;
     --radius-media: 16px;
     --section-compact: 44px;
     --section-standard: 56px;
@@ -3417,7 +3493,7 @@ strong {
   }
 
   .site-header.is-scrolled {
-    --header-height: 62px;
+    --header-height: 72px;
   }
 
   .site-header__controls > .language-toggle {
@@ -3676,7 +3752,7 @@ strong {
   }
 
   .wordmark {
-    width: 164px;
+    width: 154px;
   }
 
   .button {

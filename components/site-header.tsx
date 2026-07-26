@@ -360,12 +360,12 @@ export function SiteHeader() {
         <Link className="wordmark" href={homePath} aria-label={labels.home}>
           <Image
             className="wordmark__image"
-            src="/brand/identity/astrid-sanders-logo-horizontal.png"
+            src="/brand/identity/astrid-sanders-logo-centered-updated.png"
             alt=""
-            width={531}
-            height={140}
+            width={872}
+            height={427}
             priority
-            sizes="(max-width: 430px) 164px, (max-width: 1180px) 188px, 224px"
+            sizes="(max-width: 430px) 154px, (max-width: 1180px) 172px, 204px"
           />
         </Link>
 

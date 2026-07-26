@@ -284,6 +284,11 @@ export function HomePageContent({ locale }: { locale: Locale }) {
                 />
               </div>
             </Reveal>
+
+            <Reveal className="hero__form-card" delay={0.16}>
+              <p className="hero__form-card-title">Gratis gezondheidscheck</p>
+              <HealthCheckForm locale={locale} compact />
+            </Reveal>
           </div>
 
           {/*
@@ -588,8 +593,12 @@ export function HomePageContent({ locale }: { locale: Locale }) {
               Mijn missie
             </p>
             <p className="mission-quote__text">
-              Mensen met reuma en artrose weer grip laten krijgen op hun energie en welzijn,{" "}
-              <em>zodat ze met vertrouwen blijven doen wat voor hen belangrijk is.</em>
+              <span className="mission-quote__line">
+                Mensen met reuma en artrose weer grip laten krijgen op hun energie en welzijn,
+              </span>
+              <span className="mission-quote__line">
+                <em>zodat ze met vertrouwen blijven doen wat voor hen belangrijk is.</em>
+              </span>
             </p>
             <p className="mission-quote__attribution">— Astrid Sanders</p>
           </Reveal>

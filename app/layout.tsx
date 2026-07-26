@@ -47,7 +47,7 @@ const localBusiness = {
   "@type": "LocalBusiness",
   name: "Astrid Sanders Leefstijlcoaching",
   url: siteUrl,
-  logo: `${siteUrl}/brand/identity/astrid-sanders-monogram.png`,
+  logo: `${siteUrl}/brand/identity/astrid-sanders-monogram-updated.png`,
   email: "astrid@astridsanders.com",
   description:
     "Persoonlijke leefstijlcoaching in Den Bosch en online voor mensen met reuma en artrose.",
