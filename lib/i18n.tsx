@@ -111,6 +111,7 @@ const englishTranslations: Record<string, string> = {
   "Persoonlijke leefstijlcoaching afgestemd op jouw situatie, doelen en voortgang.":
     "Personal lifestyle coaching tailored to your situation, goals and progress.",
   "€125 per uur": "€125 per hour",
+  "per uur": "per hour",
   "Een concrete coachingsvraag": "One concrete coaching question",
   "Voeding, stress, slaap of beweging": "Nutrition, stress, sleep or movement",
   "Praktische acties voor thuis": "Practical actions for home",
@@ -234,17 +235,17 @@ const englishTranslations: Record<string, string> = {
     "Any medication changes must only be discussed with your general practitioner, rheumatologist or other treating physician.",
   "Ook na het traject blijft laagdrempelig contact mogelijk wanneer je opnieuw ondersteuning nodig hebt.":
     "After the programme, you can still get in touch if you need support again.",
+  "Mijn missie": "My mission",
+  "Mensen met reuma en artrose weer grip laten krijgen op hun energie en welzijn,":
+    "Helping people with rheumatism and osteoarthritis regain a sense of control over their energy and wellbeing,",
+  "zodat ze met vertrouwen blijven doen wat voor hen belangrijk is.":
+    "so they can keep doing, with confidence, what matters most to them.",
   "Portret van Astrid Sanders op het strand":
     "Portrait of Astrid Sanders on the beach",
   Tarieven: "Pricing",
   "Pakketten en tarieven": "Packages and pricing",
   "Begin laagdrempelig met de gratis gezondheidscheck. Daarna kies je pas welke vorm van begeleiding past bij jouw situatie en tempo.":
     "Start gently with the free health check. After that, you choose which form of guidance suits your situation and pace.",
-  "Start met helderheid": "Start with clarity",
-  "Twijfel je wat je nodig hebt? Begin met een kort gesprek.":
-    "Not sure what you need? Begin with a short conversation.",
-  "We bespreken je klachten, je dagelijkse gewoonten en wat je al hebt geprobeerd. Zo weet je welke vervolgstap logisch is voordat je ergens aan vastzit.":
-    "We discuss your symptoms, daily habits and what you have already tried. That way, you know which next step makes sense before committing to anything.",
   "12 weken begeleiding": "12 weeks of support",
   "Meest gekozen": "Most popular",
   "Een langer vervolgtraject kan worden besproken wanneer na twaalf weken aanvullende begeleiding nodig is.":
@@ -284,6 +285,15 @@ const englishTranslations: Record<string, string> = {
     "Leave your name, phone number and preferred time. Astrid will contact you personally for a short, informal phone call.",
   "Leefstijlcoaching bij reuma en artrose.": "Lifestyle coaching for rheumatism and osteoarthritis.",
   "Den Bosch en online door heel Nederland": "Den Bosch and online throughout the Netherlands",
+  "Persoonlijke begeleiding rondom voeding, beweging, slaap, stress en dagelijkse gewoonten — naast je reguliere medische zorg.":
+    "Personal guidance around nutrition, movement, sleep, stress and daily habits — alongside your regular medical care.",
+  "Geaccrediteerd leefstijlcoach, opgeleid bij Sonnevelt Opleidingen en aangesloten bij de BLCN.":
+    "Accredited lifestyle coach, trained at Sonnevelt Opleidingen and a member of BLCN.",
+  "Pagina’s": "Pages",
+  "Den Bosch, Noord-Brabant — en online door heel Nederland":
+    "Den Bosch, Noord-Brabant — and online throughout the Netherlands",
+  "Erkenning en media": "Accreditation and media",
+  "Astrid op LinkedIn": "Astrid on LinkedIn",
   "Astrid Sanders Leefstijlcoaching": "Astrid Sanders Lifestyle Coaching",
   "Leefstijlcoaching vervangt geen medische behandeling.":
     "Lifestyle coaching does not replace medical treatment.",

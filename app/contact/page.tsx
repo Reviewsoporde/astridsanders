@@ -1,4 +1,4 @@
-import { EnvelopeSimple, MapPin } from "@phosphor-icons/react/dist/ssr";
+import { EnvelopeSimple, MapPin, Phone } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,6 +7,7 @@ import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppLink } from "@/components/whatsapp-link";
 import { localizeHref, localizeReactNode, type Locale } from "@/lib/i18n";
+import { phoneDisplayNumber, phoneHref } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -64,8 +65,14 @@ export function ContactPageContent({ locale }: { locale: Locale }) {
                   </p>
                 </div>
                 <div className="site-footer__location">
+                  <Phone size={22} weight="regular" aria-hidden="true" />
+                  <p>
+                    <a href={phoneHref()}>{phoneDisplayNumber()}</a>
+                  </p>
+                </div>
+                <div className="site-footer__location">
                   <MapPin size={22} weight="regular" aria-hidden="true" />
-                  <p>Den Bosch en online door heel Nederland</p>
+                  <p>Den Bosch, Noord-Brabant — en online door heel Nederland</p>
                 </div>
                 <WhatsAppLink locale={locale} compact />
               </div>

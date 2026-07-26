@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "@fontsource-variable/manrope/wght.css";
+import "@fontsource-variable/playfair-display/wght.css";
+import "@fontsource-variable/playfair-display/wght-italic.css";
 import { SiteHeader } from "@/components/site-header";
 import { SkipLink } from "@/components/skip-link";
 import "./globals.css";
@@ -56,6 +58,7 @@ const localBusiness = {
     addressCountry: "NL",
   },
   areaServed: ["Den Bosch", "Noord-Brabant", "Nederland"],
+  sameAs: ["https://www.linkedin.com/in/astridsanders/"],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {

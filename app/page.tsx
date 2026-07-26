@@ -5,13 +5,16 @@ import {
   Check,
   HeartStraight,
   Leaf,
+  Quotes,
   ShieldCheck,
 } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { FAQList } from "@/components/faq-list";
 import { HealthCheckForm } from "@/components/health-check-form";
+import { PricingSection } from "@/components/pricing-section";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppLink } from "@/components/whatsapp-link";
@@ -183,62 +186,6 @@ const authorityFacts: AuthorityFact[] = [
   },
 ];
 
-const pricing = [
-  {
-    title: "Gratis gezondheidscheck",
-    kicker: "Eerste stap",
-    description:
-      "Een kort telefonisch gesprek waarin we jouw situatie bespreken, mijn aanpak toelichten en bekijken welke vervolgstap passend kan zijn.",
-    price: "Gratis",
-    features: [
-      "Telefonisch en vrijblijvend",
-      "Ruimte voor jouw situatie",
-      "Persoonlijk advies over een passende vervolgstap",
-    ],
-    ctaLabel: "Vraag de check aan",
-  },
-  {
-    title: "Intake",
-    kicker: "Verdieping",
-    description:
-      "Een uitgebreide intake waarin we jouw gezondheid, leefstijl, dagelijkse gewoonten en doelen in kaart brengen.",
-    price: "€99",
-    features: [
-      "Uitgebreide startanalyse",
-      "Doelen en gewoonten in kaart",
-      "Heldere richting voor je begeleiding",
-    ],
-    ctaLabel: "Plan een intake",
-  },
-  {
-    title: "Los coachingsgesprek",
-    kicker: "Flexibel",
-    description:
-      "Persoonlijke leefstijlcoaching afgestemd op jouw situatie, doelen en voortgang.",
-    price: "€125 per uur",
-    features: [
-      "Een concrete coachingsvraag",
-      "Voeding, stress, slaap of beweging",
-      "Praktische acties voor thuis",
-    ],
-    ctaLabel: "Bespreek een gesprek",
-  },
-  {
-    title: "12-weken coachingstraject",
-    kicker: "Traject",
-    description:
-      "Zes persoonlijke coachingssessies verspreid over twaalf weken, gericht op het opbouwen en volhouden van gezondere gewoonten.",
-    price: "€750",
-    features: [
-      "Zes persoonlijke sessies",
-      "Rustig opbouwen over twaalf weken",
-      "Ondersteuning bij volhouden en bijsturen",
-    ],
-    ctaLabel: "Bekijk het traject",
-    featured: true,
-  },
-];
-
 const faqs = [
   {
     question: "Wat doet een leefstijlcoach?",
@@ -310,8 +257,8 @@ export function HomePageContent({ locale }: { locale: Locale }) {
   const content = (
     <div lang={locale}>
       <main id="main-content">
-        <section className="hero" aria-labelledby="hero-title">
-          <div className="shell hero__grid">
+        <section className="hero hero--full" aria-labelledby="hero-title">
+          <div className="hero__grid">
             <Reveal className="hero__copy">
               <h1 id="hero-title">Leefstijlcoach in Den Bosch bij reuma en artrose</h1>
               <p className="hero__lead">
@@ -319,7 +266,7 @@ export function HomePageContent({ locale }: { locale: Locale }) {
                 situatie, mogelijkheden en doelen.
               </p>
               <div className="hero__actions">
-                <Link className="button" href="#gezondheidscheck">
+                <Link className="button button--solid" href="#gezondheidscheck">
                   Gratis gezondheidscheck aanvragen
                 </Link>
                 <WhatsAppLink locale={locale} />
@@ -329,14 +276,33 @@ export function HomePageContent({ locale }: { locale: Locale }) {
             <Reveal className="hero__visual-wrap" delay={0.08}>
               <div className="hero__visual">
                 <Image
-                  src="/images/generated/home-hero-v2.webp"
+                  src="/images/generated/home-hero-v3.webp"
                   alt="Astrid Sanders wandelt langs een rustig Scandinavisch meer"
                   fill
                   priority
-                  sizes="(max-width: 900px) 100vw, (max-width: 1428px) calc(100vw - 48px), 1380px"
+                  sizes="100vw"
+                  style={{ "--hero-object-position": "center 22%" } as CSSProperties}
                 />
               </div>
             </Reveal>
+          </div>
+
+          {/*
+           * Slim trust bar hugging the bottom of the hero: the three titles from
+           * the section below, condensed into one scannable row with their icons.
+           */}
+          <div className="hero-strip">
+            <ul className="shell hero-strip__list">
+              {trustPoints.map((point) => {
+                const Icon = point.icon;
+                return (
+                  <li key={point.title}>
+                    <Icon size={20} weight="regular" aria-hidden="true" />
+                    <span>{point.title}</span>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
 
           <div className="shell hero__context">
@@ -358,14 +324,13 @@ export function HomePageContent({ locale }: { locale: Locale }) {
 
         </section>
 
-        <section className="section trust-section" aria-labelledby="trust-title">
+        <section className="section trust-section trust-section--tight" aria-labelledby="trust-title">
           <div className="shell">
-            <Reveal className="section-heading section-heading--narrow">
-              <p className="eyebrow">Persoonlijk en professioneel</p>
+            <Reveal className="section-heading section-heading--tight">
               <h2 id="trust-title">Leefstijlcoaching vanuit ervaring én professionele kennis</h2>
             </Reveal>
 
-            <div className="trust-grid">
+            <div className="trust-grid trust-grid--aligned">
               {trustPoints.map((point, index) => {
                 const Icon = point.icon;
                 return (
@@ -374,11 +339,15 @@ export function HomePageContent({ locale }: { locale: Locale }) {
                     className={`trust-card trust-card--${index + 1}`}
                     delay={index * 0.05}
                   >
-                    <Icon className="trust-card__icon" size={30} weight="regular" aria-hidden="true" />
-                    <h3>{point.title}</h3>
-                    {point.paragraphs.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
-                    ))}
+                    <div className="trust-card__head">
+                      <Icon className="trust-card__icon" size={30} weight="regular" aria-hidden="true" />
+                      <h3>{point.title}</h3>
+                    </div>
+                    <div className="trust-card__body">
+                      {point.paragraphs.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                    </div>
                     <div className="trust-card__links">
                       {point.links.map((link) => (
                         <a
@@ -602,86 +571,40 @@ export function HomePageContent({ locale }: { locale: Locale }) {
                 </div>
               </Reveal>
             </div>
-
-            <Reveal className="process-image">
-              <Image
-                src="/images/astrid-portrait-beach.webp"
-                alt="Portret van Astrid Sanders op het strand"
-                fill
-                sizes="(max-width: 767px) 100vw, 1200px"
-              />
-            </Reveal>
           </div>
         </section>
 
-        <section className="section pricing-section" aria-labelledby="pricing-title">
-          <div className="shell">
-            <div className="pricing-intro">
-              <Reveal className="section-heading section-heading--narrow">
-                <h2 id="pricing-title">Tarieven</h2>
-                <p>
-                  Begin laagdrempelig met de gratis gezondheidscheck. Daarna kies je pas welke vorm
-                  van begeleiding past bij jouw situatie en tempo.
-                </p>
-              </Reveal>
-
-              <Reveal className="pricing-spotlight">
-                <div>
-                  <p className="pricing-spotlight__kicker">Start met helderheid</p>
-                  <p className="pricing-spotlight__title">
-                    Twijfel je wat je nodig hebt? Begin met een kort gesprek.
-                  </p>
-                  <p>
-                    We bespreken je klachten, je dagelijkse gewoonten en wat je al hebt geprobeerd.
-                    Zo weet je welke vervolgstap logisch is voordat je ergens aan vastzit.
-                  </p>
-                </div>
-              </Reveal>
-            </div>
-
-            <div className="pricing-grid">
-              {pricing.map((plan, index) => (
-                <Reveal
-                  key={plan.title}
-                  className={`price-card ${plan.featured ? "price-card--featured" : ""}`}
-                  delay={index * 0.04}
-                >
-                  <div className="price-card__topline">
-                    <p className="price-card__kicker">{plan.kicker}</p>
-                    {plan.featured ? (
-                      <p className="price-card__label">12 weken begeleiding</p>
-                    ) : null}
-                  </div>
-                  <h3>{plan.title}</h3>
-                  <p className="price-card__description">{plan.description}</p>
-                  <p className="price-card__price">{plan.price}</p>
-                  <ul className="price-card__features">
-                    {plan.features.map((feature) => (
-                      <li key={feature}>
-                        <Check size={17} weight="bold" aria-hidden="true" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    className="button"
-                    href={localizedPath(
-                      `/gratis-gezondheidscheck/?interesse=${encodeURIComponent(plan.title)}`,
-                    )}
-                  >
-                    {plan.ctaLabel}
-                  </Link>
-                </Reveal>
-              ))}
-            </div>
-            <p className="pricing-note">
-              Een langer vervolgtraject kan worden besproken wanneer na twaalf weken aanvullende
-              begeleiding nodig is.
+        <section
+          className="section mission-quote-section section--band-primary"
+          aria-labelledby="mission-quote-title"
+        >
+          <Reveal className="shell mission-quote">
+            <Quotes
+              className="mission-quote__mark"
+              size={40}
+              weight="fill"
+              aria-hidden="true"
+            />
+            <p className="eyebrow mission-quote__eyebrow" id="mission-quote-title">
+              Mijn missie
             </p>
-          </div>
+            <p className="mission-quote__text">
+              Mensen met reuma en artrose weer grip laten krijgen op hun energie en welzijn,{" "}
+              <em>zodat ze met vertrouwen blijven doen wat voor hen belangrijk is.</em>
+            </p>
+            <p className="mission-quote__attribution">— Astrid Sanders</p>
+          </Reveal>
         </section>
 
-        <section className="section story-section" aria-labelledby="story-title">
+        <PricingSection
+          locale={locale}
+          checkDescription="Een kort telefonisch gesprek waarin we jouw situatie bespreken, mijn aanpak toelichten en bekijken welke vervolgstap passend kan zijn."
+        />
+
+        <section
+          className="section story-section section--band-accent"
+          aria-labelledby="story-title"
+        >
           <div className="shell story-layout">
             <Reveal className="story-heading">
               <h2 id="story-title">Ik weet hoe het is wanneer klachten je leven overnemen</h2>
@@ -802,7 +725,6 @@ export function HomePageContent({ locale }: { locale: Locale }) {
                 </p>
               </div>
               <HealthCheckForm locale={locale} />
-              <WhatsAppLink locale={locale} compact className="health-check-panel__whatsapp" />
             </Reveal>
           </div>
         </section>

@@ -18,7 +18,7 @@ const copy = {
     email: "E-mailadres",
     emailPlaceholder: "jouwnaam@voorbeeld.nl",
     phone: "Telefoonnummer (optioneel)",
-    phonePlaceholder: "Bijvoorbeeld 06 12 34 56 78",
+    phonePlaceholder: "06 12 34 56 78",
     phoneHint: "Gebruik 8 tot 15 cijfers; spaties, haakjes en een landcode zijn toegestaan.",
     message: "Waar kan Astrid je mee helpen?",
     messagePlaceholder: "Vertel kort wat er speelt of welke vraag je hebt.",
@@ -39,7 +39,7 @@ const copy = {
     email: "Email address",
     emailPlaceholder: "yourname@example.com",
     phone: "Phone number (optional)",
-    phonePlaceholder: "For example +31 6 12 34 56 78",
+    phonePlaceholder: "+31 6 12 34 56 78",
     phoneHint: "Use 8 to 15 digits; spaces, brackets and an international prefix are allowed.",
     message: "How can Astrid help you?",
     messagePlaceholder: "Briefly describe your situation or question.",
@@ -219,7 +219,7 @@ export function ContactForm({
         />
       </div>
 
-      <button className="button health-form__submit" type="submit" disabled={status === "submitting"}>
+      <button className="button button--solid health-form__submit" type="submit" disabled={status === "submitting"}>
         {status === "submitting" ? labels.submitting : labels.submit}
       </button>
 

@@ -1,87 +1,137 @@
+import { Check } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { localizeReactNode, type Locale } from "@/lib/i18n";
 
-const pricing = [
+type Plan = {
+  title: string;
+  kicker: string;
+  description: string;
+  price: string;
+  priceUnit?: string;
+  features: string[];
+  ctaLabel: string;
+  featured?: boolean;
+};
+
+const pricing: Plan[] = [
   {
     title: "Gratis gezondheidscheck",
+    kicker: "Eerste stap",
     description:
       "Een kort telefonisch gesprek waarin we jouw situatie bespreken en bekijken welke vervolgstap passend kan zijn.",
     price: "Gratis",
+    features: [
+      "Telefonisch en vrijblijvend",
+      "Ruimte voor jouw situatie",
+      "Persoonlijk advies over een passende vervolgstap",
+    ],
     ctaLabel: "Vraag de check aan",
-    guidedCtaLabel: "Vraag de check aan",
   },
   {
     title: "Intake",
+    kicker: "Verdieping",
     description:
       "Een uitgebreide intake waarin we jouw gezondheid, leefstijl, dagelijkse gewoonten en doelen in kaart brengen.",
     price: "€99",
+    features: [
+      "Uitgebreide startanalyse",
+      "Doelen en gewoonten in kaart",
+      "Heldere richting voor je begeleiding",
+    ],
     ctaLabel: "Plan een intake",
-    guidedCtaLabel: "Bespreek de intake",
   },
   {
     title: "Los coachingsgesprek",
+    kicker: "Flexibel",
     description:
       "Persoonlijke leefstijlcoaching afgestemd op jouw situatie, doelen en voortgang.",
-    price: "€125 per uur",
+    price: "€125",
+    priceUnit: "per uur",
+    features: [
+      "Een concrete coachingsvraag",
+      "Voeding, stress, slaap of beweging",
+      "Praktische acties voor thuis",
+    ],
     ctaLabel: "Bespreek een gesprek",
-    guidedCtaLabel: "Bespreek een gesprek",
   },
   {
     title: "12-weken coachingstraject",
+    kicker: "Traject",
     description:
       "Zes persoonlijke coachingssessies verspreid over twaalf weken, gericht op het opbouwen en volhouden van gezondere gewoonten.",
     price: "€750",
-    featured: true,
+    features: [
+      "Zes persoonlijke sessies",
+      "Rustig opbouwen over twaalf weken",
+      "Ondersteuning bij volhouden en bijsturen",
+    ],
     ctaLabel: "Bekijk het traject",
-    guidedCtaLabel: "Bespreek het traject",
+    featured: true,
   },
 ];
 
 type PricingSectionProps = {
   locale?: Locale;
-  variant?: "compact" | "guided";
+  /**
+   * The SEO doc gives the health-check card a slightly longer description on the
+   * home page than on the sub-pages. Everything else is identical, so that single
+   * line is the only per-page override.
+   */
+  checkDescription?: string;
 };
 
-export function PricingSection({ locale = "nl", variant = "compact" }: PricingSectionProps) {
-  const isGuided = variant === "guided";
+export function PricingSection({ locale = "nl", checkDescription }: PricingSectionProps) {
+  const plans = checkDescription
+    ? pricing.map((plan, index) => (index === 0 ? { ...plan, description: checkDescription } : plan))
+    : pricing;
+
   const content = (
-    <section
-      className={`section pricing-section ${isGuided ? "pricing-section--guided" : ""}`.trim()}
-      aria-labelledby="pricing-title"
-    >
+    <section className="section pricing-section" aria-labelledby="pricing-title">
       <div className="shell">
         <Reveal className="section-heading section-heading--narrow">
           <h2 id="pricing-title">Tarieven</h2>
+          <p>
+            Begin laagdrempelig met de gratis gezondheidscheck. Daarna kies je pas welke vorm van
+            begeleiding past bij jouw situatie en tempo.
+          </p>
         </Reveal>
 
         <div className="pricing-grid">
-          {pricing.map((plan, index) => (
+          {plans.map((plan, index) => (
             <Reveal
               key={plan.title}
-              className={`price-card ${index === 0 && isGuided ? "price-card--entry" : ""} ${plan.featured ? "price-card--featured" : ""}`.trim()}
+              className={`price-card ${plan.featured ? "price-card--featured" : ""}`.trim()}
               delay={index * 0.04}
             >
               <div className="price-card__topline">
-                {plan.featured ? (
-                  <p className="price-card__label">
-                    {isGuided ? "Meest gekozen" : "12 weken begeleiding"}
-                  </p>
-                ) : null}
+                <p className="price-card__kicker">{plan.kicker}</p>
+                {plan.featured ? <p className="price-card__label">Meest gekozen</p> : null}
               </div>
               <h3>{plan.title}</h3>
-              {isGuided ? <p className="price-card__price">{plan.price}</p> : null}
               <p className="price-card__description">{plan.description}</p>
-              {!isGuided ? <p className="price-card__price">{plan.price}</p> : null}
+              <p className="price-card__price">
+                {plan.price}
+                {plan.priceUnit ? <span className="price-card__unit">{plan.priceUnit}</span> : null}
+              </p>
+              <ul className="price-card__features">
+                {plan.features.map((feature) => (
+                  <li key={feature}>
+                    <Check size={17} weight="bold" aria-hidden="true" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
               <Link
                 className="button"
                 href={`/${locale === "en" ? "en/" : ""}gratis-gezondheidscheck/?interesse=${encodeURIComponent(plan.title)}`}
               >
-                {isGuided ? plan.guidedCtaLabel : plan.ctaLabel}
+                {plan.ctaLabel}
               </Link>
             </Reveal>
           ))}
         </div>
+
         <p className="pricing-note">
           Een langer vervolgtraject kan worden besproken wanneer na twaalf weken aanvullende
           begeleiding nodig is.

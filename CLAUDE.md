@@ -69,7 +69,7 @@ Main nav CTA button: **Gratis Gezondheidscheck**.
 - **Health-check form** (deliberately minimal, low threshold): naam, telefoonnummer, voorkeursmoment voor bellen (ochtend/middag/avond). **No email field, no booking calendar.**
 - **Contact page form** (secondary, for people further along): longer, with a free-text message field.
 - **Form handling:** forms POST to a **GoHighLevel CRM webhook**. The webhook URL is not available yet — build forms against a configurable endpoint (env var `GHL_WEBHOOK_URL`), submitted via a Next.js route handler / server action so the URL stays server-side.
-- **WhatsApp button** as secondary CTA site-wide ("Liever eerst appen? Stuur een WhatsApp-bericht"). Number = Astrid's current (private) number, TBD.
+- **WhatsApp button** as secondary CTA site-wide ("Liever eerst appen? Stuur een WhatsApp-bericht"). Number = Astrid's current (private) number: **+31 6 18341657** (hardcoded default in `components/whatsapp-link.tsx`, overridable via `NEXT_PUBLIC_WHATSAPP_NUMBER`).
 
 ## SEO / Technical Requirements
 
@@ -112,3 +112,5 @@ Main nav CTA button: **Gratis Gezondheidscheck**.
 - [ ] Final email address choice (astrid@ vs info@)
 - [ ] "Ontstekingsklachten" page: in nav proposal but no content — confirm with client
 - [ ] Domain credentials (domain bought by "Roel"; Daan to obtain access for Vercel DNS setup)
+- [ ] **Light/reversed logo variant.** The footer is a solid deep-plum band, but `astrid-sanders-logo-stacked.png` is dark green on transparent. It is currently rendered with a `brightness(0) invert(1)` CSS filter, which flattens it to flat white and loses the terracotta sunrise detail. A proper light-variant asset should replace it.
+- [ ] **Logo vs. site palette mismatch.** The site palette is raspberry/plum (`#D62A57` / `#4A1730`), while the logo artwork is forest green + terracotta. The logo currently reads as a foreign element, most visibly in the header. Either a recoloured logo or a palette revisit is needed before launch.

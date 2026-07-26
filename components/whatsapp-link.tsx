@@ -1,5 +1,6 @@
-import { EnvelopeSimple, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
+import { WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
 import type { Locale } from "@/lib/i18n";
+import { whatsAppHref } from "@/lib/whatsapp";
 
 type WhatsAppLinkProps = {
   className?: string;
@@ -12,36 +13,10 @@ export function WhatsAppLink({
   compact = false,
   locale = "nl",
 }: WhatsAppLinkProps) {
-  const number = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "");
-
-  if (!number) {
-    const subject = locale === "en"
-      ? "Question about lifestyle coaching"
-      : "Vraag over leefstijlcoaching";
-
-    return (
-      <a
-        className={`${compact ? "text-link" : "button button--secondary"} ${className}`.trim()}
-        href={`mailto:astrid@astridsanders.com?subject=${encodeURIComponent(subject)}`}
-      >
-        <EnvelopeSimple size={compact ? 20 : 22} weight="regular" aria-hidden="true" />
-        {locale === "en"
-          ? "Prefer email? Contact Astrid directly"
-          : "Liever eerst mailen? Neem direct contact op"}
-      </a>
-    );
-  }
-
-  const message = encodeURIComponent(
-    locale === "en"
-      ? "Hello Astrid, I have a question about lifestyle coaching."
-      : "Hallo Astrid, ik heb een vraag over leefstijlcoaching.",
-  );
-
   return (
     <a
       className={`${compact ? "text-link" : "button button--secondary"} ${className}`.trim()}
-      href={`https://wa.me/${number}?text=${message}`}
+      href={whatsAppHref(locale)}
       target="_blank"
       rel="noreferrer"
     >

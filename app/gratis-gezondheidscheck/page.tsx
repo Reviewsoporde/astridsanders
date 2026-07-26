@@ -4,7 +4,6 @@ import Image from "next/image";
 import { HealthCheckForm } from "@/components/health-check-form";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
-import { WhatsAppLink } from "@/components/whatsapp-link";
 import { getHealthCheckInterest, type HealthCheckInterest } from "@/lib/form-validation";
 import { localizeReactNode, type Locale } from "@/lib/i18n";
 
@@ -68,7 +67,6 @@ export function GezondheidscheckPageContent({
                 </p>
               </div>
               <HealthCheckForm interest={interest} locale={locale} />
-              <WhatsAppLink locale={locale} compact className="health-check-panel__whatsapp" />
             </Reveal>
 
             <Reveal className="health-check-expectations" delay={0.04}>

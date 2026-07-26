@@ -85,12 +85,13 @@ export function FaqHealthCheckSection({
             )}
           </div>
           {formKind === "contact" ? (
-            <ContactForm locale={locale} context={contactContext} />
-          ) : (
             <>
-              <HealthCheckForm locale={locale} />
+              <ContactForm locale={locale} context={contactContext} />
+              {/* The health-check form carries WhatsApp in its own footer; the contact form does not. */}
               <WhatsAppLink locale={locale} compact className="health-check-panel__whatsapp" />
             </>
+          ) : (
+            <HealthCheckForm locale={locale} />
           )}
         </Reveal>
       </div>

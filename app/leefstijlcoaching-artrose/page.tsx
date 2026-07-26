@@ -569,7 +569,7 @@ export function ArtrosePageContent({ locale }: { locale: Locale }) {
           </div>
         </section>
 
-        <PricingSection locale={locale} variant="guided" />
+        <PricingSection locale={locale} />
 
         <FaqHealthCheckSection
           title="Veelgestelde vragen over leefstijlcoaching bij artrose"

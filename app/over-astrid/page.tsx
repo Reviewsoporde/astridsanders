@@ -5,7 +5,6 @@ import { HealthCheckForm } from "@/components/health-check-form";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
-import { WhatsAppLink } from "@/components/whatsapp-link";
 import { localizeReactNode, type Locale } from "@/lib/i18n";
 
 export const metadata: Metadata = {
@@ -235,7 +234,6 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
                 </p>
               </div>
               <HealthCheckForm locale={locale} />
-              <WhatsAppLink locale={locale} compact className="health-check-panel__whatsapp" />
             </Reveal>
           </div>
         </section>

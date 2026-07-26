@@ -1,9 +1,10 @@
 "use client";
 
-import { CheckCircle, WarningCircle } from "@phosphor-icons/react";
+import { Check, CheckCircle, WarningCircle, WhatsappLogo } from "@phosphor-icons/react";
 import { FormEvent, useState } from "react";
 import type { HealthCheckInterest } from "@/lib/form-validation";
 import { translateText, type Locale } from "@/lib/i18n";
+import { whatsAppHref } from "@/lib/whatsapp";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
@@ -13,12 +14,13 @@ const copy = {
     success: "Dank je wel. Astrid neemt persoonlijk contact met je op rond het gekozen moment.",
     genericError: "Er ging iets mis. Probeer het later opnieuw.",
     timeoutError: "Het versturen duurde te lang. Probeer het opnieuw of mail Astrid rechtstreeks.",
+    badge: ["Gratis", "Telefonisch", "Geen verplichting"],
     name: "Naam",
     namePlaceholder: "Jouw naam",
     phone: "Telefoonnummer",
-    phonePlaceholder: "Bijvoorbeeld 06 12 34 56 78",
-    phoneHint: "Gebruik 8 tot 15 cijfers; spaties, haakjes en een landcode zijn toegestaan.",
-    preferredMoment: "Wanneer komt bellen meestal goed uit?",
+    phonePlaceholder: "06 12 34 56 78",
+    phoneHint: "Op dit nummer belt Astrid je; een landcode zoals +31 mag ook.",
+    preferredMoment: "Wanneer komt bellen je het beste uit?",
     moments: [
       ["ochtend", "Ochtend"],
       ["middag", "Middag"],
@@ -27,11 +29,11 @@ const copy = {
     submitting: "Aanvraag versturen...",
     submit: "Gratis gezondheidscheck aanvragen",
     privacy: "Je gegevens worden alleen gebruikt om contact met je op te nemen over deze aanvraag.",
-    expectation:
-      "Na je aanvraag neemt Astrid persoonlijk contact op om het belmoment af te stemmen.",
     selectedInterest: "Je gekozen startpunt",
-    directContact: "Liever rechtstreeks contact?",
+    directContact: "Liever direct contact?",
     emailAction: "Mail Astrid",
+    orSeparator: "of",
+    whatsappAction: "stuur een WhatsApp-bericht",
     emailSubject: "Gratis gezondheidscheck aanvragen",
   },
   en: {
@@ -39,12 +41,13 @@ const copy = {
     success: "Thank you. Astrid will contact you personally around your preferred time.",
     genericError: "Something went wrong. Please try again later.",
     timeoutError: "Sending took too long. Try again or email Astrid directly.",
+    badge: ["Free", "By phone", "No obligation"],
     name: "Name",
     namePlaceholder: "Your name",
     phone: "Phone number",
-    phonePlaceholder: "For example +31 6 12 34 56 78",
-    phoneHint: "Use 8 to 15 digits; spaces, brackets and an international prefix are allowed.",
-    preferredMoment: "When is usually a good time to call?",
+    phonePlaceholder: "+31 6 12 34 56 78",
+    phoneHint: "Astrid will call you on this number; an international prefix such as +31 is fine.",
+    preferredMoment: "When is calling most convenient for you?",
     moments: [
       ["ochtend", "Morning"],
       ["middag", "Afternoon"],
@@ -53,13 +56,14 @@ const copy = {
     submitting: "Sending request...",
     submit: "Request a free health check",
     privacy: "Your details will only be used to contact you about this request.",
-    expectation: "After your request, Astrid will contact you personally to arrange the call.",
     selectedInterest: "Your selected starting point",
     directContact: "Prefer direct contact?",
     emailAction: "Email Astrid",
+    orSeparator: "or",
+    whatsappAction: "send a WhatsApp message",
     emailSubject: "Request a free health check",
   },
-} satisfies Record<Locale, Record<string, string | string[][]>>;
+} satisfies Record<Locale, Record<string, string | string[] | string[][]>>;
 
 type HealthCheckFormClientProps = {
   interest?: HealthCheckInterest;
@@ -74,6 +78,7 @@ export function HealthCheckFormClient({
   const [message, setMessage] = useState("");
   const labels = copy[locale];
   const moments = labels.moments as string[][];
+  const badge = labels.badge as string[];
   const interestLabel = interest ? translateText(interest, locale) : undefined;
   const emailBody = interest
     ? `${labels.selectedInterest as string}: ${interestLabel}\n\n`
@@ -134,6 +139,15 @@ export function HealthCheckFormClient({
 
   return (
     <form className="health-form" onSubmit={handleSubmit} aria-busy={status === "submitting"}>
+      <ul className="form-badge">
+        {badge.map((item) => (
+          <li key={item}>
+            <Check size={14} weight="bold" aria-hidden="true" />
+            {item}
+          </li>
+        ))}
+      </ul>
+
       {interest ? (
         <p className="form-selection">
           <span>{labels.selectedInterest as string}</span>
@@ -187,16 +201,25 @@ export function HealthCheckFormClient({
         </div>
       </fieldset>
 
-      <button className="button health-form__submit" type="submit" disabled={status === "submitting"}>
+      <button className="button button--solid health-form__submit" type="submit" disabled={status === "submitting"}>
         {status === "submitting" ? (labels.submitting as string) : (labels.submit as string)}
       </button>
 
       <p className="form-privacy">{labels.privacy as string}</p>
-      <p className="form-expectation">{labels.expectation as string}</p>
 
       <p className="form-direct-contact">
         {labels.directContact as string}{" "}
-        <a href={emailHref}>{labels.emailAction as string}</a>
+        <a href={emailHref}>{labels.emailAction as string}</a>{" "}
+        {labels.orSeparator as string}{" "}
+        <a
+          className="form-direct-contact__whatsapp"
+          href={whatsAppHref(locale)}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <WhatsappLogo size={17} weight="fill" aria-hidden="true" />
+          {labels.whatsappAction as string}
+        </a>
       </p>
 
       {message ? (

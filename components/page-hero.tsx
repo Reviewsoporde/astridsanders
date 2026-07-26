@@ -18,6 +18,33 @@ type PageHeroProps = {
   locale?: Locale;
 };
 
+type DetailEntry =
+  | { kind: "text"; text: string }
+  | { kind: "topics"; label?: string; items: string[] };
+
+// A paragraph ending in ":" directly before a topic list reads as its label
+// (e.g. "...rondom:" followed by ["Voeding", "Beweging", ...]) — pair them
+// into one unit instead of letting the grid split them apart.
+function groupDetails(details: Array<string | string[]>): DetailEntry[] {
+  const entries: DetailEntry[] = [];
+
+  for (const detail of details) {
+    if (!Array.isArray(detail)) {
+      entries.push({ kind: "text", text: detail });
+      continue;
+    }
+
+    const previous = entries[entries.length - 1];
+    if (previous?.kind === "text" && previous.text.trim().endsWith(":")) {
+      entries[entries.length - 1] = { kind: "topics", label: previous.text, items: detail };
+    } else {
+      entries.push({ kind: "topics", items: detail });
+    }
+  }
+
+  return entries;
+}
+
 export function PageHero({
   title,
   paragraphs,
@@ -27,6 +54,7 @@ export function PageHero({
   locale = "nl",
 }: PageHeroProps) {
   const [lead, ...details] = paragraphs;
+  const detailEntries = groupDetails(details);
 
   return (
     <section className="hero hero--sub" aria-labelledby="hero-title">
@@ -35,7 +63,7 @@ export function PageHero({
           <h1 id="hero-title">{title}</h1>
           {typeof lead === "string" ? <p className="hero__lead">{lead}</p> : null}
           <div className="hero__actions">
-            <Link className="button" href="#gezondheidscheck">
+            <Link className="button button--solid" href="#gezondheidscheck">
               {translateText(ctaLabel, locale)}
             </Link>
             {secondaryCtaLabel ? (
@@ -68,17 +96,20 @@ export function PageHero({
         </Reveal>
       </div>
 
-      {details.length ? (
+      {detailEntries.length ? (
         <div className="shell hero__context hero__context--sub">
-          {details.map((detail) =>
-            Array.isArray(detail) ? (
-              <ul className="hero__context-list" key={detail.join("|")}>
-                {detail.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+          {detailEntries.map((entry, index) =>
+            entry.kind === "topics" ? (
+              <div className="hero__topics" key={`topics-${index}`}>
+                {entry.label ? <p className="hero__topics-label">{entry.label}</p> : null}
+                <ul className="hero__topics-list">
+                  {entry.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
             ) : (
-              <p key={detail}>{detail}</p>
+              <p key={entry.text}>{entry.text}</p>
             ),
           )}
         </div>
