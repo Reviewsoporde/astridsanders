@@ -280,6 +280,7 @@ export function HomePageContent({ locale }: { locale: Locale }) {
                   fill
                   priority
                   sizes="100vw"
+                  style={{ objectPosition: "center 25%" }}
                 />
               </div>
             </Reveal>
