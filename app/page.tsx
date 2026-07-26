@@ -10,7 +10,6 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import Image from "next/image";
-import type { CSSProperties } from "react";
 import Link from "next/link";
 import { FAQList } from "@/components/faq-list";
 import { HealthCheckForm } from "@/components/health-check-form";
@@ -276,12 +275,11 @@ export function HomePageContent({ locale }: { locale: Locale }) {
             <Reveal className="hero__visual-wrap" delay={0.08}>
               <div className="hero__visual">
                 <Image
-                  src="/images/generated/home-hero-v3.webp"
+                  src="/images/generated/home-hero-v2.webp"
                   alt="Astrid Sanders wandelt langs een rustig Scandinavisch meer"
                   fill
                   priority
                   sizes="100vw"
-                  style={{ "--hero-object-position": "center 22%" } as CSSProperties}
                 />
               </div>
             </Reveal>
