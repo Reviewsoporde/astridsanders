@@ -283,7 +283,6 @@ export function ReumaPageContent({ locale }: { locale: Locale }) {
           image={{
             src: "/images/generated/leefstijlcoaching-reuma-hero.webp",
             alt: "Astrid Sanders bereidt een kleurrijke plantaardige maaltijd",
-            position: "center 12%",
           }}
         />
 
