@@ -56,7 +56,7 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
             "Van jarenlang leven met reuma naar anderen helpen om weer grip te krijgen op hun gezondheid.",
           ]}
           image={{
-            src: "/images/generated/over-astrid-hero.webp",
+            src: "/images/generated/over-astrid-hero.png",
             alt: "Astrid Sanders aan de oever van een rustig meer",
           }}
         />
@@ -185,7 +185,7 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
 
             <Reveal className="recognition-media" delay={0.08}>
               <Image
-                src="/images/generated/about-astrid.webp"
+                src="/images/generated/about-astrid.png"
                 alt="Astrid Sanders in een rustige, natuurlijke omgeving"
                 fill
                 sizes="(max-width: 900px) 100vw, 46vw"
@@ -217,7 +217,7 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
             <Reveal className="health-check-panel" delay={0.08}>
               <div className="health-check-panel__media">
                 <Image
-                  src="/images/astrid-portrait-studio.webp"
+                  src="/images/astrid-portrait-studio.png"
                   alt="Portret van Astrid Sanders, leefstijlcoach in Den Bosch"
                   fill
                   sizes="(max-width: 900px) 100vw, 42vw"

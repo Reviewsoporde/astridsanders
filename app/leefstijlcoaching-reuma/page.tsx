@@ -281,8 +281,12 @@ export function ReumaPageContent({ locale }: { locale: Locale }) {
             "Mijn begeleiding is beschikbaar in Den Bosch en omgeving en online door heel Nederland.",
           ]}
           image={{
-            src: "/images/generated/leefstijlcoaching-reuma-hero.webp",
+            // The -wide variant extends the source photo's left edge so the
+            // subject lands right of the headline, framed like the artrose hero.
+            src: "/images/generated/leefstijlcoaching-reuma-hero-wide.png",
             alt: "Astrid Sanders bereidt een kleurrijke plantaardige maaltijd",
+            position: "center 35%",
+            mobilePosition: "68% center",
           }}
         />
 
@@ -297,7 +301,7 @@ export function ReumaPageContent({ locale }: { locale: Locale }) {
                 </p>
               </Reveal>
               <EditorialSectionImage
-                src="/images/generated/reuma-lifestyle.webp"
+                src="/images/generated/reuma-lifestyle.png"
                 alt="Een vrouw bereidt een kleurrijke plantaardige maaltijd in een lichte keuken"
               />
             </div>
@@ -360,7 +364,7 @@ export function ReumaPageContent({ locale }: { locale: Locale }) {
                 <p>Tijdens de coaching bekijken we deze onderdelen in samenhang.</p>
               </Reveal>
               <EditorialSectionImage
-                src="/images/generated/reuma-lifestyle-balance.webp"
+                src="/images/generated/reuma-lifestyle-balance.png"
                 alt="Een vrouw wandelt ontspannen langs een rustig meer"
               />
             </div>
@@ -396,7 +400,7 @@ export function ReumaPageContent({ locale }: { locale: Locale }) {
                 <p>Daarom werk ik niet met één standaardplan dat iedereen moet volgen.</p>
               </Reveal>
               <EditorialSectionImage
-                src="/images/generated/reuma-personal-coaching.webp"
+                src="/images/generated/reuma-personal-coaching.png"
                 alt="Persoonlijk coachingsgesprek over een haalbaar leefstijlplan"
               />
             </div>

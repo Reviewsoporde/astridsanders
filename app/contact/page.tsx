@@ -49,7 +49,7 @@ export function ContactPageContent({ locale }: { locale: Locale }) {
 
               <div className="contact-visual">
                 <Image
-                  src="/images/generated/contact-hero.webp"
+                  src="/images/generated/contact-hero.png"
                   alt="Astrid Sanders schrijft persoonlijk een antwoord op een contactvraag"
                   fill
                   priority

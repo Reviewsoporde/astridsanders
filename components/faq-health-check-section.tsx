@@ -61,7 +61,7 @@ export function FaqHealthCheckSection({
         <Reveal className="health-check-panel" delay={0.08}>
           <div className="health-check-panel__media">
             <Image
-              src="/images/generated/health-check-call.webp"
+              src="/images/generated/health-check-call.png"
               alt="Astrid Sanders voert persoonlijk een telefonisch kennismakingsgesprek"
               fill
               sizes="(max-width: 900px) 100vw, 36vw"

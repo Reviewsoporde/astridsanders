@@ -324,7 +324,7 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
             "De begeleiding is beschikbaar in Den Bosch en omgeving en online door heel Nederland.",
           ]}
           image={{
-            src: "/images/generated/zorgprofessionals-hero.webp",
+            src: "/images/generated/zorgprofessionals-hero.png",
             alt: "Astrid Sanders overlegt met twee zorgprofessionals over aanvullende leefstijlbegeleiding",
           }}
           ctaLabel="Bespreek een samenwerking"
@@ -346,7 +346,7 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
                 </p>
               </Reveal>
               <EditorialSectionImage
-                src="/images/generated/healthcare-collaboration.webp"
+                src="/images/generated/healthcare-collaboration.png"
                 alt="Een leefstijlcoach overlegt aan tafel met twee zorgprofessionals"
               />
             </div>
@@ -401,7 +401,7 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
                 </p>
               </Reveal>
               <EditorialSectionImage
-                src="/images/generated/professional-practical-support.webp"
+                src="/images/generated/professional-practical-support.png"
                 alt={
                   locale === "en"
                     ? "Lifestyle coach and client create a practical weekly plan together"
@@ -457,7 +457,7 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
                 </p>
               </Reveal>
               <EditorialSectionImage
-                src="/images/generated/professional-care-collaboration.webp"
+                src="/images/generated/professional-care-collaboration.png"
                 alt={
                   locale === "en"
                     ? "A lifestyle coach consults with a general practitioner and physiotherapist"

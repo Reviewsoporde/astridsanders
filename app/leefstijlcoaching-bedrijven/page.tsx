@@ -439,7 +439,7 @@ export function BedrijvenPageContent({ locale }: { locale: Locale }) {
             "Online begeleiding is beschikbaar door heel Nederland. Workshops en andere zakelijke sessies kunnen in overleg op locatie plaatsvinden.",
           ]}
           image={{
-            src: "/images/generated/leefstijlcoaching-bedrijven-hero.webp",
+            src: "/images/generated/leefstijlcoaching-bedrijven-hero.png",
             alt: "Astrid Sanders begeleidt een praktische leefstijlworkshop voor medewerkers",
           }}
           ctaLabel="Bespreek de mogelijkheden"
@@ -463,7 +463,7 @@ export function BedrijvenPageContent({ locale }: { locale: Locale }) {
                 </p>
               </Reveal>
               <EditorialSectionImage
-                src="/images/generated/business-workshop.webp"
+                src="/images/generated/business-workshop.png"
                 alt="Collega's bespreken samen praktische leefstijlgewoonten tijdens een workshop"
               />
             </div>
@@ -525,7 +525,7 @@ export function BedrijvenPageContent({ locale }: { locale: Locale }) {
                 </p>
               </Reveal>
               <EditorialSectionImage
-                src="/images/generated/business-tailored-coaching.webp"
+                src="/images/generated/business-tailored-coaching.png"
                 alt="Leefstijlcoach en professionals stellen samen een praktisch programma op maat samen"
               />
             </div>
@@ -552,7 +552,7 @@ export function BedrijvenPageContent({ locale }: { locale: Locale }) {
                 </p>
               </Reveal>
               <EditorialSectionImage
-                src="/images/generated/business-walking-meeting.webp"
+                src="/images/generated/business-walking-meeting.png"
                 alt="Zakelijke professionals voeren buiten een ontspannen walking meeting"
               />
             </div>

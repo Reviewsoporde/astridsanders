@@ -49,7 +49,7 @@ export function GezondheidscheckPageContent({
             <Reveal className="health-check-panel" delay={0.08}>
               <div className="health-check-panel__media">
                 <Image
-                  src="/images/generated/gratis-gezondheidscheck-hero.webp"
+                  src="/images/generated/gratis-gezondheidscheck-hero.png"
                   alt="Astrid Sanders voert een persoonlijk telefoongesprek"
                   fill
                   priority

@@ -297,7 +297,7 @@ export function ArtrosePageContent({ locale }: { locale: Locale }) {
             "De coaching is beschikbaar in Den Bosch en omgeving en online door heel Nederland.",
           ]}
           image={{
-            src: "/images/generated/leefstijlcoaching-artrose-hero.webp",
+            src: "/images/generated/leefstijlcoaching-artrose-hero.png",
             alt: "Astrid Sanders maakt een rustige wandeling door de duinen",
           }}
         />
@@ -314,7 +314,7 @@ export function ArtrosePageContent({ locale }: { locale: Locale }) {
                 </p>
               </Reveal>
               <EditorialSectionImage
-                src="/images/generated/artrose-movement.webp"
+                src="/images/generated/artrose-movement.png"
                 alt="Een vrouw wandelt ontspannen over een houten pad door de duinen"
               />
             </div>
@@ -384,7 +384,7 @@ export function ArtrosePageContent({ locale }: { locale: Locale }) {
                 </p>
               </Reveal>
               <EditorialSectionImage
-                src="/images/generated/artrose-lifestyle-overview.webp"
+                src="/images/generated/artrose-lifestyle-overview.png"
                 alt="Een vrouw bereidt na een wandeling een plantaardige maaltijd in haar keuken"
               />
             </div>
@@ -439,7 +439,7 @@ export function ArtrosePageContent({ locale }: { locale: Locale }) {
                 </p>
               </Reveal>
               <EditorialSectionImage
-                src="/images/generated/artrose-personal-plan.webp"
+                src="/images/generated/artrose-personal-plan.png"
                 alt="Twee vrouwen stellen samen een haalbaar leefstijlplan op"
               />
             </div>

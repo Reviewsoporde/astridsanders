@@ -275,7 +275,7 @@ export function HomePageContent({ locale }: { locale: Locale }) {
             <Reveal className="hero__visual-wrap" delay={0.08}>
               <div className="hero__visual">
                 <Image
-                  src="/images/generated/home-hero-v3.webp"
+                  src="/images/generated/home-hero-v3.png"
                   alt="Astrid Sanders wandelt langs een rustig Scandinavisch meer"
                   fill
                   priority
@@ -376,7 +376,7 @@ export function HomePageContent({ locale }: { locale: Locale }) {
           <div className="shell recognition-grid">
             <Reveal className="recognition-media">
               <Image
-                src="/images/plant-based-lunch.webp"
+                src="/images/plant-based-lunch.png"
                 alt="Een gevarieerde plantaardige lunch met linzen, granen en groenten"
                 fill
                 sizes="(max-width: 767px) 100vw, 42vw"
@@ -707,7 +707,7 @@ export function HomePageContent({ locale }: { locale: Locale }) {
             <Reveal className="health-check-panel" delay={0.08}>
               <div className="health-check-panel__media">
                 <Image
-                  src="/images/astrid-portrait-studio.webp"
+                  src="/images/astrid-portrait-studio.png"
                   alt="Portret van Astrid Sanders, leefstijlcoach in Den Bosch"
                   fill
                   sizes="(max-width: 900px) 100vw, 36vw"

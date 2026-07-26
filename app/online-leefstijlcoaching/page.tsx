@@ -253,7 +253,7 @@ export function OnlineCoachingPageContent({ locale }: { locale: Locale }) {
             "Online coaching is beschikbaar door heel Nederland.",
           ]}
           image={{
-            src: "/images/generated/online-leefstijlcoaching-hero.webp",
+            src: "/images/generated/online-leefstijlcoaching-hero.png",
             alt: "Astrid Sanders voert een persoonlijk online coachingsgesprek",
             mobilePosition: "68% center",
           }}
@@ -272,7 +272,7 @@ export function OnlineCoachingPageContent({ locale }: { locale: Locale }) {
                 </p>
               </Reveal>
               <EditorialSectionImage
-                src="/images/generated/online-coaching.webp"
+                src="/images/generated/online-coaching.png"
                 alt="Een leefstijlcoach voert vanuit een rustige werkplek een online gesprek"
               />
             </div>
@@ -327,7 +327,7 @@ export function OnlineCoachingPageContent({ locale }: { locale: Locale }) {
                 </p>
               </Reveal>
               <EditorialSectionImage
-                src="/images/generated/online-lifestyle-pillars.webp"
+                src="/images/generated/online-lifestyle-pillars.png"
                 alt="Een rustige thuisomgeving met plantaardige voeding, wandelschoenen, een notitieboek en een slaapmasker"
               />
             </div>
@@ -362,7 +362,7 @@ export function OnlineCoachingPageContent({ locale }: { locale: Locale }) {
                 </p>
               </Reveal>
               <EditorialSectionImage
-                src="/images/generated/online-home-session.webp"
+                src="/images/generated/online-home-session.png"
                 alt="Een cliënt voert vanuit huis een persoonlijk videogesprek met haar leefstijlcoach"
               />
             </div>

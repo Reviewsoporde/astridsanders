@@ -33,7 +33,7 @@ export const metadata: Metadata = {
       "Persoonlijke leefstijlcoaching in Den Bosch en online voor mensen met reuma en artrose. Vraag een gratis gezondheidscheck aan.",
     images: [
       {
-        url: "/images/astrid-portrait-beach.webp",
+        url: "/images/astrid-portrait-beach.png",
         width: 1536,
         height: 1024,
         alt: "Portret van Astrid Sanders, leefstijlcoach in Den Bosch",
