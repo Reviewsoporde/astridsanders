@@ -15,7 +15,10 @@ import { phoneDisplayNumber, phoneHref } from "@/lib/whatsapp";
 const footerNavigation = [
   { label: { nl: "Reuma", en: "Rheumatism" }, href: "/leefstijlcoaching-reuma/" },
   { label: { nl: "Artrose", en: "Osteoarthritis" }, href: "/leefstijlcoaching-artrose/" },
-  { label: { nl: "Online", en: "Online coaching" }, href: "/online-leefstijlcoaching/" },
+  {
+    label: { nl: "Gezondheidsrisico’s", en: "Health risks" },
+    href: "/leefstijlcoaching-gezondheidsrisicos/",
+  },
   { label: { nl: "Bedrijven", en: "Organisations" }, href: "/leefstijlcoaching-bedrijven/" },
   { label: { nl: "Zorgprofessionals", en: "Professionals" }, href: "/zorgprofessionals/" },
   { label: { nl: "Over Astrid", en: "About Astrid" }, href: "/over-astrid/" },
@@ -38,8 +41,15 @@ const footerCredentials = [
   },
   {
     label: {
-      nl: "Aansluiting en accreditatie bij de BLCN",
-      en: "Membership and accreditation with BLCN",
+      nl: "BLCN-lidnummer L2125",
+      en: "BLCN membership number L2125",
+    },
+    href: "https://blcn.nl/",
+  },
+  {
+    label: {
+      nl: "KABIZ-registratienummer 18109454184",
+      en: "KABIZ registration number 18109454184",
     },
     href: "https://www.kabiz.nl/raadplegenregister/default.aspx",
   },
@@ -49,7 +59,7 @@ const footerCredentials = [
   },
   {
     label: { nl: "Partner: PlantsForHealth", en: "Partner: PlantsForHealth" },
-    href: "https://plants-for-health.com/",
+    href: "https://plants-for-health.nl/",
   },
 ];
 
@@ -67,29 +77,29 @@ export function SiteFooter({ locale = "nl" }: { locale?: Locale }) {
           >
             <Image
               className="site-footer__logo"
-              src="/brand/identity/astrid-sanders-logo-stacked-updated.png"
+              src="/brand/astrid-sanders-logo-reversed.png"
               alt=""
-              width={230}
-              height={258}
-              sizes="158px"
+              width={1000}
+              height={595}
+              sizes="200px"
             />
           </Link>
           <p>
             {isEnglish
-              ? "Lifestyle coaching for rheumatism and osteoarthritis."
-              : "Leefstijlcoaching bij reuma en artrose."}
+              ? "Lifestyle coaching for rheumatism, osteoarthritis and other health risks."
+              : "Leefstijlcoaching bij reuma, artrose en andere gezondheidsrisico’s."}
           </p>
           <p>
             {isEnglish
-              ? "Personal guidance around nutrition, movement, sleep, stress and daily habits — alongside your regular medical care."
-              : "Persoonlijke begeleiding rondom voeding, beweging, slaap, stress en dagelijkse gewoonten — naast je reguliere medische zorg."}
+              ? "Personal guidance around nutrition, movement, sleep, stress and daily habits."
+              : "Persoonlijke begeleiding rondom voeding, beweging, slaap, stress en dagelijkse gewoonten."}
           </p>
           <p className="site-footer__credential">
             <Certificate size={22} weight="regular" aria-hidden="true" />
             <span>
               {isEnglish
-                ? "Accredited lifestyle coach, trained at Sonnevelt Opleidingen and a member of BLCN."
-                : "Geaccrediteerd leefstijlcoach, opgeleid bij Sonnevelt Opleidingen en aangesloten bij de BLCN."}
+                ? "Lifestyle coach, KABIZ registration 18109454184 and BLCN member L2125."
+                : "Leefstijlcoach, KABIZ-registratie 18109454184 en BLCN-lid L2125."}
             </span>
           </p>
         </div>
@@ -114,8 +124,8 @@ export function SiteFooter({ locale = "nl" }: { locale?: Locale }) {
             <MapPin size={22} weight="regular" aria-hidden="true" />
             <p>
               {isEnglish
-                ? "Den Bosch, Noord-Brabant — and online throughout the Netherlands"
-                : "Den Bosch, Noord-Brabant — en online door heel Nederland"}
+                ? "'s-Hertogenbosch — and online throughout the Netherlands"
+                : "'s-Hertogenbosch — en online door heel Nederland"}
             </p>
           </div>
           <a href="mailto:astrid@astridsanders.com">
@@ -164,8 +174,8 @@ export function SiteFooter({ locale = "nl" }: { locale?: Locale }) {
         <p>© {new Date().getFullYear()} Astrid Sanders Leefstijlcoaching</p>
         <p>
           {isEnglish
-            ? "Lifestyle coaching does not replace medical treatment."
-            : "Leefstijlcoaching vervangt geen medische behandeling."}
+            ? "Dutch Chamber of Commerce 42145089"
+            : "KvK-nummer 42145089"}
         </p>
       </div>
     </footer>

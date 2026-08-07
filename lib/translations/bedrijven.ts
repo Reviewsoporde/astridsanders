@@ -39,7 +39,7 @@ export const bedrijvenTranslations: Record<string, string> = {
   "Veel zitten en weinig bewegen": "Sitting a lot and moving little",
   "Slecht slapen of onvoldoende herstel": "Poor sleep or insufficient recovery",
   "Een verstoorde balans tussen werk en privé": "A disrupted work-life balance",
-  "Moeite met grenzen stellen": "Difficulty setting boundaries",
+  "Verslavingen en ongezonde gewoonten": "Addictions and unhealthy habits",
   "Gezonde voornemens die snel wegvallen": "Healthy intentions that quickly fade",
   "Gezondheidsklachten die invloed hebben op het dagelijks functioneren":
     "Health complaints that affect daily functioning",
@@ -57,6 +57,35 @@ export const bedrijvenTranslations: Record<string, string> = {
   "Veranderingen langer vol te houden": "Maintain changes for longer",
   "Meer verantwoordelijkheid te nemen voor hun leefstijl":
     "Take more responsibility for their lifestyle",
+  "Resultaten:": "Results:",
+  "Mogelijke resultaten waar een organisatie aan kan werken:":
+    "Potential results an organisation can work towards:",
+  "Hoger werkplezier": "Greater enjoyment at work",
+  "Hogere productiviteit": "Higher productivity",
+  "Minder kosten / kostenbesparing": "Lower costs / cost savings",
+  "Vitalere, gezondere medewerkers": "More vital, healthier employees",
+  "Betere werksfeer": "A better working atmosphere",
+  "Hogere klanttevredenheid": "Higher customer satisfaction",
+  "Ziekteverzuim omlaag": "Lower sickness absence",
+  "Minder uitval": "Fewer employees dropping out",
+  "Indicatieve verzuimkosten": "Indicative sickness absence costs",
+  "Wat kan één geval van psychisch verzuim kosten?":
+    "What can one case of mental-health-related absence cost?",
+  "Volgens de Arbobalans 2024 van TNO duurt verzuim door psychische klachten gemiddeld 63 werkdagen. ArboNed noemt gemiddeld €360 per verzuimdag; Nationale-Nederlanden noemt gemiddeld €400 per dag.":
+    "According to TNO’s Arbobalans 2024, absence due to mental health complaints lasts an average of 63 working days. ArboNed cites an average of €360 per day of absence; Nationale-Nederlanden cites an average of €400 per day.",
+  "63 werkdagen": "63 working days",
+  "€360–€400 per dag": "€360–€400 per day",
+  "= €22.680–€25.200 per geval": "= €22,680–€25,200 per case",
+  "Dit is een indicatieve berekening. De werkelijke kosten verschillen per medewerker en organisatie, onder meer door salaris, vervanging, productiviteitsverlies, begeleiding en omzetverlies.":
+    "This is an indicative calculation. Actual costs vary by employee and organisation, including due to salary, replacement, productivity loss, support and lost revenue.",
+  "Leefstijlcoaching garandeert geen lager ziekteverzuim of kostenbesparing.":
+    "Lifestyle coaching does not guarantee lower sickness absence or cost savings.",
+  "Bronnen:": "Sources:",
+  "TNO Arbobalans 2024": "TNO Arbobalans 2024",
+  "ArboNed: gemiddelde kosten per verzuimdag":
+    "ArboNed: average cost per day of absence",
+  "Nationale-Nederlanden: Trendrapport Ziekteverzuim & Arbeidsongeschiktheid":
+    "Nationale-Nederlanden: Sickness Absence & Disability Trend Report",
   "Leefstijlcoaching vervangt geen bedrijfsarts, medische behandeling, fysiotherapie of arbeidsdeskundig advies.":
     "Lifestyle coaching does not replace an occupational health physician, medical treatment, physiotherapy or occupational expert advice.",
   "Het is aanvullende begeleiding gericht op leefstijl, gedrag en praktische uitvoering.":
@@ -155,13 +184,10 @@ export const bedrijvenTranslations: Record<string, string> = {
   "Preventieve ondersteuning": "Preventive support",
   "Astrid kan aansluiten bij bestaande initiatieven of helpen bepalen welke eerste interventie het meest passend is.":
     "Astrid can join existing initiatives or help determine which first intervention is most suitable.",
-  "Voor teams die gezamenlijk willen werken aan:":
-    "For teams that want to work together on:",
   Werkdruk: "Work pressure",
   Energie: "Energy",
   Slaap: "Sleep",
   Herstel: "Recovery",
-  "Gezonde teamgewoonten": "Healthy team habits",
   "Managers, bestuurders en ondernemers": "Managers, directors and entrepreneurs",
   "Individuele coaching kan ook worden ingezet voor professionals met hoge verantwoordelijkheid, complexe agenda’s of langdurige werkdruk.":
     "Individual coaching can also be used for professionals with significant responsibility, complex diaries or prolonged work pressure.",
@@ -232,10 +258,12 @@ export const bedrijvenTranslations: Record<string, string> = {
   "Leefstijlcoaching met professionele bedrijfservaring":
     "Lifestyle coaching with professional business experience",
   "Lees meer over Astrid": "Read more about Astrid",
-  "Voordat ik leefstijlcoach werd, werkte ik jarenlang op het snijvlak van marketing, communicatie en klantbeleving.":
-    "Before I became a lifestyle coach, I worked for many years at the intersection of marketing, communications and customer experience.",
-  "Ik werkte onder andere in de financiële sector, bij Center Parcs en in verschillende interimfuncties. Daarnaast heb ik ervaring met het aansturen van een callcenter en ben ik bestuurder van de Nijmeegse Vierdaagse.":
-    "I have worked in the financial sector, at Center Parcs and in various interim roles, among others. I also have experience managing a call centre and am a board member of the Nijmegen Four Days Marches.",
+  "Voordat ik leefstijlcoach werd, werkte ik jarenlang op het snijvlak van marketing, management, communicatie en klantbeleving.":
+    "Before I became a lifestyle coach, I worked for many years at the intersection of marketing, management, communications and customer experience.",
+  "Ik werkte onder andere in de financiële sector, bij Center Parcs en in verschillende interimfuncties.":
+    "I worked in the financial sector, at Center Parcs and in various interim roles.",
+  "Daarnaast heb ik ruime ervaring als manager en bestuurder. Zo stuurde ik een callcenter aan en ben ik bestuurder van de Nijmeegse Vierdaagse.":
+    "I also have extensive experience as a manager and board member. I managed a call centre and serve on the board of the Nijmegen Four Days Marches.",
   "Daardoor begrijp ik hoe werkdruk, verantwoordelijkheid, organisaties en verschillende belangen invloed kunnen hebben op dagelijkse keuzes en gezondheid.":
     "As a result, I understand how work pressure, responsibility, organisations and differing interests can influence daily choices and health.",
   "Mijn persoonlijke ervaring met reuma en artrose liet mij daarnaast zien hoeveel invloed gezondheidsklachten kunnen hebben op energie, werk en dagelijks functioneren.":

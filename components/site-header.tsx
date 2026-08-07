@@ -11,7 +11,10 @@ const navigation = [
   { label: { nl: "Home", en: "Home" }, href: "/" },
   { label: { nl: "Reuma", en: "Rheumatism" }, href: "/leefstijlcoaching-reuma/" },
   { label: { nl: "Artrose", en: "Osteoarthritis" }, href: "/leefstijlcoaching-artrose/" },
-  { label: { nl: "Online", en: "Online" }, href: "/online-leefstijlcoaching/" },
+  {
+    label: { nl: "Gezondheidsrisico’s", en: "Health risks" },
+    href: "/leefstijlcoaching-gezondheidsrisicos/",
+  },
   { label: { nl: "Bedrijven", en: "Organisations" }, href: "/leefstijlcoaching-bedrijven/" },
   { label: { nl: "Zorgprofessionals", en: "Professionals" }, href: "/zorgprofessionals/" },
   { label: { nl: "Over Astrid", en: "About Astrid" }, href: "/over-astrid/" },
@@ -360,12 +363,12 @@ export function SiteHeader() {
         <Link className="wordmark" href={homePath} aria-label={labels.home}>
           <Image
             className="wordmark__image"
-            src="/brand/identity/astrid-sanders-logo-centered-updated.png"
+            src="/brand/astrid-sanders-logo-primary.png"
             alt=""
-            width={872}
-            height={427}
+            width={1000}
+            height={593}
             priority
-            sizes="(max-width: 430px) 154px, (max-width: 1180px) 172px, 204px"
+            sizes="(max-width: 1159px) 132px, (max-width: 1390px) 12vw, 160px"
           />
         </Link>
 

@@ -1,0 +1,34 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="256"
+  height="256"
+  viewBox="0 0 256 256"
+  fill="none"
+  role="img"
+  aria-labelledby="as-weave-light-title as-weave-light-description"
+>
+  <title id="as-weave-light-title">AS monogram concept A, reversed structural weave</title>
+  <desc id="as-weave-light-description">
+    A cream geometric capital A crossed by a restrained S-shaped path and a tan horizontal bridge, for dark backgrounds.
+  </desc>
+  <path
+    d="M43 211 107 45c3-8 13-8 16 0l68 166"
+    stroke="#FAF6EE"
+    stroke-width="21"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+  />
+  <path
+    d="M188 70c-14-16-34-23-54-19-23 4-36 19-34 38 2 18 18 28 44 33 24 5 38 17 38 35 0 26-23 45-52 45-23 0-43-10-57-27"
+    stroke="#FAF6EE"
+    stroke-width="18"
+    stroke-linecap="square"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M78 145h82"
+    stroke="#C09877"
+    stroke-width="13"
+    stroke-linecap="square"
+  />
+</svg>

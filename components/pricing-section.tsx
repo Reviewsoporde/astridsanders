@@ -8,6 +8,7 @@ type Plan = {
   kicker: string;
   description: string;
   price: string;
+  pricePrefix?: string;
   priceUnit?: string;
   features: string[];
   ctaLabel: string;
@@ -60,7 +61,8 @@ const pricing: Plan[] = [
     kicker: "Traject",
     description:
       "Zes persoonlijke coachingssessies verspreid over twaalf weken, gericht op het opbouwen en volhouden van gezondere gewoonten.",
-    price: "€749",
+    price: "€499",
+    pricePrefix: "vanaf",
     features: [
       "Zes persoonlijke sessies",
       "Rustig opbouwen over twaalf weken",
@@ -111,7 +113,10 @@ export function PricingSection({ locale = "nl", checkDescription }: PricingSecti
               <h3>{plan.title}</h3>
               <p className="price-card__description">{plan.description}</p>
               <p className="price-card__price">
-                {plan.price}
+                {plan.pricePrefix ? (
+                  <span className="price-card__price-prefix">{plan.pricePrefix}</span>
+                ) : null}
+                <span>{plan.price}</span>
                 {plan.priceUnit ? <span className="price-card__unit">{plan.priceUnit}</span> : null}
               </p>
               <ul className="price-card__features">
@@ -135,6 +140,10 @@ export function PricingSection({ locale = "nl", checkDescription }: PricingSecti
         <p className="pricing-note">
           Een langer vervolgtraject kan worden besproken wanneer na twaalf weken aanvullende
           begeleiding nodig is.
+        </p>
+        <p className="pricing-note">
+          De genoemde bedragen zijn exclusief 21% btw. Een eventuele vergoeding hangt af van je
+          zorgverzekeraar, polis, verwijzing en het gevolgde programma; controleer dit vooraf.
         </p>
       </div>
     </section>

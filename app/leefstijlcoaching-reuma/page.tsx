@@ -364,8 +364,8 @@ export function ReumaPageContent({ locale }: { locale: Locale }) {
                 <p>Tijdens de coaching bekijken we deze onderdelen in samenhang.</p>
               </Reveal>
               <EditorialSectionImage
-                src="/images/generated/reuma-lifestyle-balance.png"
-                alt="Een vrouw wandelt ontspannen langs een rustig meer"
+                src="/images/generated/reuma-lifestyle-balance.webp"
+                alt="Een vrouw werkt geconcentreerd aan haar kracht in een sportschool"
               />
             </div>
 

@@ -1,5 +1,5 @@
 param(
-  [string]$SourcePath = (Join-Path $PSScriptRoot "..\public\brand\identity\astrid-sanders-monogram-updated.png"),
+  [string]$SourcePath = (Join-Path $PSScriptRoot "..\public\brand\astrid-sanders-monogram-primary.png"),
   [string]$AppDirectory = (Join-Path $PSScriptRoot "..\app")
 )
 
@@ -22,7 +22,8 @@ function New-IconPngBytes {
   $stream = New-Object System.IO.MemoryStream
 
   try {
-    $graphics.Clear([System.Drawing.Color]::FromArgb(255, 255, 250, 244))
+    # Matches --page (#FAF7F0), the site's warm cream background.
+    $graphics.Clear([System.Drawing.Color]::FromArgb(255, 250, 247, 240))
     $graphics.CompositingMode = [System.Drawing.Drawing2D.CompositingMode]::SourceOver
     $graphics.CompositingQuality = [System.Drawing.Drawing2D.CompositingQuality]::HighQuality
     $graphics.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic

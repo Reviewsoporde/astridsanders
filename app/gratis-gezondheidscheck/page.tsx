@@ -1,4 +1,4 @@
-import { Leaf, Check } from "@phosphor-icons/react/dist/ssr";
+import { PhoneCall, Check } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { HealthCheckForm } from "@/components/health-check-form";
@@ -57,7 +57,7 @@ export function GezondheidscheckPageContent({
                 />
               </div>
               <div className="health-check-panel__heading">
-                <Leaf size={30} weight="regular" aria-hidden="true" />
+                <PhoneCall size={28} weight="regular" aria-hidden="true" />
                 <p className="health-check-panel__title" id="gezondheidscheck">
                   Gratis gezondheidscheck aanvragen
                 </p>

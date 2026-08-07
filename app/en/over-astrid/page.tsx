@@ -4,7 +4,7 @@ import { OverAstridPageContent } from "@/app/over-astrid/page";
 export const metadata: Metadata = {
   title: "About Astrid",
   description:
-    "From years of living with rheumatism to helping others regain control of their health. Read the story of lifestyle coach Astrid Sanders.",
+    "Read the personal story, professional background and registrations of lifestyle coach Astrid Sanders in Den Bosch.",
   alternates: {
     canonical: "/en/over-astrid/",
     languages: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: "/en/over-astrid/",
     title: "About Astrid",
     description:
-      "From years of living with rheumatism to helping others regain control of their health. Read the story of lifestyle coach Astrid Sanders.",
+      "Read the personal story, professional background and registrations of lifestyle coach Astrid Sanders in Den Bosch.",
   },
 };
 

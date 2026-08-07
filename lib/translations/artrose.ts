@@ -12,8 +12,8 @@ export const artroseTranslations: Record<string, string> = {
     "I am Astrid Sanders, an accredited lifestyle coach with lived experience. I experienced osteoarthritis symptoms in my knees for years myself, and I know how frustrating it is when pain and stiffness determine what you can and cannot do.",
   "De coaching is beschikbaar in Den Bosch en omgeving en online door heel Nederland.":
     "Coaching is available in and around Den Bosch and online throughout the Netherlands.",
-  "Astrid Sanders maakt een rustige wandeling door de duinen":
-    "Astrid Sanders taking a gentle walk through the dunes",
+  "Astrid Sanders loopt doelgericht een brede stadstrap op":
+    "Astrid Sanders purposefully walking up broad city steps",
 
   // Recognition section
   "Herken je deze klachten bij artrose?":
@@ -124,8 +124,8 @@ export const artroseTranslations: Record<string, string> = {
     "Every person with osteoarthritis has different symptoms, joints, responsibilities and goals.",
   "Daarom krijg je geen standaarddieet of algemeen beweegschema. We beginnen bij jouw situatie en bepalen welke veranderingen haalbaar en relevant zijn.":
     "That is why you do not get a standard diet or generic exercise schedule. We start from your situation and determine which changes are feasible and relevant.",
-  "Twee vrouwen stellen samen een haalbaar leefstijlplan op":
-    "Two women create a feasible lifestyle plan together",
+  "Astrid Sanders bespreekt een haalbaar leefstijlplan met een cliënt":
+    "Astrid Sanders discussing a feasible lifestyle plan with a client",
   "We brengen jouw situatie in kaart": "We map out your situation",
   "Tijdens de eerste gesprekken bespreken we:": "During the first sessions, we discuss:",
   "Waar je artroseklachten ervaart": "Where you experience osteoarthritis symptoms",

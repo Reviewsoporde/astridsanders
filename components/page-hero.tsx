@@ -15,7 +15,9 @@ type PageHeroProps = {
     mobilePosition?: string;
   };
   ctaLabel?: string;
+  ctaHref?: string;
   secondaryCtaLabel?: string;
+  showWhatsApp?: boolean;
   locale?: Locale;
 };
 
@@ -51,7 +53,9 @@ export function PageHero({
   paragraphs,
   image,
   ctaLabel = "Gratis gezondheidscheck aanvragen",
+  ctaHref = "#gezondheidscheck",
   secondaryCtaLabel,
+  showWhatsApp = true,
   locale = "nl",
 }: PageHeroProps) {
   const [lead, ...details] = paragraphs;
@@ -64,16 +68,16 @@ export function PageHero({
           <h1 id="hero-title">{title}</h1>
           {typeof lead === "string" ? <p className="hero__lead">{lead}</p> : null}
           <div className="hero__actions">
-            <Link className="button button--solid" href="#gezondheidscheck">
+            <Link className="button button--solid" href={ctaHref}>
               {translateText(ctaLabel, locale)}
             </Link>
             {secondaryCtaLabel ? (
               <Link className="button button--secondary" href="#gezondheidscheck">
                 {translateText(secondaryCtaLabel, locale)}
               </Link>
-            ) : (
+            ) : showWhatsApp ? (
               <WhatsAppLink locale={locale} />
-            )}
+            ) : null}
           </div>
         </Reveal>
 

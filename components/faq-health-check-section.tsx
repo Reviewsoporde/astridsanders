@@ -1,4 +1,4 @@
-import { Leaf } from "@phosphor-icons/react/dist/ssr";
+import { PhoneCall } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import { ContactForm, type ContactFormContext } from "@/components/contact-form";
 import { FAQList } from "@/components/faq-list";
@@ -68,7 +68,7 @@ export function FaqHealthCheckSection({
             />
           </div>
           <div className="health-check-panel__heading">
-            <Leaf size={30} weight="regular" aria-hidden="true" />
+            <PhoneCall size={28} weight="regular" aria-hidden="true" />
             {formHeadingLevel === "h2" ? (
               <h2 className="health-check-panel__title" id="gezondheidscheck">
                 {formTitle}

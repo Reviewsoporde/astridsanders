@@ -1,0 +1,22 @@
+# 1. Design & branding (site-wide)
+
+- [x] **Color palette: drop the "zuurstokroze" (raspberry/pink), switch to the earth-tone / brown palette** Astrid picked from the two variants shown ("dan gaan we voor de bruine"). Rationale: current palette reads too feminine/"zweverig"; earth tones also match PlantsForHealth branding. `(0:09–0:10)` — *Done: deep olive anchor + sage bands + cream/sand surfaces + tan CTA, contrast-verified; see `app/globals.css` `:root`.*
+- [x] **Overall feel: less "alternatief/zweverig/socio", more zakelijk** — apply as a lens to all imagery and styling decisions. `(0:08)` — *Done: lens written up in [01a-zakelijk-lens.md](01a-zakelijk-lens.md) and applied across typography, motion, cards, icons and positioning.*
+- [x] **Final client-supplied AS logo installed.** `(0:13–0:14)` — *Done 8 August 2026: Astrid supplied the final stacked green/dark-green and green/white lockups. Her explicit final artwork includes “ASTRID SANDERS” and “LEEFSTIJLCOACHING” and supersedes the earlier symbol-only concept brief. Optimized variants are active in the header, footer, structured data and browser icons.*
+  - [x] Daan sends **two logo variants** for Astrid to choose from. `(0:53)` — *Prepared as dark and reversed SVGs; see [01c-logo-variants.md](01c-logo-variants.md).*
+- [ ] **Regenerate all AI photos not explicitly approved by Astrid** with new input. `(0:11–0:13, 0:53)`
+  - Realistic, less alternative styling; zakelijke sfeer
+  - Astrid's hair: **shoulder-length**, not halfway down the back
+  - Flowers/plants are fine; occasionally include **men**
+  - **More variation in model ages** (currently all ~her age)
+  - Add **sporty activities**: normal city bike (woman ~40–50, no elderly-with-helmet vibe), gym — not only walking/phone shots
+  - [x] Artrose movement slot replaced with an ordinary Dutch city-bike scene and an optimized WebP.
+  - [x] Reuma lifestyle-balance slot replaced with a realistic gym strength scene and an optimized WebP.
+  - [x] Home hero regenerated from Astrid's supplied likeness references, with zakelijke styling and a copy-safe left side.
+  - [x] Artrose hero regenerated as purposeful movement in an ordinary Dutch city setting.
+  - [x] Artrose personal-plan scene regenerated with a male client and a wider age range.
+  - [x] Over Astrid hero and tall editorial image regenerated as real working contexts.
+  - [ ] Remaining conditional identity-specific slots still require Astrid's written KEEP/replace map; the likeness references are now present in `new_Images/`. See [01b-photo-brief.md](01b-photo-brief.md).
+- [x] **Replace the hero/main photo** — current one misses the mark; Astrid sent a reference picture the day before the call. `(0:08–0:09)` — *Done: `home-hero-v4.webp` was generated from the supplied references and is active on the homepage.*
+- [ ] Keep every photo Astrid explicitly approved in her written feedback. `(0:28)` — *Blocked: the approval map/written photo feedback is not present in the workspace, so no identity-specific bulk replacement was attempted.*
+- [ ] Send Astrid the new AI-photo input/results once ready. `(0:13)` — *Seven completed replacement frames are ready for review; sending externally remains a PM/client action.*

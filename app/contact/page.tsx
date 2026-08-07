@@ -72,7 +72,7 @@ export function ContactPageContent({ locale }: { locale: Locale }) {
                 </div>
                 <div className="site-footer__location">
                   <MapPin size={22} weight="regular" aria-hidden="true" />
-                  <p>Den Bosch, Noord-Brabant — en online door heel Nederland</p>
+                  <p>&apos;s-Hertogenbosch — en online door heel Nederland</p>
                 </div>
                 <WhatsAppLink locale={locale} compact />
               </div>

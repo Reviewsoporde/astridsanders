@@ -25,6 +25,8 @@ export const metadata: Metadata = {
 const patientProfile = [
   "Leven met reuma",
   "Leven met artrose",
+  "Te maken hebben met beginnende diabetes",
+  "Leven met obesitas of overgewicht in combinatie met gezondheidsrisico’s",
   "Beperkingen ervaren door pijn of stijfheid",
   "Te maken hebben met wisselende energie",
   "Minder bewegen door onzekerheid of lichamelijke klachten",
@@ -42,6 +44,23 @@ const supportNeeds = [
   "Gezonde veranderingen moeilijk zelfstandig volhoudt",
   "Al verschillende leefstijlmethodes heeft geprobeerd",
   "Persoonlijke begeleiding mist naast medische behandeling",
+];
+
+const referralGuardrails = [
+  "Gemotiveerd zijn om actief met leefstijlverandering aan de slag te gaan",
+  "Begrijpen dat coaching aanvullend is op reguliere zorg",
+  "Medische behandeling voortzetten onder verantwoordelijkheid van de betrokken zorgprofessional",
+  "Medicatie alleen wijzigen in overleg met de behandelend arts",
+  "Bij medische voedingsvragen begeleiding door een arts of diëtist behouden",
+];
+
+const possibleOutcomes = [
+  "Minder pijn ervaren",
+  "Meer energie in het dagelijks leven",
+  "Werken aan een betere gezondheid",
+  "Gezondheidsvaardigheden ontwikkelen die ook na het traject toepasbaar blijven",
+  "Meer grip krijgen op voeding, beweging, slaap, stress en herstel",
+  "Waar mogelijk minder afhankelijk worden van medicatie, uitsluitend in overleg met de behandelend arts.",
 ];
 
 const coachingPillars = [
@@ -309,7 +328,7 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
           locale={locale}
           title="Patiënten doorverwijzen naar aanvullende leefstijlcoaching"
           paragraphs={[
-            "Begeleidt u patiënten met reuma of artrose die naast hun reguliere behandeling ondersteuning nodig hebben bij duurzame leefstijlverandering?",
+            "Begeleidt u patiënten die naast een reguliere behandeling ondersteuning nodig hebben bij duurzame leefstijlverandering?",
             "Astrid Sanders biedt persoonlijke leefstijlcoaching rondom:",
             [
               "Voeding",
@@ -327,11 +346,12 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
             src: "/images/generated/zorgprofessionals-hero.png",
             alt: "Astrid Sanders overlegt met twee zorgprofessionals over aanvullende leefstijlbegeleiding",
           }}
-          ctaLabel="Bespreek een samenwerking"
-          secondaryCtaLabel="Patiënt doorverwijzen"
+          ctaLabel="Bespreek samenwerking"
+          ctaHref={localizeHref("/contact/", locale)}
+          showWhatsApp={false}
         />
 
-        {/* Section 2: referral criteria, two-column patient profile and support needs */}
+        {/* Section 2: referral criteria in three patient-fit and guardrail columns */}
         <section className="section recognition-section" aria-labelledby="referral-fit-title">
           <div className="shell">
             <div className="recognition-intro">
@@ -351,10 +371,10 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
               />
             </div>
 
-            <div className="recognition-lists">
+            <div className="recognition-lists recognition-lists--three">
               <Reveal>
-                <h3>Patiënten met reuma of artrose</h3>
-                <p>Astrid richt zich voornamelijk op mensen die:</p>
+                <h3>Patiënten en gezondheidsvragen</h3>
+                <p>Leefstijlcoaching kan relevant zijn voor mensen die:</p>
                 <ul className="check-list">
                   {patientProfile.map((item) => (
                     <li key={item}>
@@ -376,12 +396,58 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
                   ))}
                 </ul>
               </Reveal>
+              <Reveal delay={0.1}>
+                <h3>Wanneer begeleiding passend kan zijn</h3>
+                <p>Begeleiding kan passend zijn wanneer patiënten:</p>
+                <ul className="check-list">
+                  {referralGuardrails.map((item) => (
+                    <li key={item}>
+                      <Check size={18} weight="bold" aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
             </div>
 
             <Reveal className="section-note">
               <p>
                 De medische behandeling en verantwoordelijkheid blijven bij de betrokken
                 zorgprofessionals.
+              </p>
+            </Reveal>
+          </div>
+        </section>
+
+        <section
+          className="section patient-outcomes"
+          aria-labelledby="patient-outcomes-title"
+        >
+          <div className="shell">
+            <Reveal className="section-heading section-heading--narrow">
+              <h2 id="patient-outcomes-title">Mogelijke doelen</h2>
+              <p>
+                De begeleiding kan patiënten ondersteunen bij persoonlijke leefstijldoelen, passend
+                bij hun situatie en in aanvulling op reguliere zorg.
+              </p>
+            </Reveal>
+
+            <Reveal className="patient-outcomes__content">
+              <ul className="check-list possible-outcomes">
+                {possibleOutcomes.map((outcome) => (
+                  <li key={outcome}>
+                    <Check size={18} weight="bold" aria-hidden="true" />
+                    <span>{outcome}</span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+
+            <Reveal className="section-note patient-outcomes__note">
+              <p>
+                Dit zijn mogelijke doelen en geen gegarandeerde uitkomsten. Leefstijlcoaching
+                vervangt geen medische behandeling. Beslissingen over medicatie blijven bij de
+                patiënt en de behandelend arts.
               </p>
             </Reveal>
           </div>
@@ -489,7 +555,7 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
 
             <Reveal className="professional-collaboration-action">
               <Link className="button" href={localizeHref("/contact/", locale)}>
-                <span>Bespreek een samenwerking</span>
+                <span>Bespreek samenwerking</span>
                 <ArrowRight size={18} weight="bold" aria-hidden="true" />
               </Link>
             </Reveal>
@@ -614,7 +680,7 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
           title="Veelgestelde vragen voor zorgprofessionals"
           faqs={faqs}
           formKind="contact"
-          formTitle="Bespreek een samenwerking"
+          formTitle="Bespreek samenwerking"
           formDescription="Beschrijf kort uw vraag over samenwerking of een mogelijke doorverwijzing. Astrid neemt persoonlijk contact met u op."
           contactContext="zorgprofessionals"
         />

@@ -1,8 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import "@fontsource-variable/manrope/wght.css";
 import "@fontsource-variable/playfair-display/wght.css";
-import "@fontsource-variable/playfair-display/wght-italic.css";
 import { SiteHeader } from "@/components/site-header";
 import { SkipLink } from "@/components/skip-link";
 import "./globals.css";
@@ -42,22 +41,43 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#faf7f0",
+};
+
 const localBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "Astrid Sanders Leefstijlcoaching",
   url: siteUrl,
-  logo: `${siteUrl}/brand/identity/astrid-sanders-monogram-updated.png`,
+  logo: `${siteUrl}/brand/astrid-sanders-monogram-primary.png`,
   email: "astrid@astridsanders.com",
   description:
-    "Persoonlijke leefstijlcoaching in Den Bosch en online voor mensen met reuma en artrose.",
+    "Persoonlijke leefstijlcoaching in Den Bosch en online bij reuma, artrose en andere gezondheidsrisico’s.",
+  identifier: [
+    {
+      "@type": "PropertyValue",
+      propertyID: "KvK",
+      value: "42145089",
+    },
+    {
+      "@type": "PropertyValue",
+      propertyID: "KABIZ",
+      value: "18109454184",
+    },
+    {
+      "@type": "PropertyValue",
+      propertyID: "BLCN",
+      value: "L2125",
+    },
+  ],
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Den Bosch",
+    addressLocality: "'s-Hertogenbosch",
     addressRegion: "Noord-Brabant",
     addressCountry: "NL",
   },
-  areaServed: ["Den Bosch", "Noord-Brabant", "Nederland"],
+  areaServed: ["'s-Hertogenbosch", "Den Bosch", "Noord-Brabant", "Nederland"],
   sameAs: ["https://www.linkedin.com/in/astridsanders/"],
 };
 

@@ -1,0 +1,40 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="256"
+  height="256"
+  viewBox="0 0 256 256"
+  fill="none"
+  role="img"
+  aria-labelledby="as-counterline-light-title as-counterline-light-description"
+>
+  <title id="as-counterline-light-title">AS-monogram concept B, stevig kader in lichte uitvoering</title>
+  <desc id="as-counterline-light-description">
+    Een solide crèmekleurige hoofdletter A met een S-vormige route in de negatieve
+    ruimte en één zandkleurig accent, bedoeld voor donkere achtergronden.
+  </desc>
+  <defs>
+    <mask id="as-counterline-light-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="256" height="256">
+      <rect width="256" height="256" fill="white" />
+      <path
+        d="M181 76h-38c-14 0-23 7-23 18 0 11 8 18 24 22l18 4c22 5 33 16 33 34 0 23-18 38-45 38H86"
+        stroke="black"
+        stroke-width="14"
+        stroke-linecap="square"
+        stroke-linejoin="round"
+      />
+    </mask>
+  </defs>
+  <path
+    fill="#FAF6EE"
+    fill-rule="evenodd"
+    d="M128 32 220 216h-34l-22-47H92l-22 47H36L128 32Zm0 63-24 51h48l-24-51Z"
+    clip-rule="evenodd"
+    mask="url(#as-counterline-light-cut)"
+  />
+  <path
+    d="M157 119c16 4 26 11 30 22"
+    stroke="#C09877"
+    stroke-width="6"
+    stroke-linecap="square"
+  />
+</svg>

@@ -4,8 +4,8 @@ export const zorgprofessionalsTranslations: Record<string, string> = {
   // Hero
   "Patiënten doorverwijzen naar aanvullende leefstijlcoaching":
     "Referring patients to complementary lifestyle coaching",
-  "Begeleidt u patiënten met reuma of artrose die naast hun reguliere behandeling ondersteuning nodig hebben bij duurzame leefstijlverandering?":
-    "Do you treat patients with rheumatism or osteoarthritis who need support with lasting lifestyle change alongside their regular treatment?",
+  "Begeleidt u patiënten die naast een reguliere behandeling ondersteuning nodig hebben bij duurzame leefstijlverandering?":
+    "Do you treat patients who need support with lasting lifestyle change alongside regular treatment?",
   "Astrid Sanders biedt persoonlijke leefstijlcoaching rondom:":
     "Astrid Sanders offers personal lifestyle coaching around:",
   Beweging: "Movement",
@@ -19,7 +19,6 @@ export const zorgprofessionalsTranslations: Record<string, string> = {
     "The coaching is available in and around Den Bosch and online throughout the Netherlands.",
   "Astrid Sanders overlegt met twee zorgprofessionals over aanvullende leefstijlbegeleiding":
     "Astrid Sanders consulting with two healthcare professionals about complementary lifestyle support",
-  "Patiënt doorverwijzen": "Refer a patient",
   "Beschrijf kort uw vraag over samenwerking of een mogelijke doorverwijzing. Astrid neemt persoonlijk contact met u op.":
     "Briefly describe your question about collaboration or a possible referral. Astrid will contact you personally.",
 
@@ -28,10 +27,14 @@ export const zorgprofessionalsTranslations: Record<string, string> = {
     "For which patients can lifestyle coaching be relevant?",
   "Aanvullende leefstijlbegeleiding kan passend zijn voor patiënten die gemotiveerd zijn om aan hun leefstijl te werken, maar moeite hebben om adviezen zelfstandig toe te passen en vol te houden.":
     "Complementary lifestyle support can be suitable for patients who are motivated to work on their lifestyle but struggle to apply and maintain advice on their own.",
-  "Patiënten met reuma of artrose": "Patients with rheumatism or osteoarthritis",
-  "Astrid richt zich voornamelijk op mensen die:": "Astrid mainly focuses on people who:",
+  "Patiënten en gezondheidsvragen": "Patients and health concerns",
+  "Leefstijlcoaching kan relevant zijn voor mensen die:":
+    "Lifestyle coaching can be relevant for people who:",
   "Leven met reuma": "Live with rheumatism",
   "Leven met artrose": "Live with osteoarthritis",
+  "Te maken hebben met beginnende diabetes": "Have early-stage diabetes",
+  "Leven met obesitas of overgewicht in combinatie met gezondheidsrisico’s":
+    "Live with obesity or excess weight combined with health risks",
   "Beperkingen ervaren door pijn of stijfheid": "Experience limitations due to pain or stiffness",
   "Te maken hebben met wisselende energie": "Deal with fluctuating energy levels",
   "Minder bewegen door onzekerheid of lichamelijke klachten":
@@ -55,8 +58,37 @@ export const zorgprofessionalsTranslations: Record<string, string> = {
     "Has already tried several lifestyle methods",
   "Persoonlijke begeleiding mist naast medische behandeling":
     "Lacks personal guidance alongside medical treatment",
+  "Wanneer begeleiding passend kan zijn": "When coaching may be suitable",
+  "Begeleiding kan passend zijn wanneer patiënten:":
+    "Coaching may be suitable when patients:",
+  "Gemotiveerd zijn om actief met leefstijlverandering aan de slag te gaan":
+    "Are motivated to actively work on lifestyle change",
+  "Begrijpen dat coaching aanvullend is op reguliere zorg":
+    "Understand that coaching complements regular care",
+  "Medische behandeling voortzetten onder verantwoordelijkheid van de betrokken zorgprofessional":
+    "Continue medical treatment under the responsibility of the healthcare professional involved",
+  "Medicatie alleen wijzigen in overleg met de behandelend arts":
+    "Only change medication in consultation with the treating physician",
+  "Bij medische voedingsvragen begeleiding door een arts of diëtist behouden":
+    "Continue guidance from a physician or dietitian for medical nutrition questions",
   "De medische behandeling en verantwoordelijkheid blijven bij de betrokken zorgprofessionals.":
     "Medical treatment and responsibility remain with the healthcare professionals involved.",
+
+  // Early patient outcomes
+  "Mogelijke doelen": "Possible goals",
+  "De begeleiding kan patiënten ondersteunen bij persoonlijke leefstijldoelen, passend bij hun situatie en in aanvulling op reguliere zorg.":
+    "The coaching can support patients with personal lifestyle goals suited to their situation and alongside regular care.",
+  "Minder pijn ervaren": "Experience less pain",
+  "Meer energie in het dagelijks leven": "More energy in daily life",
+  "Werken aan een betere gezondheid": "Work towards better health",
+  "Gezondheidsvaardigheden ontwikkelen die ook na het traject toepasbaar blijven":
+    "Develop lasting health skills that remain useful after the coaching programme",
+  "Meer grip krijgen op voeding, beweging, slaap, stress en herstel":
+    "Gain more control over nutrition, movement, sleep, stress and recovery",
+  "Waar mogelijk minder afhankelijk worden van medicatie, uitsluitend in overleg met de behandelend arts.":
+    "Where possible, become less dependent on medication, only in consultation with the treating physician.",
+  "Dit zijn mogelijke doelen en geen gegarandeerde uitkomsten. Leefstijlcoaching vervangt geen medische behandeling. Beslissingen over medicatie blijven bij de patiënt en de behandelend arts.":
+    "These are possible goals, not guaranteed outcomes. Lifestyle coaching does not replace medical treatment. Medication decisions remain with the patient and the treating physician.",
 
   // Section 3: coaching pillars
   "Praktische ondersteuning bij duurzame leefstijlverandering":
@@ -151,7 +183,7 @@ export const zorgprofessionalsTranslations: Record<string, string> = {
   "Het opbouwen van gezonde gewoonten": "Building healthy habits",
   "De fysiotherapeut blijft verantwoordelijk voor lichamelijk onderzoek, oefentherapie en het fysieke behandelplan.":
     "The physiotherapist remains responsible for physical examination, exercise therapy and the physical treatment plan.",
-  "Bespreek een samenwerking": "Discuss a collaboration",
+  "Bespreek samenwerking": "Discuss a collaboration",
 
   // Section 5: referral process
   "Zo verloopt de doorverwijzing": "How the referral process works",

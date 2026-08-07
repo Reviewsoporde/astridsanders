@@ -10,9 +10,11 @@ Dutch-language lead-generation website for **Astrid Sanders Leefstijlcoaching** 
 
 ## Tech Stack
 
-- **Next.js (App Router)** + **TypeScript** + **Tailwind CSS**
+- **Next.js (App Router)** + **TypeScript**
 - Deployed on **Vercel**
 - Package manager: **npm**
+
+> **Styling: hand-written semantic CSS, not utility classes.** Tailwind v4 is wired through PostCSS but there is no `tailwind.config.*`, no `@theme` and no `@apply` — it contributes only preflight. Every `className` in the codebase is a hand-authored BEM-ish semantic class, and **all** styling lives in the single file `app/globals.css`, organised by comment banners. Do not introduce utility classes; match the surrounding CSS.
 
 ### Conventions
 
@@ -27,10 +29,12 @@ Dutch-language lead-generation website for **Astrid Sanders Leefstijlcoaching** 
 | Document | Role |
 |---|---|
 | `Kopie van  Astrid Sanders - SEO - This is the right one.md` | **LEADING.** Page structure, URL slugs, SEO titles/meta descriptions, exact H1/H2/H3 hierarchy, full page copy, FAQ content, pricing. |
+| `260730 v2 website feedback.docx.pdf` | **LATEST CLIENT FEEDBACK for `/over-astrid/` and the former Online page.** Its supplied page content and visible tab name supersede the older SEO copy for those two pages. Medical-claim safety still takes priority over unsafe guarantee or treatment language in the PDF. |
 | `Website Strategy input.md` | Background/strategy. Astrid's full story, tone-of-voice rules (§10), CTA/form rationale (§9), business data (§16), future SEO cluster roadmap (§18), open action items (§19). |
 
 **Precedence rule: when the two documents conflict, the SEO doc wins.** Known resolved conflicts:
 
+- Exception: for the About page and the former Online page, `260730 v2 website feedback.docx.pdf` is newer client input and wins over the SEO doc. The new canonical route is `/leefstijlcoaching-gezondheidsrisicos/`; the old Online routes are permanent redirects.
 - Navigation = the SEO doc's 8-page structure, **not** the Strategy doc's `Particulier | Zakelijk | Zorg Professionals` menu.
 - Pricing **is** published on the site (SEO doc), despite the Strategy doc saying "prices later".
 
@@ -41,7 +45,7 @@ Dutch-language lead-generation website for **Astrid Sanders Leefstijlcoaching** 
 | Home | `/` |
 | Leefstijlcoaching bij Reuma | `/leefstijlcoaching-reuma/` |
 | Leefstijlcoaching bij Artrose | `/leefstijlcoaching-artrose/` |
-| Online Leefstijlcoaching | `/online-leefstijlcoaching/` |
+| Leefstijlcoaching bij Gezondheidsrisico’s | `/leefstijlcoaching-gezondheidsrisicos/` |
 | Leefstijlcoaching voor Bedrijven | `/leefstijlcoaching-bedrijven/` |
 | Zorgprofessionals | `/zorgprofessionals/` |
 | Over Astrid | `/over-astrid/` |
@@ -54,7 +58,7 @@ Main nav CTA button: **Gratis Gezondheidscheck**.
 
 ## Hard Content Rules (never violate)
 
-1. **Use the SEO doc copy as-is.** The Dutch copy is keyword-engineered — do not paraphrase, "improve", or translate it. Preserve the exact H1/H2/H3 hierarchy per page.
+1. **Use the current page source document as-is where medically safe.** The SEO doc remains leading except for the two pages superseded by `260730 v2 website feedback.docx.pdf`. Preserve confirmed H1/H2/H3 structure; adapt only where needed for medical-claim safety, factual precision or implementation consistency.
 2. **Medical-claim compliance.** Never state or imply that coaching cures, treats, or replaces medical care for reuma/artrose. Keep every disclaimer intact ("vervangt geen medische behandeling", "geen gegarandeerd resultaat", medication decisions belong to the treating physician).
 3. **Tone-of-voice choices (confirmed by the client, Strategy doc §10):**
    - Say **"minder afhankelijk van medicatie"** — never "medicatievrij".
@@ -89,28 +93,44 @@ Main nav CTA button: **Gratis Gezondheidscheck**.
 
 **Imagery:** natural and energetic — nature, outdoor movement, healthy food, daylight. Astrid has a personal affinity with nature and **Norway**; that mood (health, outdoors, calm) fits. Explicitly **not** clinical/medical and **not** vague-spiritual.
 
+### Register: zakelijk, not zweverig (client lens, revision round 2026-08)
+
+Astrid's first-impression feedback on the built site: *"iets te alternatief, iets te zweverig, iets te socio. Ik ben een wat zakelijker type."* This is a **lens applied to every imagery, styling and copy decision** — not a one-off task. It sharpens the existing "geen geitenwollensokken" rule, it does not replace it.
+
+> **Zakelijk = the site looks like it was made by someone who runs a practice, not by someone who is on a journey.** Structure over atmosphere. Evidence over feeling. Daylight over mood. Every element has a job.
+
+- **Never (visual):** serif italic as an emotional device · centred manifesto or pull-quote blocks · frosted glass · radial gradient washes · decorative circles and organic shapes · drop-shadow "float" on photos · scroll reveals slower than ~400 ms · pill radii outside segmented controls · soft-wellness glyphs (leaf, heart, lotus, sun, hands).
+- **Never (photography):** linen · barefoot · meditation or yoga poses · candles · tea · incense · mats · sun flare · hands-on-heart · eyes closed · flowing hair · heavy bokeh · pastel wash · people gazing into the middle distance.
+- **Always (photography):** daylight, unfiltered · real clothes (blazer, smart-casual, sportswear) · direct eye contact or purposeful action · settings that read as work or real life (consult table, office, workshop, kitchen, city street, gym, city bike) · mixed ages · men in roughly a third of frames · Astrid's hair shoulder-length · plants as environment, never as prop-styling.
+- **Proof, not sentiment.** Credibility is carried by named credentials, registers and media in plain text — never third-party logos (permission + implied endorsement), never invented numbers, and no testimonials in v1.
+
+Long-form do/don't, decision log and enforcement greps: `revision-checklist/01a-zakelijk-lens.md`. Per-photo art direction: `revision-checklist/01b-photo-brief.md`.
+
 **Layout:** follow the "Recommended layout" notes per section in the SEO doc — text-left/photo-right heroes, three USP cards, two-column recognition lists, five service cards, numbered 3-step process blocks, pricing cards, FAQ accordions, closing health-check form.
 
-**Pricing (published):** Gratis gezondheidscheck — €0 · Intake — €99 · Los coachingsgesprek — €125/uur · 12-weken traject (6 sessies) — €750.
+**Pricing (published; updated by 2026 feedback):** Gratis gezondheidscheck — €0 · Intake — €99 · Los coachingsgesprek — €125/uur · 12-weken traject (6 sessies) — vanaf €499.
 
 ## Business Facts
 
 - Email: `astrid@astridsanders.com` (info@ vs astrid@ not final)
 - Location: Den Bosch; works throughout the Netherlands (online coaching)
-- Accreditation: diploma Leefstijlcoach at Sonnevelt Opleidingen; member of BLCN (Beroepsvereniging Leefstijlcoaches Nederland)
+- Training: diploma Leefstijlcoach at Sonnevelt Opleidingen
+- KABIZ registration number: `18109454184`
+- BLCN membership number: `L2125`
+- KvK number: `42145089`
 - Media: Omroep Brabant interview — https://www.omroepbrabant.nl/nieuws/6000617/biefstuk-eruit-peulvruchten-erin-astrid-werd-noodgedwongen-vegan
 - Partner program: PlantsForHealth (mutual linking intended; testimonial video pending)
-- Unverified/pending: street address spelling, KvK number, phone number (currently her private number, also used for WhatsApp)
+- Other roles/interests confirmed in the 2026 feedback: Furuheim Lodge in Vrådal, Norway; board member of Stichting DE 4DAAGSE
+- Unverified/pending: street address spelling, phone number (currently her private number, also used for WhatsApp)
 
 ## Open Items (blocking or pending client input)
 
 - [ ] GoHighLevel webhook URL for form submissions
 - [ ] Hero photo of Astrid (client may supply; until then use the inspiration direction: sparkling portrait + food/healthy-life or nature association)
 - [ ] PlantsForHealth testimonial video (post-launch, optional)
-- [ ] KvK number for footer/legal
 - [ ] Correct spelling of the street address
 - [ ] Final email address choice (astrid@ vs info@)
 - [ ] "Ontstekingsklachten" page: in nav proposal but no content — confirm with client
 - [ ] Domain credentials (domain bought by "Roel"; Daan to obtain access for Vercel DNS setup)
-- [ ] **Light/reversed logo variant.** The footer is a solid deep-plum band, but `astrid-sanders-logo-stacked.png` is dark green on transparent. It is currently rendered with a `brightness(0) invert(1)` CSS filter, which flattens it to flat white and loses the terracotta sunrise detail. A proper light-variant asset should replace it.
-- [ ] **Logo vs. site palette mismatch.** The site palette is raspberry/plum (`#D62A57` / `#4A1730`), while the logo artwork is forest green + terracotta. The logo currently reads as a foreign element, most visibly in the header. Either a recoloured logo or a palette revisit is needed before launch.
+- [x] **Final primary and reversed logo variants.** Astrid supplied the final green/dark-green and green/white lockups on 8 August 2026. Optimized transparent production assets now power the header, footer, LocalBusiness structured data and browser icons; no CSS color filter is used.
+- [x] ~~**Logo vs. site palette mismatch.**~~ Resolved by the earth-tone palette revision (2026-08): the site now uses deep olive (`#333D31`), sage (`#A9AC8C`), cream/sand surfaces, and a tan accent (`#C09877`), which harmonizes with the logo's forest green + terracotta. Palette tokens live in `app/globals.css` `:root`.

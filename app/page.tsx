@@ -3,9 +3,8 @@ import {
   ArrowSquareOut,
   Certificate,
   Check,
-  HeartStraight,
-  Leaf,
-  Quotes,
+  IdentificationBadge,
+  PhoneCall,
   ShieldCheck,
 } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
@@ -32,7 +31,12 @@ export const metadata: Metadata = {
 const trustPoints = [
   {
     title: "Ervaringsdeskundige",
-    icon: HeartStraight,
+    /*
+     * "Ervaringsdeskundige" is a credential, not an emotion — a badge, not a
+     * heart. This is the card where Astrid is most at risk of reading as a
+     * fellow patient rather than as the professional being hired.
+     */
+    icon: IdentificationBadge,
     paragraphs: [
       "Ik weet hoe het is wanneer pijn, stijfheid en vermoeidheid steeds meer invloed krijgen op je dagelijks leven. Ik heb zelf jarenlang geleefd met artrose en ernstige reumatische klachten.",
       "Mijn ervaring helpt mij om niet alleen naar de theorie te kijken, maar ook te begrijpen hoe moeilijk het kan zijn om veranderingen daadwerkelijk toe te passen en vol te houden.",
@@ -60,14 +64,15 @@ const trustPoints = [
         external: true,
       },
       {
-        label: "Raadpleeg het KABIZ-register",
-        href: "https://www.kabiz.nl/raadplegenregister/default.aspx",
+        label: "Bekijk de BLCN",
+        href: "https://blcn.nl/",
         external: true,
       },
     ],
   },
   {
     title: "Gespecialiseerd in reuma en artrose",
+    stripTitle: "Resultaatgericht en persoonlijk",
     icon: ShieldCheck,
     paragraphs: [
       "Mijn belangrijkste specialisatie ligt bij reuma en artrose.",
@@ -103,13 +108,13 @@ const services = [
     href: "/leefstijlcoaching-artrose/",
   },
   {
-    title: "Online Leefstijlcoaching",
+    title: "Leefstijlcoaching voor jouw gezondheid",
     paragraphs: [
-      "Woon je niet in de omgeving van Den Bosch of is regelmatig reizen lastig?",
-      "Met online leefstijlcoaching krijg je persoonlijke begeleiding vanuit je eigen omgeving. De gesprekken kunnen online of telefonisch plaatsvinden en zijn beschikbaar door heel Nederland.",
+      "Overgewicht, hoge bloeddruk, verhoogde bloedsuiker, stress of gewrichtsklachten kunnen veel invloed hebben op je dagelijks leven. Vaak spelen meerdere factoren tegelijk.",
+      "Met persoonlijke leefstijlcoaching onderzoeken we welke haalbare veranderingen in voeding, beweging, slaap, stress en dagelijkse gewoonten bij jouw situatie passen.",
     ],
-    label: "Online leefstijlcoaching",
-    href: "/online-leefstijlcoaching/",
+    label: "Leefstijlcoaching voor jouw gezondheid",
+    href: "/leefstijlcoaching-gezondheidsrisicos/",
   },
   {
     title: "Leefstijlcoaching voor Bedrijven",
@@ -131,24 +136,31 @@ const services = [
   },
 ];
 
-const coachingTopics = [
-  "Plantaardige en evenwichtige voeding",
-  "Stress en ontspanning",
-  "Slaap en herstel",
-  "Beweging die bij jouw mogelijkheden past",
-  "Gezond gewicht en behoud van spierkracht",
-  "Gewoonten en dagelijkse structuur",
-  "Het praktisch volhouden van veranderingen",
+const desiredOutcomes = [
+  "Minder pijn",
+  "Meer energie",
+  "Minder afhankelijk van medicatie",
+  "Lekkerder in je vel zitten",
+  "Een betere gezondheid",
+  "Gezondheidsvaardigheden voor de rest van je leven",
 ];
 
-const possibleGoals = [
-  "Meer grip op je dagelijkse leefstijl",
-  "Gezondere voedings- en beweeggewoonten",
-  "Een beter evenwicht tussen activiteit en herstel",
-  "Beter slapen en bewuster omgaan met stress",
-  "Meer energie in het dagelijks leven",
-  "Met meer vertrouwen en plezier kunnen bewegen",
-  "Je fitter en gezonder voelen",
+const homeProcessSteps = [
+  {
+    title: "Stap 1: Gratis gezondheidscheck",
+    description:
+      "We beginnen met een kort en vrijblijvend telefoongesprek over wat er speelt en welke eerste stap bij jou past.",
+  },
+  {
+    title: "Stap 2: Persoonlijke coaching",
+    description:
+      "We stemmen de begeleiding af op jouw situatie en werken praktisch aan voeding, beweging, slaap, stress en gewoonten.",
+  },
+  {
+    title: "Stap 3: Zelfstandig verder",
+    description:
+      "Je leert welke keuzes voor jou werken, zodat je gezonde veranderingen ook na het traject zelfstandig kunt volhouden.",
+  },
 ];
 
 type AuthorityFact = {
@@ -164,8 +176,8 @@ const authorityFacts: AuthorityFact[] = [
     external: true,
   },
   {
-    label: "Aansluiting en accreditatie bij de BLCN",
-    href: "https://www.kabiz.nl/raadplegenregister/default.aspx",
+    label: "Aangesloten bij de BLCN",
+    href: "https://blcn.nl/",
     external: true,
   },
   {
@@ -182,6 +194,39 @@ const authorityFacts: AuthorityFact[] = [
     label: "LinkedIn-profiel van Astrid Sanders",
     href: "https://www.linkedin.com/in/astridsanders/",
     external: true,
+  },
+];
+
+/*
+ * Credential strip on the olive band, directly above the pricing cards. Text
+ * only — never third-party logos: reproducing those marks needs written
+ * permission and implies a partnership that does not exist. Every entry is a
+ * fact already stated elsewhere on this page (see `authorityFacts` and the
+ * story copy), shortened to a scannable token. No counts, no success rates.
+ */
+const credentials: AuthorityFact[] = [
+  {
+    label: "Sonnevelt Opleidingen",
+    href: "https://www.sonneveltopleidingen.nl/opleidingen/leefstijlcoach",
+    external: true,
+  },
+  {
+    label: "BLCN",
+    href: "https://blcn.nl/",
+    external: true,
+  },
+  {
+    label: "Ervaringsdeskundige",
+    href: "/over-astrid/",
+    external: false,
+  },
+  {
+    label: "Interview bij Omroep Brabant",
+    href: "https://www.omroepbrabant.nl/nieuws/6000617/biefstuk-eruit-peulvruchten-erin-astrid-werd-noodgedwongen-vegan",
+    external: true,
+  },
+  {
+    label: "Bestuurder Nijmeegse Vierdaagse",
   },
 ];
 
@@ -259,15 +304,12 @@ export function HomePageContent({ locale }: { locale: Locale }) {
         <section className="hero hero--full" aria-labelledby="hero-title">
           <div className="hero__grid">
             <Reveal className="hero__copy">
-              <h1 id="hero-title">Leefstijlcoach in Den Bosch bij reuma en artrose</h1>
+              <h1 id="hero-title">Leefstijlcoach bij reuma en artrose</h1>
               <p className="hero__lead">
                 Geen snelle oplossing of standaardplan, maar begeleiding die aansluit op jouw
                 situatie, mogelijkheden en doelen.
               </p>
               <div className="hero__actions">
-                <Link className="button button--solid" href="#gezondheidscheck">
-                  Gratis gezondheidscheck aanvragen
-                </Link>
                 <WhatsAppLink locale={locale} />
               </div>
             </Reveal>
@@ -275,20 +317,16 @@ export function HomePageContent({ locale }: { locale: Locale }) {
             <Reveal className="hero__visual-wrap" delay={0.08}>
               <div className="hero__visual">
                 <Image
-                  src="/images/generated/home-hero-v3.png"
-                  alt="Astrid Sanders wandelt langs een rustig Scandinavisch meer"
+                  src="/images/generated/home-hero-v4.webp"
+                  alt="Astrid Sanders in haar praktijk voor leefstijlcoaching"
                   fill
                   priority
                   sizes="100vw"
-                  style={{ objectPosition: "center 25%" }}
+                  style={{ objectPosition: "78% 25%" }}
                 />
               </div>
             </Reveal>
 
-            <Reveal className="hero__form-card" delay={0.16}>
-              <p className="hero__form-card-title">Gratis gezondheidscheck</p>
-              <HealthCheckForm locale={locale} compact />
-            </Reveal>
           </div>
 
           {/*
@@ -302,29 +340,13 @@ export function HomePageContent({ locale }: { locale: Locale }) {
                 return (
                   <li key={point.title}>
                     <Icon size={20} weight="regular" aria-hidden="true" />
-                    <span>{point.title}</span>
+                    <span>{point.stripTitle ?? point.title}</span>
                   </li>
                 );
               })}
             </ul>
           </div>
 
-          <div className="shell hero__context">
-            <p>
-              Heb je te maken met gewrichtspijn, stijfheid, vermoeidheid of terugkerende
-              klachten? En wil je ontdekken welke rol voeding, stress, slaap en beweging kunnen
-              spelen in jouw dagelijks leven?
-            </p>
-            <p>
-              Ik ben Astrid Sanders, geaccrediteerd leefstijlcoach en ervaringsdeskundige. Vanuit
-              Den Bosch begeleid ik mensen met reuma en artrose bij het ontwikkelen van een
-              leefstijl die praktisch, persoonlijk en vol te houden is.
-            </p>
-            <p>
-              Leefstijlcoaching is beschikbaar in Den Bosch en omgeving en online door heel
-              Nederland.
-            </p>
-          </div>
 
         </section>
 
@@ -344,7 +366,7 @@ export function HomePageContent({ locale }: { locale: Locale }) {
                     delay={index * 0.05}
                   >
                     <div className="trust-card__head">
-                      <Icon className="trust-card__icon" size={30} weight="regular" aria-hidden="true" />
+                      <Icon className="trust-card__icon" size={28} weight="regular" aria-hidden="true" />
                       <h3>{point.title}</h3>
                     </div>
                     <div className="trust-card__body">
@@ -393,7 +415,7 @@ export function HomePageContent({ locale }: { locale: Locale }) {
                 <h2 id="recognition-title">Heb je hier regelmatig last van?</h2>
               </Reveal>
 
-              <div className="recognition-lists">
+              <div className="recognition-lists recognition-lists--three">
                 <Reveal>
                   <h3>Situaties waarbij coaching kan passen</h3>
                   <ul className="check-list">
@@ -429,23 +451,28 @@ export function HomePageContent({ locale }: { locale: Locale }) {
                     ))}
                   </ul>
                 </Reveal>
+                <Reveal delay={0.1}>
+                  <h3>Wil jij:</h3>
+                  <ul className="check-list">
+                    {desiredOutcomes.map((item) => (
+                      <li key={item}>
+                        <Check size={18} weight="bold" aria-hidden="true" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
               </div>
 
               <Reveal className="recognition-note">
+                <p className="recognition-note__lead">Spreken deze punten je aan?</p>
                 <p>
-                  Leefstijlcoaching vervangt geen medische behandeling. Het kan je wel helpen om
-                  naast reguliere zorg bewuster te werken aan voeding, beweging, slaap, stress en
-                  andere leefstijlfactoren.
+                  Dan gaan we samen met een persoonlijk traject aan de slag. We starten met de
+                  gratis gezondheidscheck en bepalen van daaruit welke begeleiding bij jou past.
                 </p>
-                <p>
-                  Wanneer er sprake is van overgewicht in combinatie met een verhoogd
-                  gezondheidsrisico, bekijken we tijdens de gezondheidscheck welke vorm van
-                  begeleiding passend is en of een erkend GLI-traject relevant kan zijn.
-                </p>
-                <p className="term-note">GLI staat voor Gecombineerde Leefstijlinterventie.</p>
-                <p>
-                  Tijdens de gratis gezondheidscheck bespreken we jouw persoonlijke situatie en
-                  bekijken we samen wat een passende eerste stap kan zijn.
+                <p className="term-note">
+                  Leefstijlcoaching vervangt geen medische behandeling. Beslissingen over medicatie
+                  bespreek je altijd met je behandelend arts.
                 </p>
                 <Link className="button" href="#gezondheidscheck">
                   Gratis gezondheidscheck aanvragen
@@ -491,116 +518,57 @@ export function HomePageContent({ locale }: { locale: Locale }) {
               <h2 id="process-title">Van gezondheidscheck naar een leefstijl die bij je past</h2>
             </Reveal>
 
-            <div className="process-steps">
-              <Reveal className="process-step">
-                <span className="process-step__number" aria-hidden="true">1</span>
-                <div>
-                  <h3>Stap 1: Gratis gezondheidscheck</h3>
-                  <p>We beginnen met een kort en vrijblijvend telefoongesprek.</p>
-                  <p>
-                    Je vertelt wat er speelt, welke klachten of uitdagingen je ervaart en wat je
-                    al hebt geprobeerd. Ik leg uit hoe mijn begeleiding werkt en we bekijken samen
-                    of mijn aanpak bij jou past.
-                  </p>
-                  <p>
-                    Je hoeft hiervoor niet direct een afspraak in een agenda te boeken. Laat je
-                    naam, telefoonnummer en voorkeursmoment achter, dan neem ik persoonlijk contact
-                    met je op.
-                  </p>
-                </div>
-              </Reveal>
-
-              <Reveal className="process-step" delay={0.05}>
-                <span className="process-step__number" aria-hidden="true">2</span>
-                <div>
-                  <h3>Stap 2: Persoonlijke coaching</h3>
-                  <p>
-                    Wanneer we besluiten om verder te gaan, stemmen we de begeleiding af op jouw
-                    situatie.
-                  </p>
-                  <p>
-                    De coaching kan online, persoonlijk of als combinatie plaatsvinden.
-                    Afhankelijk van jouw behoeften kijken we naar onderwerpen zoals:
-                  </p>
-                  <ul className="compact-list">
-                    {coachingTopics.slice(0, 4).map((topic) => (
-                      <li key={topic}>{topic}</li>
-                    ))}
-                  </ul>
-                  <details className="compact-disclosure">
-                    <summary>Meer onderwerpen binnen de coaching</summary>
-                    <ul className="compact-list">
-                      {coachingTopics.slice(4).map((topic) => (
-                        <li key={topic}>{topic}</li>
-                      ))}
-                    </ul>
-                  </details>
-                  <p>
-                    Je kunt kiezen voor een losse intake, een afzonderlijk coachingsgesprek of een
-                    gestructureerd traject.
-                  </p>
-                </div>
-              </Reveal>
-
-              <Reveal className="process-step" delay={0.1}>
-                <span className="process-step__number" aria-hidden="true">3</span>
-                <div>
-                  <h3>Stap 3: Zelfstandig verder</h3>
-                  <p>
-                    Het doel is dat je steeds beter begrijpt welke gewoonten bij jou passen en dat
-                    je deze zelfstandig kunt blijven toepassen.
-                  </p>
-                  <p>Mogelijke doelen zijn:</p>
-                  <ul className="compact-list">
-                    {possibleGoals.slice(0, 4).map((goal) => (
-                      <li key={goal}>{goal}</li>
-                    ))}
-                  </ul>
-                  <details className="compact-disclosure">
-                    <summary>Meer mogelijke doelen</summary>
-                    <ul className="compact-list">
-                      {possibleGoals.slice(4).map((goal) => (
-                        <li key={goal}>{goal}</li>
-                      ))}
-                    </ul>
-                  </details>
-                  <p>
-                    Eventuele wijzigingen in medicatie worden uitsluitend besproken met je
-                    huisarts, reumatoloog of andere behandelend arts.
-                  </p>
-                  <p>
-                    Ook na het traject blijft laagdrempelig contact mogelijk wanneer je opnieuw
-                    ondersteuning nodig hebt.
-                  </p>
-                </div>
-              </Reveal>
+            <div className="process-steps process-steps--compact">
+              {homeProcessSteps.map((step, index) => (
+                <Reveal key={step.title} className="process-step" delay={index * 0.05}>
+                  <span className="process-step__number" aria-hidden="true">
+                    {index + 1}
+                  </span>
+                  <div>
+                    <h3>{step.title}</h3>
+                    <p>{step.description}</p>
+                  </div>
+                </Reveal>
+              ))}
             </div>
           </div>
         </section>
 
+        {/*
+          * Positioning statement plus credentials, not a pull quote: a quote
+          * from the person doing the selling is the weakest kind of proof, and
+          * the centred italic setting it used to have was the most "manifesto"
+          * moment on the site. The band stays — it sits immediately before the
+          * pricing cards, which is exactly where proof belongs.
+          */}
         <section
-          className="section mission-quote-section section--band-primary"
-          aria-labelledby="mission-quote-title"
+          className="section positioning-section section--band-primary"
+          aria-labelledby="positioning-title"
         >
-          <Reveal className="shell mission-quote">
-            <Quotes
-              className="mission-quote__mark"
-              size={40}
-              weight="fill"
-              aria-hidden="true"
-            />
-            <p className="eyebrow mission-quote__eyebrow" id="mission-quote-title">
-              Mijn missie
+          <Reveal className="shell positioning">
+            <p className="eyebrow positioning__eyebrow" id="positioning-title">
+              Achtergrond en erkenning
             </p>
-            <p className="mission-quote__text">
-              <span className="mission-quote__line">
-                Mensen met reuma en artrose weer grip laten krijgen op hun energie en welzijn,
-              </span>
-              <span className="mission-quote__line">
-                <em>zodat ze met vertrouwen blijven doen wat voor hen belangrijk is.</em>
-              </span>
+            <p className="positioning__statement">
+              Mensen met reuma en artrose weer grip laten krijgen op hun energie en welzijn.
             </p>
-            <p className="mission-quote__attribution">— Astrid Sanders</p>
+            <ul className="credential-strip">
+              {credentials.map((item) => (
+                <li key={item.label}>
+                  {item.href ? (
+                    <a
+                      href={item.external ? item.href : localizedPath(item.href)}
+                      target={item.external ? "_blank" : undefined}
+                      rel={item.external ? "noreferrer" : undefined}
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <span>{item.label}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
           </Reveal>
         </section>
 
@@ -628,16 +596,6 @@ export function HomePageContent({ locale }: { locale: Locale }) {
                 mijn knieën regelmatig dik en pijnlijk, waardoor bewegen steeds moeilijker werd.
               </p>
               <p>
-                In juli 2020 kreeg ik plotseling een sterk opgezwollen hand. Binnen enkele maanden
-                ging mijn gezondheid snel achteruit. Op het moeilijkste moment kon ik nauwelijks
-                meer lopen en waren mijn handen, voeten en knieën ontstoken.
-              </p>
-              <p>
-                In de jaren daarna probeerde ik verschillende methoden en leefstijlaanpassingen. Ik
-                hield zelfs in een uitgebreide spreadsheet bij wat mogelijk invloed had op mijn
-                klachten. Toch vond ik lange tijd geen duidelijke aanpak die voor mij werkte.
-              </p>
-              <p>
                 In mei 2024 begon ik opnieuw met een wetenschappelijk onderbouwde leefstijlaanpak,
                 waarbij plantaardige voeding een belangrijk onderdeel vormde. Na ongeveer zes weken
                 merkte ik veranderingen in mijn energie en dagelijks functioneren.
@@ -655,15 +613,6 @@ export function HomePageContent({ locale }: { locale: Locale }) {
                 Daarom heb ik de opleiding tot leefstijlcoach gevolgd. Nu combineer ik mijn eigen
                 ervaring met professionele kennis om anderen te helpen meer grip te krijgen op hun
                 leefstijl en gezondheid.
-              </p>
-              <p>
-                Voor mijn werk als leefstijlcoach heb ik jarenlang gewerkt in marketing,
-                communicatie en klantbeleving. Daarnaast ben ik bestuurder van de Nijmeegse
-                Vierdaagse.
-              </p>
-              <p>
-                Die professionele achtergrond helpt mij om gestructureerd, persoonlijk en
-                doelgericht te begeleiden.
               </p>
             </Reveal>
 
@@ -723,7 +672,7 @@ export function HomePageContent({ locale }: { locale: Locale }) {
                 />
               </div>
               <div className="health-check-panel__heading">
-                <Leaf size={30} weight="regular" aria-hidden="true" />
+                <PhoneCall size={28} weight="regular" aria-hidden="true" />
                 <p className="health-check-panel__title" id="gezondheidscheck">
                   Gratis gezondheidscheck aanvragen
                 </p>

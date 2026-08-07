@@ -31,7 +31,7 @@ const employeeChallenges = [
   "Veel zitten en weinig bewegen",
   "Slecht slapen of onvoldoende herstel",
   "Een verstoorde balans tussen werk en privé",
-  "Moeite met grenzen stellen",
+  "Verslavingen en ongezonde gewoonten",
   "Gezonde voornemens die snel wegvallen",
   "Gezondheidsklachten die invloed hebben op het dagelijks functioneren",
 ];
@@ -45,6 +45,17 @@ const coachingSupport = [
   "Persoonlijke doelen om te zetten naar concrete acties",
   "Veranderingen langer vol te houden",
   "Meer verantwoordelijkheid te nemen voor hun leefstijl",
+];
+
+const businessResults = [
+  "Hoger werkplezier",
+  "Hogere productiviteit",
+  "Minder kosten / kostenbesparing",
+  "Vitalere, gezondere medewerkers",
+  "Betere werksfeer",
+  "Hogere klanttevredenheid",
+  "Ziekteverzuim omlaag",
+  "Minder uitval",
 ];
 
 const businessServices: { title: string; blocks: ContentBlock[] }[] = [
@@ -201,25 +212,6 @@ const audienceCards: { title: string; blocks: ContentBlock[] }[] = [
       {
         kind: "paragraph",
         text: "Astrid kan aansluiten bij bestaande initiatieven of helpen bepalen welke eerste interventie het meest passend is.",
-      },
-    ],
-  },
-  {
-    title: "Teams",
-    blocks: [
-      { kind: "paragraph", text: "Voor teams die gezamenlijk willen werken aan:" },
-      {
-        kind: "list",
-        items: [
-          "Werkdruk",
-          "Energie",
-          "Voeding",
-          "Beweging",
-          "Slaap",
-          "Herstel",
-          "Werk-privébalans",
-          "Gezonde teamgewoonten",
-        ],
       },
     ],
   },
@@ -468,7 +460,7 @@ export function BedrijvenPageContent({ locale }: { locale: Locale }) {
               />
             </div>
 
-            <div className="recognition-lists">
+            <div className="recognition-lists recognition-lists--three">
               <Reveal>
                 <h3>Veelvoorkomende uitdagingen</h3>
                 <p>Medewerkers kunnen te maken hebben met:</p>
@@ -493,9 +485,40 @@ export function BedrijvenPageContent({ locale }: { locale: Locale }) {
                   ))}
                 </ul>
               </Reveal>
+              <Reveal delay={0.1}>
+                <h3>Resultaten:</h3>
+                <p>Mogelijke resultaten waar een organisatie aan kan werken:</p>
+                <ul className="check-list">
+                  {businessResults.map((item) => (
+                    <li key={item}>
+                      <Check size={18} weight="bold" aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
             </div>
 
-            <Reveal className="section-note">
+            <Reveal className="absence-cost-card">
+              <p className="eyebrow">Indicatieve verzuimkosten</p>
+              <h3>Wat kan één geval van psychisch verzuim kosten?</h3>
+              <p>
+                Volgens de Arbobalans 2024 van TNO duurt verzuim door psychische klachten
+                gemiddeld 63 werkdagen. ArboNed noemt gemiddeld €360 per verzuimdag;
+                Nationale-Nederlanden noemt gemiddeld €400 per dag.
+              </p>
+              <p className="absence-cost-card__calculation">
+                <span>63 werkdagen</span>
+                <span aria-hidden="true">×</span>
+                <span>€360–€400 per dag</span>
+                <strong>= €22.680–€25.200 per geval</strong>
+              </p>
+              <p>
+                Dit is een indicatieve berekening. De werkelijke kosten verschillen per medewerker
+                en organisatie, onder meer door salaris, vervanging, productiviteitsverlies,
+                begeleiding en omzetverlies.
+              </p>
+              <p>Leefstijlcoaching garandeert geen lager ziekteverzuim of kostenbesparing.</p>
               <p>
                 Leefstijlcoaching vervangt geen bedrijfsarts, medische behandeling, fysiotherapie of
                 arbeidsdeskundig advies.
@@ -504,6 +527,39 @@ export function BedrijvenPageContent({ locale }: { locale: Locale }) {
                 Het is aanvullende begeleiding gericht op leefstijl, gedrag en praktische
                 uitvoering.
               </p>
+              <div className="absence-cost-card__sources">
+                <p>Bronnen:</p>
+                <ul className="compact-list">
+                  <li>
+                    <a
+                      href="https://publications.tno.nl/publication/34644281/tJVhoMUv/TNO-2025-R11108.pdf"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      TNO Arbobalans 2024
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.arboned.nl/nieuws/toename-bezoek-bedrijfspsycholoog-door-wachtlijst-reguliere-zorg"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      ArboNed: gemiddelde kosten per verzuimdag
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.nn.nl/nieuws/trendrapport-ziekteverzuim-en-arbeidsongeschiktheid/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Nationale-Nederlanden: Trendrapport Ziekteverzuim &amp;
+                      Arbeidsongeschiktheid
+                    </a>
+                  </li>
+                </ul>
+              </div>
               <Link className="button cta-inline" href="#gezondheidscheck">
                 Bespreek de mogelijkheden
               </Link>
@@ -557,7 +613,7 @@ export function BedrijvenPageContent({ locale }: { locale: Locale }) {
               />
             </div>
 
-            <div className="pillar-grid pillar-grid--four">
+            <div className="pillar-grid pillar-grid--three">
               {audienceCards.map((card, index) => (
                 <Reveal
                   key={card.title}
@@ -614,12 +670,15 @@ export function BedrijvenPageContent({ locale }: { locale: Locale }) {
             <Reveal className="story-copy" delay={0.05}>
               <p>
                 Voordat ik leefstijlcoach werd, werkte ik jarenlang op het snijvlak van marketing,
-                communicatie en klantbeleving.
+                management, communicatie en klantbeleving.
               </p>
               <p>
                 Ik werkte onder andere in de financiële sector, bij Center Parcs en in verschillende
-                interimfuncties. Daarnaast heb ik ervaring met het aansturen van een callcenter en
-                ben ik bestuurder van de Nijmeegse Vierdaagse.
+                interimfuncties.
+              </p>
+              <p>
+                Daarnaast heb ik ruime ervaring als manager en bestuurder. Zo stuurde ik een
+                callcenter aan en ben ik bestuurder van de Nijmeegse Vierdaagse.
               </p>
               <p>
                 Daardoor begrijp ik hoe werkdruk, verantwoordelijkheid, organisaties en

@@ -4,41 +4,45 @@
   color-scheme: light;
 
   /*
-   * Palette roles are mapped from the melnoakes.com reference onto Astrid's own
-   * brand (deep burgundy + raspberry, shared by the updated logo). Where the
-   * reference uses a saturated coral as its band colour, we use raspberry; its
-   * warmer secondary notes map to the logo's softer rose tones.
-   * Contrast against --page is verified: --text 14.0:1, --text-soft 8.8:1,
-   * --muted 5.3:1, --accent 4.8:1. Cream on --brand is 10.5:1, on --accent 4.8:1.
+   * Earth-tone palette (client revision, 2026-08): deep olive anchor, sage
+   * band colour, warm cream/sand surfaces and a muted tan/camel accent —
+   * harmonising with the logo's forest green and PlantsForHealth branding.
+   * Contrast against --page is verified: --text 14.5:1, --text-soft 8.7:1,
+   * --muted 5.7:1. Cream (--accent-ink) on --brand is 10.5:1.
    */
-  --page: #fff8f7;
+  --page: #faf7f0;
   --surface: #ffffff;
-  --surface-soft: #ffe8ed;
-  --surface-mineral: #f8d4dc;
-  --text: #2e1b25;
-  --text-soft: #503b46;
-  --muted: #715e68;
-  --line: #e8cdd5;
-  --line-strong: #caa8b3;
-  --brand: #4a1730;
-  --brand-deep: #35101f;
-  --accent: #d62a57;
-  --accent-hover: #b81e49;
+  --surface-soft: #f1eadd;
+  --surface-mineral: #e4d9c5;
+  --sage: #a9ac8c;
+  --text: #26241d;
+  --text-soft: #4a473c;
+  --muted: #67624f;
+  --line: #e0d8c6;
+  --line-strong: #bfb39c;
+  --brand: #333d31;
+  --brand-deep: #232b22;
+  --accent: #c09877;
+  --accent-hover: #ac8560;
 
   /*
-   * #d62a57 only reaches 4.16:1 on --surface-soft and 3.57:1 on
-   * --surface-mineral, so it is used for fills and decoration while every
-   * accent-coloured *text* uses the deeper #b81e49, which clears 4.5:1 on all
-   * four light surfaces.
+   * The tan accent #c09877 is light, so unlike the previous palette it cannot
+   * carry cream text. Fills (buttons, badges, pills) pair it with --on-accent
+   * (6.0:1; 4.7:1 on --accent-hover; 6.8:1 on --sage), while accent-coloured
+   * *text* on light surfaces uses the bronze #745334, which clears 4.5:1 on
+   * all four light surfaces (4.96:1 on --surface-mineral). --accent-ink stays
+   * the cream ink for text on the dark olive bands only.
    */
-  --accent-text: #b81e49;
-  --accent-ink: #fff9fb;
-  --success: #247657;
-  --success-soft: #e4f4ec;
-  --error: #a83249;
-  --error-soft: #fce8ec;
-  --shadow-soft: 0 1px 2px rgb(74 23 48 / 7%);
-  --shadow-media: 0 10px 28px rgb(74 23 48 / 12%);
+  --accent-text: #745334;
+  --accent-ink: #faf6ee;
+  --on-accent: #2a2117;
+  --success: #3d6b4a;
+  --success-soft: #e9f1e4;
+  --error: #a0432e;
+  --error-soft: #f7e8e2;
+  --shadow-soft: 0 1px 2px color-mix(in srgb, var(--brand-deep) 8%, transparent);
+  /* Photos sit on the page; they do not float above it. */
+  --shadow-media: 0 4px 16px color-mix(in srgb, var(--brand-deep) 9%, transparent);
   --font-display: "Playfair Display Variable", Georgia, "Times New Roman", serif;
   --font-sans: "Manrope Variable", "Segoe UI", sans-serif;
 
@@ -85,8 +89,14 @@ body {
   color: var(--text);
   font-family: var(--font-sans);
   font-size: 16px;
-  font-weight: 350;
-  line-height: 1.8;
+  /*
+   * 400 at 1.65, not 350 at 1.8. Light weight on open leading is the house
+   * style of wellness/lifestyle editorial — it reads as atmosphere. A normal
+   * weight on tighter leading reads as a document, which is the register the
+   * client asked for ("zakelijk"). Also easier to read for the 45-70 audience.
+   */
+  font-weight: 400;
+  line-height: 1.65;
   text-rendering: optimizeLegibility;
 }
 
@@ -125,7 +135,8 @@ a:focus-visible,
 summary:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--accent) 78%, white);
+  /* The tan accent is too light for a visible ring; use the bronze text tone. */
+  outline: 3px solid color-mix(in srgb, var(--accent-text) 80%, white);
   outline-offset: 3px;
 }
 
@@ -141,9 +152,11 @@ p {
 }
 
 /*
- * Headings are the reference's signature: a high-contrast display serif at
- * normal weight and open leading, never the tight negative-tracked sans that
- * reads as generic product UI.
+ * Headings stay a display serif — never the tight negative-tracked *sans* that
+ * reads as generic product UI. But the serif is set tight and wide rather than
+ * airy and narrow: negative tracking, close leading, generous measure. Playfair
+ * set this way reads as a publisher or a practice; set loose and narrow it
+ * reads as lifestyle editorial, which is the "zweverig" the client rejected.
  */
 h1,
 h2,
@@ -152,49 +165,42 @@ h3 {
   color: var(--text);
   font-family: var(--font-display);
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.3;
+  letter-spacing: -0.012em;
+  line-height: 1.16;
   overflow-wrap: break-word;
   text-wrap: balance;
 }
 
 h1 {
-  max-width: 18ch;
-  font-size: clamp(2.4rem, 4.4vw, 3.9rem);
+  max-width: 24ch;
+  font-size: clamp(2.15rem, 3.4vw, 3.1rem);
 }
 
 h2 {
-  max-width: 20ch;
-  font-size: clamp(2rem, 3.4vw, 3.1rem);
+  max-width: 26ch;
+  font-size: clamp(1.7rem, 2.5vw, 2.45rem);
 }
 
 h3 {
   font-size: clamp(1.25rem, 1.7vw, 1.6rem);
-  line-height: 1.28;
-}
-
-/* Italic serif carries the emotional/pivot lines, as in the reference. */
-h1 em,
-h2 em,
-h3 em,
-.display-italic {
-  font-style: italic;
+  line-height: 1.2;
 }
 
 p {
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.15rem;
   color: var(--muted);
   text-wrap: pretty;
 }
 
 strong {
   color: var(--text-soft);
-  font-weight: 650;
+  font-weight: 700;
 }
 
 /*
- * Wide-tracked uppercase micro-type. Doubles as the reference's nav treatment
- * and as an echo of the logo's own "LEEFSTIJLCOACH" lockup.
+ * Tracked uppercase micro-type: the nav treatment and an echo of the logo's own
+ * "LEEFSTIJLCOACHING" lockup. 0.14em, not 0.2em — the wider setting is luxury-brand
+ * tracking, this one reads as consultancy.
  */
 .eyebrow,
 .desktop-nav > a:not(.button),
@@ -202,17 +208,8 @@ strong {
 .price-card__kicker {
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-}
-
-/* Serif-italic caption under a small label, per the reference's card pattern. */
-.card-caption {
-  color: var(--text-soft);
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-style: italic;
-  line-height: 1.4;
 }
 
 .shell {
@@ -233,7 +230,23 @@ strong {
 .section--band-primary,
 .section--band-accent,
 .trust-section {
-  color: var(--accent-ink);
+  color: var(--band-ink);
+}
+
+/*
+ * Dark olive bands carry cream ink; the light sage band carries dark ink.
+ * Each band sets --band-ink (its text colour) and --band-contrast (the text
+ * colour used over a --band-ink fill, e.g. hovered ghost buttons).
+ */
+.section--band-primary,
+.trust-section {
+  --band-ink: var(--accent-ink);
+  --band-contrast: var(--brand);
+}
+
+.section--band-accent {
+  --band-ink: var(--on-accent);
+  --band-contrast: var(--accent-ink);
 }
 
 .section--band-primary.section--band-primary {
@@ -241,7 +254,7 @@ strong {
 }
 
 .section--band-accent.section--band-accent {
-  background: var(--accent);
+  background: var(--sage);
 }
 
 /*
@@ -254,57 +267,57 @@ strong {
 }
 
 :is(.section--band-primary.section--band-primary, .section--band-accent.section--band-accent, .trust-section.trust-section) :is(p, li, summary, figcaption, span, div, small, label, dt, dd, blockquote) {
-  color: var(--accent-ink);
+  color: var(--band-ink);
 }
 
 :is(.section--band-primary.section--band-primary, .section--band-accent.section--band-accent, .trust-section.trust-section) :is(.eyebrow, .process-step__number, .lifestyle-pillar__number, .artrose-recognition-panel__heading span) {
-  color: var(--accent-ink);
+  color: var(--band-ink);
 }
 
 :is(.section--band-primary.section--band-primary, .section--band-accent.section--band-accent, .trust-section.trust-section) svg,
 :is(.section--band-primary.section--band-primary, .section--band-accent.section--band-accent, .trust-section.trust-section) li::marker {
-  color: var(--accent-ink);
+  color: var(--band-ink);
 }
 
-/* Hairlines and card edges have to lighten against a dark band, not darken. */
+/* Hairlines lighten against the dark bands and darken against the sage band. */
 :is(.section--band-primary.section--band-primary, .section--band-accent.section--band-accent, .trust-section.trust-section) :is(.trust-card, .service-card article, .process-step, .faq-item, .faq-list, .lifestyle-pillar, .lifestyle-pillars, .professional-audience-card, .recognition-lists > .reveal, .artrose-recognition-lists, .pillar-card) {
-  border-color: color-mix(in srgb, var(--accent-ink) 26%, transparent);
+  border-color: color-mix(in srgb, var(--band-ink) 26%, transparent);
 }
 
-/* Nested panels keep their own light surface, so their text must stay dark. */
+/* Nested panels get a subtle ink-tinted lift; band text colour still applies. */
 :is(.section--band-primary.section--band-primary, .section--band-accent.section--band-accent, .trust-section.trust-section) :is(.recognition-note, .section-note, .pillar-card, .authority-panel, .health-check-panel, .contact-panel, .artrose-recognition-note, .lifestyle-pillar__note, .business-process__content > p:last-child) {
-  background: color-mix(in srgb, var(--accent-ink) 12%, transparent);
-  border-color: color-mix(in srgb, var(--accent-ink) 24%, transparent);
+  background: color-mix(in srgb, var(--band-ink) 12%, transparent);
+  border-color: color-mix(in srgb, var(--band-ink) 24%, transparent);
 }
 
 /*
- * A cream tint reads well over pine, but on the lighter terracotta band it
- * lifts the panel enough to drop cream text to 4.19:1. Darken instead there.
+ * On the sage band a 12% dark-ink tint reads muddy; a deeper olive tint keeps
+ * the panel in the sage family while dark ink stays at 5.5:1 on it.
  */
 .section--band-accent.section--band-accent :is(.recognition-note, .section-note, .pillar-card, .authority-panel, .health-check-panel, .contact-panel, .artrose-recognition-note, .lifestyle-pillar__note, .business-process__content > p:last-child) {
   background: color-mix(in srgb, var(--brand) 14%, transparent);
 }
 
 :is(.section--band-primary.section--band-primary, .section--band-accent.section--band-accent, .trust-section.trust-section) :is(.text-link, .authority-panel li > a, .authority-panel__unlinked, .form-direct-contact a, a:not(.button)) {
-  color: var(--accent-ink);
-  text-decoration-color: color-mix(in srgb, var(--accent-ink) 45%, transparent);
+  color: var(--band-ink);
+  text-decoration-color: color-mix(in srgb, var(--band-ink) 45%, transparent);
 }
 
 :is(.section--band-primary.section--band-primary, .section--band-accent.section--band-accent, .trust-section.trust-section) :is(.text-link, .authority-panel li > a):hover {
-  color: var(--accent-ink);
+  color: var(--band-ink);
   text-decoration-color: currentcolor;
 }
 
-/* Buttons inside a band adopt the on-dark ghost treatment automatically. */
+/* Buttons inside a band adopt the band-ink ghost treatment automatically. */
 :is(.section--band-primary.section--band-primary, .section--band-accent.section--band-accent, .trust-section.trust-section) .button:not(.button--solid) {
-  border-color: color-mix(in srgb, var(--accent-ink) 76%, transparent);
-  color: var(--accent-ink);
+  border-color: color-mix(in srgb, var(--band-ink) 76%, transparent);
+  color: var(--band-ink);
 }
 
 :is(.section--band-primary.section--band-primary, .section--band-accent.section--band-accent, .trust-section.trust-section) .button:not(.button--solid):hover {
-  border-color: var(--accent-ink);
-  background: var(--accent-ink);
-  color: var(--brand);
+  border-color: var(--band-ink);
+  background: var(--band-ink);
+  color: var(--band-contrast);
 }
 
 .section-heading {
@@ -343,12 +356,13 @@ strong {
 }
 
 @media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  /* Crisp, not cinematic: a short settle, never a slow drift up the page. */
   .reveal[data-reveal-ready="true"] {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(8px);
     transition:
-      opacity 560ms ease,
-      transform 560ms var(--ease-out);
+      opacity 300ms ease,
+      transform 340ms var(--ease-out);
   }
 
   .reveal[data-reveal-ready="true"].is-visible {
@@ -365,7 +379,7 @@ strong {
   padding: 10px 15px;
   border-radius: var(--radius-control);
   background: var(--accent);
-  color: var(--accent-ink);
+  color: var(--on-accent);
   transform: translateY(-160%);
   transition: transform 160ms ease;
 }
@@ -446,17 +460,21 @@ strong {
   transform: scale(0.98);
 }
 
-/* Filled variant, reserved for the primary "gratis gezondheidscheck" CTA. */
+/*
+ * Filled variant, reserved for the primary "gratis gezondheidscheck" CTA.
+ * The tan fill is light, so it carries dark ink (6.0:1; 4.7:1 on hover) and
+ * keeps the bronze border for a 3:1 boundary against white/cream surfaces.
+ */
 .button--solid {
   border-color: var(--accent-text);
   background: var(--accent);
-  color: var(--accent-ink);
+  color: var(--on-accent);
 }
 
 .button--solid:hover {
-  border-color: var(--accent-hover);
+  border-color: var(--accent-text);
   background: var(--accent-hover);
-  color: var(--accent-ink);
+  color: var(--on-accent);
 }
 
 /* Ghost button sitting on a colour band or on hero photography. */
@@ -541,7 +559,7 @@ strong {
 
   border-bottom-color: color-mix(in srgb, var(--line) 72%, transparent);
   background: color-mix(in srgb, var(--page) 94%, transparent);
-  box-shadow: 0 6px 24px rgb(74 23 48 / 7%);
+  box-shadow: 0 6px 24px color-mix(in srgb, var(--brand) 7%, transparent);
 }
 
 .site-header__inner {
@@ -561,7 +579,10 @@ strong {
 
 .wordmark {
   display: inline-flex;
-  width: clamp(172px, 14vw, 204px);
+
+  /* The final client-supplied lockup is stacked at roughly 1.68:1. Keep it
+   * optically substantial without exceeding the compact sticky header. */
+  width: clamp(132px, 12vw, 160px);
   align-items: center;
   flex: 0 0 auto;
   transition: transform 280ms var(--ease-out);
@@ -604,7 +625,7 @@ strong {
   left: 10px;
   height: 2px;
   border-radius: 2px;
-  background: var(--accent);
+  background: var(--accent-text);
   content: "";
   opacity: 0;
   transform: scaleX(0.3);
@@ -680,8 +701,8 @@ strong {
   border-radius: var(--radius-card);
   background: var(--surface);
   box-shadow:
-    0 1px 2px rgb(74 23 48 / 6%),
-    0 14px 34px rgb(74 23 48 / 13%);
+    0 1px 2px color-mix(in srgb, var(--brand) 6%, transparent),
+    0 14px 34px color-mix(in srgb, var(--brand) 13%, transparent);
 }
 
 /* Invisible bridge so the pointer can cross the gap without closing the menu. */
@@ -731,7 +752,7 @@ strong {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--accent-text);
   content: "";
   transform: translateY(-50%);
 }
@@ -837,7 +858,7 @@ strong {
   z-index: calc(var(--z-navigation-panel) - 1);
   height: 100dvh;
   animation: nav-scrim-in 220ms ease both;
-  background: rgb(53 16 31 / 42%);
+  background: color-mix(in srgb, var(--brand-deep) 42%, transparent);
 }
 
 @keyframes nav-scrim-in {
@@ -855,7 +876,7 @@ strong {
   animation: nav-panel-in 260ms var(--ease-out) both;
   border-bottom: 1px solid var(--line);
   background: var(--surface);
-  box-shadow: 0 18px 40px rgb(74 23 48 / 14%);
+  box-shadow: 0 18px 40px color-mix(in srgb, var(--brand) 14%, transparent);
   overscroll-behavior: contain;
 }
 
@@ -909,7 +930,7 @@ strong {
   width: 3px;
   height: 18px;
   border-radius: 2px;
-  background: var(--accent);
+  background: var(--accent-text);
   content: "";
   transform: translateY(-50%);
 }
@@ -1014,7 +1035,7 @@ strong {
 .hero__lead {
   max-width: 54ch;
   margin-block: 20px 0;
-  color: rgb(255 249 251 / 88%);
+  color: color-mix(in srgb, var(--accent-ink) 88%, transparent);
   font-size: clamp(1.02rem, 1.5vw, 1.2rem);
   line-height: 1.58;
 }
@@ -1029,7 +1050,7 @@ strong {
 .hero__cta-note {
   max-width: 54ch;
   margin: var(--space-sm) 0 0;
-  color: rgb(255 249 251 / 80%);
+  color: color-mix(in srgb, var(--accent-ink) 80%, transparent);
   font-size: 0.84rem;
   line-height: 1.5;
 }
@@ -1047,20 +1068,15 @@ strong {
 .hero__visual img {
   object-fit: cover;
   object-position: var(--hero-object-position, center);
-  transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero__visual::after {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgb(53 16 31 / 90%) 0%, rgb(74 23 48 / 74%) 38%, rgb(74 23 48 / 18%) 72%, transparent 100%),
-    linear-gradient(0deg, rgb(53 16 31 / 40%), transparent 56%);
+    linear-gradient(90deg, color-mix(in srgb, var(--brand-deep) 90%, transparent) 0%, color-mix(in srgb, var(--brand) 74%, transparent) 38%, color-mix(in srgb, var(--brand) 18%, transparent) 72%, transparent 100%),
+    linear-gradient(0deg, color-mix(in srgb, var(--brand-deep) 40%, transparent), transparent 56%);
   content: "";
-}
-
-.hero__grid:hover .hero__visual img {
-  transform: scale(1.025);
 }
 
 /*
@@ -1115,8 +1131,8 @@ strong {
 }
 
 /*
- * The raspberry accent is too dark to read on the plum band, so the icons take
- * a cream-lifted tint of it: still accented, but visible.
+ * The tan accent is too dark to read on the olive band, so the icons take a
+ * cream-lifted tint of it: still accented, but visible.
  */
 .hero-strip__list svg {
   flex: none;
@@ -1205,23 +1221,10 @@ strong {
   align-items: flex-start;
 }
 
-.hero__form-card {
-  display: none;
-}
-
-.hero__form-card-title {
-  margin: 0 0 var(--space-md);
-  color: var(--text);
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 400;
-  letter-spacing: 0;
-}
-
 .hero--full .hero__visual::after {
   background:
-    linear-gradient(90deg, rgb(53 16 31 / 88%) 0%, rgb(74 23 48 / 64%) 34%, rgb(74 23 48 / 16%) 62%, transparent 84%),
-    linear-gradient(0deg, rgb(53 16 31 / 66%) 0%, rgb(53 16 31 / 14%) 40%, transparent 66%);
+    linear-gradient(90deg, color-mix(in srgb, var(--brand-deep) 88%, transparent) 0%, color-mix(in srgb, var(--brand) 64%, transparent) 34%, color-mix(in srgb, var(--brand) 16%, transparent) 62%, transparent 84%),
+    linear-gradient(0deg, color-mix(in srgb, var(--brand-deep) 66%, transparent) 0%, color-mix(in srgb, var(--brand-deep) 14%, transparent) 40%, transparent 66%);
 }
 
 .hero--full .hero__context {
@@ -1229,9 +1232,6 @@ strong {
   padding-block: clamp(28px, 4vw, 48px) var(--space-xl);
 }
 
-/* Below this width there's no room for a floating form card beside the
-   photo, so it's dropped and the CTA buttons remain the path to the form
-   further down the page. */
 @media (min-width: 1180px) {
   .hero--full .hero__copy h1 {
     max-width: 26ch;
@@ -1239,37 +1239,6 @@ strong {
 
   .hero--full .hero__lead {
     max-width: 50ch;
-  }
-
-  .hero__form-card {
-    display: block;
-    grid-area: 1 / 1;
-    position: relative;
-    z-index: var(--z-content);
-    align-self: center;
-    justify-self: end;
-    width: min(380px, 32%);
-    margin-right: clamp(24px, 4vw, 64px);
-    padding: clamp(24px, 2vw, 30px);
-    border: 1px solid rgb(255 255 255 / 75%);
-    border-radius: var(--radius-card);
-    /*
-     * Mostly-opaque cream, not a generic frosted-glass smear: legibility can't
-     * depend on how light or dark the photo happens to be behind the card, and
-     * a warm near-solid surface reads as this site's own card, not stock SaaS
-     * glass. The blur keeps just enough transparency to feel photo-anchored.
-     */
-    background: linear-gradient(
-      165deg,
-      color-mix(in srgb, var(--accent-ink) 96%, transparent) 0%,
-      color-mix(in srgb, var(--accent-ink) 90%, transparent) 100%
-    );
-    backdrop-filter: blur(20px) saturate(160%);
-    -webkit-backdrop-filter: blur(20px) saturate(160%);
-    box-shadow:
-      0 24px 56px rgb(53 16 31 / 34%),
-      0 0 0 1px color-mix(in srgb, var(--accent) 16%, transparent),
-      inset 0 1px 0 rgb(255 255 255 / 80%);
   }
 }
 
@@ -1434,10 +1403,11 @@ strong {
   isolation: isolate;
 }
 
+/* A dark hairline defines the photo's edge; a white inner glow would soften it. */
 .recognition-intro__media::after {
   position: absolute;
   inset: 0;
-  border: 1px solid rgb(255 255 255 / 28%);
+  border: 1px solid color-mix(in srgb, var(--brand-deep) 14%, transparent);
   border-radius: inherit;
   content: "";
   pointer-events: none;
@@ -1445,11 +1415,6 @@ strong {
 
 .recognition-intro__media img {
   object-fit: cover;
-  transition: transform 900ms var(--ease-out);
-}
-
-.recognition-intro__media:hover img {
-  transform: scale(1.025);
 }
 
 .recognition-grid {
@@ -1483,6 +1448,10 @@ strong {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-lg);
+}
+
+.recognition-lists--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .recognition-lists > .reveal {
@@ -1548,6 +1517,83 @@ strong {
   background: var(--surface-mineral);
 }
 
+.absence-cost-card {
+  max-width: 1060px;
+  margin-top: var(--space-xl);
+  padding: clamp(28px, 4vw, 52px);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-card);
+  background: var(--surface-mineral);
+}
+
+.absence-cost-card h3 {
+  max-width: 28ch;
+}
+
+.absence-cost-card__calculation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 14px;
+  margin-block: var(--space-lg);
+  padding-block: var(--space-md);
+  border-block: 1px solid var(--line-strong);
+  color: var(--text);
+}
+
+.absence-cost-card__calculation strong {
+  color: var(--accent-text);
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.5vw, 2.25rem);
+  font-weight: 400;
+}
+
+.absence-cost-card__sources {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--line);
+}
+
+.absence-cost-card__sources p {
+  margin-bottom: var(--space-xs);
+  font-weight: 700;
+}
+
+.absence-cost-card__sources .compact-list {
+  margin-block: 0;
+}
+
+.absence-cost-card__sources a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.patient-outcomes {
+  background: var(--surface-soft);
+}
+
+.patient-outcomes__content {
+  max-width: 1120px;
+}
+
+.possible-outcomes {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-block: 1px solid var(--line-strong);
+}
+
+.possible-outcomes li {
+  padding: clamp(22px, 3vw, 32px);
+}
+
+.possible-outcomes li + li {
+  border-left: 1px solid var(--line);
+}
+
+.patient-outcomes__note {
+  max-width: 1120px;
+}
+
 .professional-scope-card {
   width: 100%;
   max-width: none;
@@ -1567,7 +1613,7 @@ strong {
 }
 
 /*
- * These callouts carry the medical disclaimers and sit on the dusty-pink tint,
+ * These callouts carry the medical disclaimers and sit on the mineral surface,
  * where --muted is only 4.41:1. They take the stronger secondary text colour.
  */
 .recognition-note,
@@ -1587,6 +1633,14 @@ strong {
 
 .recognition-note .button {
   margin-top: 10px;
+}
+
+.recognition-note__lead {
+  margin-bottom: 8px;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  line-height: 1.2;
 }
 
 /* Artrose recognition: paired editorial lists with a full-width next step. */
@@ -1658,13 +1712,7 @@ strong {
   margin-top: clamp(30px, 3vw, 42px);
   padding: clamp(28px, 3vw, 38px) clamp(30px, 4vw, 52px);
   overflow: hidden;
-  background:
-    radial-gradient(
-      circle at 92% 12%,
-      color-mix(in srgb, var(--surface) 62%, transparent) 0,
-      transparent 24%
-    ),
-    var(--surface-mineral);
+  background: var(--surface-mineral);
 }
 
 .artrose-recognition-note::before {
@@ -1864,6 +1912,24 @@ strong {
   min-height: clamp(290px, 23vw, 350px);
 }
 
+.about-photo-stack {
+  display: grid;
+  min-width: 0;
+  gap: var(--space-md);
+}
+
+.about-photo-stack .recognition-intro__media {
+  width: 100%;
+  min-height: clamp(180px, 17vw, 250px);
+}
+
+.media-credit {
+  margin-top: var(--space-sm);
+  color: var(--text-soft);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
 .guidance-intro {
   grid-template-areas: "copy media";
 }
@@ -1951,13 +2017,13 @@ strong {
 :is(.section--band-primary.section--band-primary, .section--band-accent.section--band-accent, .trust-section.trust-section) .lifestyle-pillar__toggle::before,
 :is(.section--band-primary.section--band-primary, .section--band-accent.section--band-accent, .trust-section.trust-section) .lifestyle-pillar__toggle::after,
 :is(.section--band-primary.section--band-primary, .section--band-accent.section--band-accent, .trust-section.trust-section) .lifestyle-pillar details[open] .lifestyle-pillar__toggle {
-  background: var(--accent-ink);
-  border-color: var(--accent-ink);
+  background: var(--band-ink);
+  border-color: var(--band-ink);
 }
 
 :is(.section--band-primary.section--band-primary, .section--band-accent.section--band-accent, .trust-section.trust-section) .lifestyle-pillar details[open] .lifestyle-pillar__toggle::before,
 :is(.section--band-primary.section--band-primary, .section--band-accent.section--band-accent, .trust-section.trust-section) .lifestyle-pillar details[open] .lifestyle-pillar__toggle::after {
-  background: var(--brand);
+  background: var(--band-contrast);
 }
 
 .lifestyle-pillar__toggle::before,
@@ -1967,7 +2033,7 @@ strong {
   left: 50%;
   width: 12px;
   height: 1.5px;
-  background: var(--accent);
+  background: var(--accent-text);
   content: "";
   transform: translate(-50%, -50%);
   transition: transform 220ms var(--ease-out);
@@ -1990,7 +2056,7 @@ strong {
 
 .lifestyle-pillar details[open] .lifestyle-pillar__toggle::before,
 .lifestyle-pillar details[open] .lifestyle-pillar__toggle::after {
-  background: var(--accent-ink);
+  background: var(--on-accent);
 }
 
 .lifestyle-pillar details[open] .lifestyle-pillar__toggle::after {
@@ -2070,6 +2136,32 @@ strong {
   margin-bottom: 0;
 }
 
+.process-steps--compact {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: none;
+  border-block: 1px solid var(--line-strong);
+}
+
+.process-steps--compact .process-step {
+  display: block;
+  padding: clamp(28px, 4vw, 46px);
+  border-top: 0;
+}
+
+.process-steps--compact .process-step + .process-step {
+  border-left: 1px solid var(--line);
+}
+
+.process-steps--compact .process-step__number {
+  display: block;
+  margin-bottom: var(--space-lg);
+  font-size: clamp(3.4rem, 5vw, 5rem);
+}
+
+.process-steps--compact h3 {
+  min-height: 2.5em;
+}
+
 .compact-disclosure {
   margin-block: calc(var(--space-md) * -1) var(--space-lg);
 }
@@ -2098,25 +2190,7 @@ strong {
 /* Business process: a denser editorial timeline for longer B2B content. */
 .business-process {
   overflow: clip;
-  background:
-    radial-gradient(
-      circle at 7% 18%,
-      color-mix(in srgb, var(--accent) 9%, transparent) 0,
-      transparent 28%
-    ),
-    color-mix(in srgb, var(--surface-mineral) 30%, var(--page));
-}
-
-.business-process::after {
-  position: absolute;
-  right: -11rem;
-  bottom: -14rem;
-  width: 30rem;
-  height: 30rem;
-  border: 1px solid color-mix(in srgb, var(--line-strong) 30%, transparent);
-  border-radius: 50%;
-  content: "";
-  pointer-events: none;
+  background: color-mix(in srgb, var(--surface-mineral) 30%, var(--page));
 }
 
 .business-process__layout {
@@ -2332,7 +2406,7 @@ strong {
   padding: 6px 10px;
   border-radius: var(--radius-control);
   background: var(--accent);
-  color: var(--accent-ink);
+  color: var(--on-accent);
   font-size: 0.7rem;
   font-weight: 720;
   letter-spacing: 0.08em;
@@ -2357,6 +2431,9 @@ strong {
 
 /* Prices are set in the display serif so the number reads as editorial. */
 .price-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.18em;
   margin-block: 24px 26px;
   color: var(--text);
   font-family: var(--font-display);
@@ -2366,6 +2443,14 @@ strong {
   letter-spacing: -0.01em;
   line-height: 1;
   white-space: nowrap;
+}
+
+.price-card__price-prefix {
+  font-family: var(--font-sans);
+  font-size: clamp(0.72rem, 1.1vw, 0.82rem);
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .price-card__unit {
@@ -2410,12 +2495,12 @@ strong {
 }
 
 .price-card--featured .price-card__kicker {
-  color: #f0b9c8;
+  color: color-mix(in srgb, var(--accent) 70%, var(--accent-ink));
 }
 
 .price-card--featured .price-card__description,
 .price-card--featured .price-card__features li {
-  color: #f8d4dc;
+  color: color-mix(in srgb, var(--accent-ink) 86%, var(--brand-deep));
 }
 
 .price-card--featured .price-card__features {
@@ -2423,17 +2508,17 @@ strong {
 }
 
 .price-card--featured .price-card__features svg {
-  color: #f0b9c8;
+  color: color-mix(in srgb, var(--accent) 70%, var(--accent-ink));
 }
 
 .price-card--featured .button {
   border-color: var(--accent-text);
   background: var(--accent);
-  color: var(--accent-ink);
+  color: var(--on-accent);
 }
 
 .price-card--featured .button:hover {
-  border-color: var(--accent-hover);
+  border-color: var(--accent-text);
   background: var(--accent-hover);
 }
 
@@ -2446,49 +2531,86 @@ strong {
   font-size: 0.93rem;
 }
 
-/* Mission quote */
-.mission-quote-section {
+/*
+ * Positioning band: one statement, then the credentials that back it. Set left
+ * and at heading-adjacent size, never centred at pull-quote size — a centred
+ * oversized serif line is the shape of a manifesto, which is the register the
+ * client rejected.
+ */
+.positioning-section {
   padding-block: var(--section-compact);
 }
 
-.mission-quote {
+.positioning {
   max-width: 1380px;
   margin-inline: auto;
-  text-align: center;
 }
 
-.mission-quote__mark {
-  margin-bottom: var(--space-sm);
-  opacity: 0.6;
-}
-
-.mission-quote__eyebrow {
+.positioning__eyebrow {
   margin-bottom: var(--space-md);
   opacity: 0.8;
 }
 
-.mission-quote__text {
-  margin-bottom: var(--space-lg);
+.positioning__statement {
+  max-width: 34ch;
+  margin-bottom: var(--space-xl);
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  font-size: clamp(1.25rem, 1.7vw, 1.6rem);
   font-weight: 400;
+  line-height: 1.3;
+}
+
+/*
+ * Credentials as one hairline-divided row, mirroring `.hero-strip__list` so the
+ * band's opening and closing proof rows read as the same device.
+ */
+.credential-strip {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: var(--space-lg) 0 0;
+  border-top: 1px solid color-mix(in srgb, var(--band-ink) 26%, transparent);
+  gap: var(--space-sm) 0;
+  list-style: none;
+}
+
+.credential-strip li {
+  padding-inline: clamp(14px, 1.6vw, 22px);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   line-height: 1.4;
+  text-transform: uppercase;
 }
 
-.mission-quote__line {
-  display: block;
+.credential-strip li:first-child {
+  padding-left: 0;
 }
 
-.mission-quote__line + .mission-quote__line {
-  margin-top: 0.25em;
+.credential-strip li + li {
+  border-left: 1px solid color-mix(in srgb, var(--band-ink) 22%, transparent);
 }
 
-.mission-quote__attribution {
-  margin-bottom: 0;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  opacity: 0.85;
+/* Colour and underline tint come from the band cascade; only the offset is ours. */
+.credential-strip a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 767px) {
+  .credential-strip li {
+    padding-inline: 0;
+  }
+
+  .credential-strip li + li {
+    padding-top: var(--space-sm);
+    border-top: 1px solid color-mix(in srgb, var(--band-ink) 18%, transparent);
+    border-left: 0;
+  }
+
+  .credential-strip {
+    flex-direction: column;
+  }
 }
 
 /* Story */
@@ -2549,6 +2671,14 @@ strong {
   background: var(--brand-deep);
   color: var(--accent-ink);
   font-weight: 620;
+}
+
+/*
+ * The panel keeps its own dark surface inside the light sage band, so it must
+ * beat the band rule that flips descendant text to the band's dark ink.
+ */
+.section--band-accent.section--band-accent .story-copy__important {
+  color: var(--accent-ink);
 }
 
 .authority-panel {
@@ -2825,11 +2955,11 @@ strong {
 .moment-option input:checked + span {
   border-color: var(--accent-text);
   background: var(--accent);
-  color: var(--accent-ink);
+  color: var(--on-accent);
 }
 
 .moment-option input:focus-visible + span {
-  outline: 3px solid color-mix(in srgb, var(--accent) 46%, transparent);
+  outline: 3px solid color-mix(in srgb, var(--accent-text) 80%, white);
   outline-offset: 2px;
 }
 
@@ -3069,9 +3199,10 @@ strong {
 }
 
 /*
- * Footer is a solid brand band, mirroring the reference's solid-colour footer.
- * The stacked logo is dark pine on transparent, so it is filtered to cream
- * until a proper light-variant asset exists.
+ * Footer is a solid brand band (deep olive), mirroring the reference's
+ * solid-colour footer. The final reversed logo is supplied as white artwork on
+ * transparent, so its original two-colour geometry stays intact without a CSS
+ * filter or a visible background tile.
  */
 .site-footer {
   padding-block: 50px 24px;
@@ -3088,10 +3219,6 @@ strong {
   color: color-mix(in srgb, var(--accent-ink) 82%, transparent);
 }
 
-.site-footer__logo {
-  filter: brightness(0) invert(1);
-}
-
 .site-footer__grid {
   display: grid;
   grid-template-columns: minmax(260px, 1.1fr) minmax(240px, 1fr) minmax(300px, 1.1fr);
@@ -3100,7 +3227,7 @@ strong {
 
 .site-footer__logo-link {
   display: inline-flex;
-  width: 158px;
+  width: 200px;
   margin-bottom: 20px;
 }
 
@@ -3221,7 +3348,7 @@ strong {
 
 .site-footer__bottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 24px;
   margin-top: 28px;
   padding-top: 20px;
@@ -3293,6 +3420,26 @@ strong {
   .pillar-grid--three,
   .pillar-grid--four {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .recognition-lists--three,
+  .process-steps--compact,
+  .possible-outcomes {
+    grid-template-columns: 1fr;
+  }
+
+  .process-steps--compact .process-step + .process-step {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .process-steps--compact h3 {
+    min-height: auto;
+  }
+
+  .possible-outcomes li + li {
+    border-top: 1px solid var(--line);
+    border-left: 0;
   }
 
   .professional-audience-grid {
@@ -3439,7 +3586,6 @@ strong {
 
   :root {
     --header-height: 94px;
-    --radius-media: 16px;
     --section-compact: 44px;
     --section-standard: 56px;
     --section-feature: 68px;
@@ -3559,14 +3705,14 @@ strong {
 
   .hero__visual::after {
     background:
-      linear-gradient(0deg, rgb(53 16 31 / 94%) 0%, rgb(74 23 48 / 64%) 46%, rgb(74 23 48 / 7%) 76%),
-      linear-gradient(90deg, rgb(74 23 48 / 30%), transparent);
+      linear-gradient(0deg, color-mix(in srgb, var(--brand-deep) 94%, transparent) 0%, color-mix(in srgb, var(--brand) 64%, transparent) 46%, color-mix(in srgb, var(--brand) 7%, transparent) 76%),
+      linear-gradient(90deg, color-mix(in srgb, var(--brand) 30%, transparent), transparent);
   }
 
   .hero--full .hero__visual::after {
     background:
-      linear-gradient(0deg, rgb(53 16 31 / 94%) 0%, rgb(74 23 48 / 66%) 44%, rgb(74 23 48 / 8%) 74%),
-      linear-gradient(90deg, rgb(74 23 48 / 34%), transparent 70%);
+      linear-gradient(0deg, color-mix(in srgb, var(--brand-deep) 94%, transparent) 0%, color-mix(in srgb, var(--brand) 66%, transparent) 44%, color-mix(in srgb, var(--brand) 8%, transparent) 74%),
+      linear-gradient(90deg, color-mix(in srgb, var(--brand) 34%, transparent), transparent 70%);
   }
 
   .hero__visual img {
@@ -3608,6 +3754,8 @@ strong {
   .services-grid,
   .pillar-grid,
   .recognition-lists,
+  .process-steps--compact,
+  .possible-outcomes,
   .pricing-grid,
   .site-footer__grid {
     grid-template-columns: 1fr;
@@ -3670,6 +3818,28 @@ strong {
 
   .process-step__number {
     font-size: 3.4rem;
+  }
+
+  .process-steps--compact .process-step {
+    padding: 28px 0;
+  }
+
+  .process-steps--compact .process-step + .process-step {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .process-steps--compact h3 {
+    min-height: auto;
+  }
+
+  .possible-outcomes li {
+    padding: 22px 0;
+  }
+
+  .possible-outcomes li + li {
+    border-top: 1px solid var(--line);
+    border-left: 0;
   }
 
   .business-process__step,
@@ -3752,7 +3922,7 @@ strong {
   }
 
   .wordmark {
-    width: 154px;
+    width: 132px;
   }
 
   .button {

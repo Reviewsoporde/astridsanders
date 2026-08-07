@@ -168,8 +168,8 @@ const englishTranslations: Record<string, string> = {
     "Lifestyle coach in Den Bosch for rheumatism and osteoarthritis",
   "Geen snelle oplossing of standaardplan, maar begeleiding die aansluit op jouw situatie, mogelijkheden en doelen.":
     "No quick fix or standard plan, but guidance tailored to your situation, abilities and goals.",
-  "Astrid Sanders wandelt langs een rustig Scandinavisch meer":
-    "Astrid Sanders walking beside a calm Scandinavian lake",
+  "Astrid Sanders in haar praktijk voor leefstijlcoaching":
+    "Astrid Sanders in her lifestyle coaching practice",
   "Gratis gezondheidscheck aanvragen": "Request a free health check",
   "Portret van Astrid Sanders, leefstijlcoach in Den Bosch":
     "Portrait of Astrid Sanders, lifestyle coach in Den Bosch",
@@ -235,11 +235,10 @@ const englishTranslations: Record<string, string> = {
     "Any medication changes must only be discussed with your general practitioner, rheumatologist or other treating physician.",
   "Ook na het traject blijft laagdrempelig contact mogelijk wanneer je opnieuw ondersteuning nodig hebt.":
     "After the programme, you can still get in touch if you need support again.",
-  "Mijn missie": "My mission",
-  "Mensen met reuma en artrose weer grip laten krijgen op hun energie en welzijn,":
-    "Helping people with rheumatism and osteoarthritis regain a sense of control over their energy and wellbeing,",
-  "zodat ze met vertrouwen blijven doen wat voor hen belangrijk is.":
-    "so they can keep doing, with confidence, what matters most to them.",
+  "Achtergrond en erkenning": "Background and accreditation",
+  "Mensen met reuma en artrose weer grip laten krijgen op hun energie en welzijn.":
+    "Helping people with rheumatism and osteoarthritis regain a sense of control over their energy and wellbeing.",
+  "Bestuurder Nijmeegse Vierdaagse": "Board member, Nijmegen Four Days Marches",
   "Portret van Astrid Sanders op het strand":
     "Portrait of Astrid Sanders on the beach",
   Tarieven: "Pricing",
@@ -297,6 +296,41 @@ const englishTranslations: Record<string, string> = {
   "Astrid Sanders Leefstijlcoaching": "Astrid Sanders Lifestyle Coaching",
   "Leefstijlcoaching vervangt geen medische behandeling.":
     "Lifestyle coaching does not replace medical treatment.",
+
+  // Revision round 2026-08: homepage, pricing, proof links and location.
+  "Leefstijlcoach bij reuma en artrose":
+    "Lifestyle coach for rheumatism and osteoarthritis",
+  "Resultaatgericht en persoonlijk": "Goal-focused and personal",
+  "Wil jij:": "Would you like:",
+  "Minder pijn": "Less pain",
+  "Meer energie": "More energy",
+  "Minder afhankelijk van medicatie": "Less dependence on medication",
+  "Lekkerder in je vel zitten": "Feel better in yourself",
+  "Een betere gezondheid": "Better health",
+  "Gezondheidsvaardigheden voor de rest van je leven":
+    "Health skills you can use for the rest of your life",
+  "Spreken deze punten je aan?": "Do these points resonate with you?",
+  "Dan gaan we samen met een persoonlijk traject aan de slag. We starten met de gratis gezondheidscheck en bepalen van daaruit welke begeleiding bij jou past.":
+    "Then we start a personal programme together. We begin with the free health check and use it to determine which coaching suits you.",
+  "Leefstijlcoaching vervangt geen medische behandeling. Beslissingen over medicatie bespreek je altijd met je behandelend arts.":
+    "Lifestyle coaching does not replace medical treatment. Always discuss medication decisions with your treating physician.",
+  "We beginnen met een kort en vrijblijvend telefoongesprek over wat er speelt en welke eerste stap bij jou past.":
+    "We begin with a short, no-obligation phone call about what is going on and which first step suits you.",
+  "We stemmen de begeleiding af op jouw situatie en werken praktisch aan voeding, beweging, slaap, stress en gewoonten.":
+    "We tailor the coaching to your situation and work practically on nutrition, movement, sleep, stress and habits.",
+  "Je leert welke keuzes voor jou werken, zodat je gezonde veranderingen ook na het traject zelfstandig kunt volhouden.":
+    "You learn which choices work for you, so you can maintain healthy changes independently after the programme.",
+  vanaf: "from",
+  "Bekijk de BLCN": "View BLCN",
+  "Aangesloten bij de BLCN": "Member of BLCN",
+  "Persoonlijke begeleiding rondom voeding, beweging, slaap, stress en dagelijkse gewoonten.":
+    "Personal guidance around nutrition, movement, sleep, stress and daily habits.",
+  "Een vrouw fietst doelgericht door een Nederlandse stadsomgeving":
+    "A woman cycles purposefully through a Dutch urban setting",
+  "Een vrouw werkt geconcentreerd aan haar kracht in een sportschool":
+    "A woman focuses on building strength in a gym",
+  "'s-Hertogenbosch — en online door heel Nederland":
+    "'s-Hertogenbosch — and online throughout the Netherlands",
 };
 
 const translations: Record<string, string> = {
