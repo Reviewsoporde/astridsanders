@@ -2911,6 +2911,10 @@ strong {
   border-radius: var(--radius-control);
   background: var(--surface);
   color: var(--text);
+  /* Fixed at 16px regardless of the mobile body font-size: anything smaller
+     makes iOS Safari auto-zoom the viewport on focus, which is jarring and
+     actively works against finishing the form. */
+  font-size: 16px;
   outline: none;
   transition:
     border-color 160ms ease,
@@ -3317,6 +3321,12 @@ strong {
 
 .site-footer__nav a,
 .site-footer__contact > a:not(.button) {
+  display: inline-flex;
+  align-items: center;
+  /* Padding + matching negative margin grows the tap target toward the 44px
+     comfortable minimum without widening the visual gap between links. */
+  margin-block: -10px;
+  padding-block: 10px;
   color: color-mix(in srgb, var(--accent-ink) 86%, transparent);
   font-weight: 500;
 }
@@ -3327,8 +3337,6 @@ strong {
  * and let the shared hover rule below supply the underline.
  */
 .site-footer__contact > a:not(.button) {
-  display: inline-flex;
-  align-items: center;
   gap: 10px;
   font-weight: 500;
   text-decoration: none;
