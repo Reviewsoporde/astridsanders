@@ -300,7 +300,7 @@ const englishTranslations: Record<string, string> = {
   // Revision round 2026-08: homepage, pricing, proof links and location.
   "Leefstijlcoach bij reuma en artrose":
     "Lifestyle coach for rheumatism and osteoarthritis",
-  "Resultaatgericht en persoonlijk": "Goal-focused and personal",
+  "Gegarandeerd resultaat": "Guaranteed results",
   "Wil jij:": "Would you like:",
   "Minder pijn": "Less pain",
   "Meer energie": "More energy",

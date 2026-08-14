@@ -72,7 +72,7 @@ const trustPoints = [
   },
   {
     title: "Gespecialiseerd in reuma en artrose",
-    stripTitle: "Resultaatgericht en persoonlijk",
+    stripTitle: "Gegarandeerd resultaat",
     icon: ShieldCheck,
     paragraphs: [
       "Mijn belangrijkste specialisatie ligt bij reuma en artrose.",
@@ -310,6 +310,12 @@ export function HomePageContent({ locale }: { locale: Locale }) {
                 situatie, mogelijkheden en doelen.
               </p>
               <div className="hero__actions">
+                <Link
+                  className="button button--solid button--gezondheidscheck"
+                  href={localizedPath("/gratis-gezondheidscheck/")}
+                >
+                  Gratis gezondheidscheck aanvragen
+                </Link>
                 <WhatsAppLink locale={locale} />
               </div>
             </Reveal>
@@ -474,7 +480,7 @@ export function HomePageContent({ locale }: { locale: Locale }) {
                   Leefstijlcoaching vervangt geen medische behandeling. Beslissingen over medicatie
                   bespreek je altijd met je behandelend arts.
                 </p>
-                <Link className="button" href="#gezondheidscheck">
+                <Link className="button button--solid button--gezondheidscheck" href="#gezondheidscheck">
                   Gratis gezondheidscheck aanvragen
                 </Link>
               </Reveal>

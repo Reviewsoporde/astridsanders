@@ -60,6 +60,7 @@ export function PageHero({
 }: PageHeroProps) {
   const [lead, ...details] = paragraphs;
   const detailEntries = groupDetails(details);
+  const isGezondheidscheckCta = ctaLabel.includes("Gratis gezondheidscheck");
 
   return (
     <section className="hero hero--sub" aria-labelledby="hero-title">
@@ -68,7 +69,10 @@ export function PageHero({
           <h1 id="hero-title">{title}</h1>
           {typeof lead === "string" ? <p className="hero__lead">{lead}</p> : null}
           <div className="hero__actions">
-            <Link className="button button--solid" href={ctaHref}>
+            <Link
+              className={`button button--solid${isGezondheidscheckCta ? " button--gezondheidscheck" : ""}`}
+              href={ctaHref}
+            >
               {translateText(ctaLabel, locale)}
             </Link>
             {secondaryCtaLabel ? (

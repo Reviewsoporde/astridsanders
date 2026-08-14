@@ -209,7 +209,7 @@ export function HealthCheckFormClient({
         </div>
       </fieldset>
 
-      <button className="button button--solid health-form__submit" type="submit" disabled={status === "submitting"}>
+      <button className="button button--solid button--gezondheidscheck health-form__submit" type="submit" disabled={status === "submitting"}>
         {status === "submitting" ? (labels.submitting as string) : (labels.submit as string)}
       </button>
 

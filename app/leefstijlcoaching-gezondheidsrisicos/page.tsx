@@ -313,7 +313,7 @@ export function GezondheidsrisicosPageContent({ locale }: { locale: Locale }) {
                 noodzakelijk. Leefstijlcoaching vervangt deze zorg niet en resultaten verschillen
                 per persoon.
               </p>
-              <Link className="button cta-inline" href="#gezondheidscheck">
+              <Link className="button button--solid button--gezondheidscheck cta-inline" href="#gezondheidscheck">
                 Gratis gezondheidscheck aanvragen
               </Link>
             </Reveal>

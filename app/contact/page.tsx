@@ -41,7 +41,7 @@ export function ContactPageContent({ locale }: { locale: Locale }) {
                 achter.
               </p>
               <Link
-                className="button cta-inline"
+                className="button button--solid button--gezondheidscheck cta-inline"
                 href={localizeHref("/gratis-gezondheidscheck/", locale)}
               >
                 Gratis gezondheidscheck aanvragen

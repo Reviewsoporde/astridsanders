@@ -4,8 +4,8 @@ export const zorgprofessionalsTranslations: Record<string, string> = {
   // Hero
   "Patiënten doorverwijzen naar aanvullende leefstijlcoaching":
     "Referring patients to complementary lifestyle coaching",
-  "Begeleidt u patiënten die naast een reguliere behandeling ondersteuning nodig hebben bij duurzame leefstijlverandering?":
-    "Do you treat patients who need support with lasting lifestyle change alongside regular treatment?",
+  "Begeleidt u patiënten die naast uw reguliere behandeling ondersteuning nodig hebben bij duurzame leefstijlverandering?":
+    "Do you treat patients who need support with lasting lifestyle change alongside your regular treatment?",
   "Astrid Sanders biedt persoonlijke leefstijlcoaching rondom:":
     "Astrid Sanders offers personal lifestyle coaching around:",
   Beweging: "Movement",

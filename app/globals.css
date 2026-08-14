@@ -24,6 +24,9 @@
   --brand-deep: #232b22;
   --accent: #c09877;
   --accent-hover: #ac8560;
+  /* Lighter tan fill reserved for "Gratis gezondheidscheck" CTAs specifically. */
+  --accent-light: #d8bda1;
+  --accent-light-hover: #c9a483;
 
   /*
    * The tan accent #c09877 is light, so unlike the previous palette it cannot
@@ -474,6 +477,25 @@ strong {
 .button--solid:hover {
   border-color: var(--accent-text);
   background: var(--accent-hover);
+  color: var(--on-accent);
+}
+
+/*
+ * Single source of truth for every "Gratis gezondheidscheck" CTA on the
+ * site (nav, footer, hero, inline links, forms), so they all share one
+ * lighter tan regardless of which base .button variant they start from.
+ * Paired with .button--solid on each usage so the band-context override
+ * below (`.button:not(.button--solid)`) still skips it.
+ */
+.button--gezondheidscheck {
+  border-color: var(--accent-text);
+  background: var(--accent-light);
+  color: var(--on-accent);
+}
+
+.button--gezondheidscheck:hover {
+  border-color: var(--accent-text);
+  background: var(--accent-light-hover);
   color: var(--on-accent);
 }
 
@@ -1204,7 +1226,8 @@ strong {
   width: var(--shell-width);
   margin-right: auto;
   margin-left: 0;
-  padding: 0 0 clamp(44px, 6vw, 88px) clamp(24px, 4vw, 56px);
+  align-self: start;
+  padding: clamp(120px, 30dvh, 300px) 0 clamp(44px, 6vw, 88px) clamp(24px, 4vw, 56px);
 }
 
 .hero--full .hero__copy h1 {
@@ -1321,6 +1344,17 @@ strong {
  */
 .trust-section--tight {
   padding-block: var(--space-xl) var(--section-feature);
+  /*
+   * Client request (2026-08): this one band reads as cream-on-black rather
+   * than the shared dark-olive band. --band-ink/--band-contrast drive every
+   * descendant colour rule above (headings, body copy, icons, links), so
+   * overriding them here recolours the whole section without touching the
+   * shared `.trust-section` band used on the other seven routes.
+   */
+  background: #faf7f0;
+  color: #000;
+  --band-ink: #000;
+  --band-contrast: #faf7f0;
 }
 
 .trust-card__head {
@@ -3675,7 +3709,7 @@ strong {
   }
 
   .hero--full .hero__copy {
-    padding: 0 0 32px;
+    padding: clamp(72px, 26dvh, 200px) 0 32px;
   }
 
   .hero--full .hero__copy h1 {

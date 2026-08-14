@@ -399,7 +399,7 @@ export function SiteHeader() {
               );
             })}
             <Link
-              className="button button--small button--solid"
+              className="button button--small button--solid button--gezondheidscheck"
               href={healthCheckPath}
               aria-label={labels.ctaFull}
             >
@@ -509,7 +509,7 @@ export function SiteHeader() {
                   </Link>
                 );
               })}
-              <Link className="button button--solid" href={healthCheckPath} onClick={() => setIsOpen(false)}>
+              <Link className="button button--solid button--gezondheidscheck" href={healthCheckPath} onClick={() => setIsOpen(false)}>
                 {labels.ctaFull}
               </Link>
             </div>

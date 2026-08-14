@@ -146,7 +146,7 @@ export function SiteFooter({ locale = "nl" }: { locale?: Locale }) {
             {isEnglish ? "Astrid on LinkedIn" : "Astrid op LinkedIn"}
           </a>
           <Link
-            className="button button--small button--solid"
+            className="button button--small button--solid button--gezondheidscheck"
             href={localizeHref("/gratis-gezondheidscheck/", locale)}
           >
             {isEnglish ? "Request a free health check" : "Gratis gezondheidscheck aanvragen"}

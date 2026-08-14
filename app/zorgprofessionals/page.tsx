@@ -328,7 +328,7 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
           locale={locale}
           title="Patiënten doorverwijzen naar aanvullende leefstijlcoaching"
           paragraphs={[
-            "Begeleidt u patiënten die naast een reguliere behandeling ondersteuning nodig hebben bij duurzame leefstijlverandering?",
+            "Begeleidt u patiënten die naast uw reguliere behandeling ondersteuning nodig hebben bij duurzame leefstijlverandering?",
             "Astrid Sanders biedt persoonlijke leefstijlcoaching rondom:",
             [
               "Voeding",
