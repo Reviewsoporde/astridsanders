@@ -325,8 +325,8 @@ const englishTranslations: Record<string, string> = {
   "Aangesloten bij de BLCN": "Member of BLCN",
   "Persoonlijke begeleiding rondom voeding, beweging, slaap, stress en dagelijkse gewoonten.":
     "Personal guidance around nutrition, movement, sleep, stress and daily habits.",
-  "Een vrouw fietst doelgericht door een Nederlandse stadsomgeving":
-    "A woman cycles purposefully through a Dutch urban setting",
+  "Een vrouw fietst doelgericht over een kustweg langs een fjord":
+    "A woman cycles purposefully along a coastal road beside a fjord",
   "Een vrouw werkt geconcentreerd aan haar kracht in een sportschool":
     "A woman focuses on building strength in a gym",
   "'s-Hertogenbosch — en online door heel Nederland":

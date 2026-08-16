@@ -88,7 +88,7 @@ Derived from the CSS so the crops actually survive the layout.
 | Hero | `generated/leefstijlcoaching-artrose-hero-v2.webp` | "Astrid Sanders loopt doelgericht een brede stadstrap op" | **Done** | Regenerated as purposeful everyday movement in an ordinary Dutch city setting, with Astrid right and copy-safe space left. |
 | Editorial 1 | `generated/artrose-movement.png` | "Een vrouw wandelt ontspannen over een houten pad door de duinen" | **R** | **This is the city-bike slot.** Woman ~40–50, ordinary Dutch city bike, ordinary street or park path, everyday clothes, no helmet, no elderly-couple framing, upright and relaxed but going somewhere. |
 | Editorial 2 | `generated/artrose-lifestyle-overview.png` | "Een vrouw bereidt na een wandeling een plantaardige maaltijd in haar keuken" | **K?** | On-register. Age variation candidate. |
-| Editorial 3 | `generated/artrose-personal-plan-v2.webp` | "Astrid Sanders bespreekt een haalbaar leefstijlplan met een cliënt" | **Done** | Regenerated with one male client around 50, a clear age/gender contrast, table, plan and neutral daylight. |
+| Editorial 3 | `generated/business-tailored-coaching.png` | "Astrid Sanders bespreekt aan tafel met deelnemers welke leefstijlveranderingen haalbaar zijn" | **Done** | Client swap (17 Aug 2026): reuses the Bedrijven Editorial 2 group-table shot. `artrose-personal-plan-v2.webp` is no longer referenced — archive it in the approved delete pass. |
 
 ### Gezondheidsrisico’s
 
@@ -103,7 +103,7 @@ Derived from the CSS so the crops actually survive the layout.
 | Slot | File | Current alt | | Direction |
 |---|---|---|---|---|
 | Hero | `generated/leefstijlcoaching-bedrijven-hero.png` | "Astrid Sanders begeleidt een praktische leefstijlworkshop voor medewerkers" | **K?** | On-register. Verify hair. |
-| Editorial 1 | `generated/business-workshop.png` | "Collega's bespreken samen praktische leefstijlgewoonten tijdens een workshop" | **K** | On-register. |
+| Editorial 1 | `generated/artrose-personal-plan-v2.webp` | "Astrid bespreekt een persoonlijk leefstijlplan met een medewerker aan de overlegtafel" | **K** | Replaced the group-workshop shot: one-on-one consult table, daylight, blazer, purposeful action. `business-workshop.png` is now unused. |
 | Editorial 2 | `generated/business-tailored-coaching.png` | "Leefstijlcoach en professionals stellen samen een praktisch programma op maat samen" | **K** | On-register. |
 | Editorial 3 | `generated/business-walking-meeting.png` | "Zakelijke professionals voeren buiten een ontspannen walking meeting" | **K** | **Already the most on-register photo in the whole set.** Use it as the reference for what "zakelijk" looks like when briefing the rest. |
 

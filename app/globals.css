@@ -602,9 +602,11 @@ strong {
 .wordmark {
   display: inline-flex;
 
-  /* The final client-supplied lockup is stacked at roughly 1.68:1. Keep it
-   * optically substantial without exceeding the compact sticky header. */
-  width: clamp(132px, 12vw, 160px);
+  /* The client-supplied lockup is horizontal at roughly 3.32:1, so width buys
+   * far less height than the old stacked mark did. These values land the logo
+   * at ~54-62px tall, which reads as substantial in the 112px header and still
+   * clears the 80px scrolled state after the 0.72 scale below. */
+  width: clamp(178px, 16vw, 206px);
   align-items: center;
   flex: 0 0 auto;
   transition: transform 280ms var(--ease-out);
@@ -3265,7 +3267,7 @@ strong {
 
 .site-footer__logo-link {
   display: inline-flex;
-  width: 200px;
+  width: 230px;
   margin-bottom: 20px;
 }
 
@@ -3964,7 +3966,7 @@ strong {
   }
 
   .wordmark {
-    width: 132px;
+    width: 150px;
   }
 
   .button {

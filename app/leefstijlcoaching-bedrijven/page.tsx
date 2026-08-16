@@ -455,8 +455,8 @@ export function BedrijvenPageContent({ locale }: { locale: Locale }) {
                 </p>
               </Reveal>
               <EditorialSectionImage
-                src="/images/generated/business-workshop.png"
-                alt="Collega's bespreken samen praktische leefstijlgewoonten tijdens een workshop"
+                src="/images/generated/artrose-personal-plan-v2.webp"
+                alt="Astrid bespreekt een persoonlijk leefstijlplan met een medewerker aan de overlegtafel"
               />
             </div>
 

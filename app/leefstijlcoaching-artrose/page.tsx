@@ -316,7 +316,7 @@ export function ArtrosePageContent({ locale }: { locale: Locale }) {
               </Reveal>
               <EditorialSectionImage
                 src="/images/generated/artrose-movement.webp"
-                alt="Een vrouw fietst doelgericht door een Nederlandse stadsomgeving"
+                alt="Een vrouw fietst doelgericht over een kustweg langs een fjord"
               />
             </div>
 
@@ -440,8 +440,8 @@ export function ArtrosePageContent({ locale }: { locale: Locale }) {
                 </p>
               </Reveal>
               <EditorialSectionImage
-                src="/images/generated/artrose-personal-plan-v2.webp"
-                alt="Astrid Sanders bespreekt een haalbaar leefstijlplan met een cliënt"
+                src="/images/generated/business-tailored-coaching.png"
+                alt="Astrid Sanders bespreekt aan tafel met deelnemers welke leefstijlveranderingen haalbaar zijn"
               />
             </div>
 

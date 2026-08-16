@@ -79,9 +79,9 @@ export function SiteFooter({ locale = "nl" }: { locale?: Locale }) {
               className="site-footer__logo"
               src="/brand/astrid-sanders-logo-reversed.png"
               alt=""
-              width={1000}
-              height={595}
-              sizes="200px"
+              width={1600}
+              height={482}
+              sizes="230px"
             />
           </Link>
           <p>

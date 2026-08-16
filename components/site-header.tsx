@@ -365,10 +365,10 @@ export function SiteHeader() {
             className="wordmark__image"
             src="/brand/astrid-sanders-logo-primary.png"
             alt=""
-            width={1000}
-            height={593}
+            width={1600}
+            height={482}
             priority
-            sizes="(max-width: 1159px) 132px, (max-width: 1390px) 12vw, 160px"
+            sizes="(max-width: 430px) 150px, (max-width: 1112px) 178px, (max-width: 1287px) 16vw, 206px"
           />
         </Link>
 
