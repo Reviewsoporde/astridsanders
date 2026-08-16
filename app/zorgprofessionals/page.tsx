@@ -470,8 +470,8 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
                 src="/images/generated/professional-practical-support.png"
                 alt={
                   locale === "en"
-                    ? "Lifestyle coach and client create a practical weekly plan together"
-                    : "Leefstijlcoach en cliënt maken samen een praktisch weekplan"
+                    ? "Lifestyle coach and client walking together on an outdoor trail"
+                    : "Leefstijlcoach en cliënt wandelen samen buiten over een pad"
                 }
               />
             </div>

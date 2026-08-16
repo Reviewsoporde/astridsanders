@@ -123,7 +123,7 @@ Derived from the CSS so the crops actually survive the layout.
 | Over Astrid hero | `generated/over-astrid-hero-v2.webp` | "Astrid Sanders werkt aan aantekeningen in haar coachingspraktijk" | **Done** | Regenerated as a practical working portrait with a clean left side for hero copy. |
 | Over Astrid media | `generated/about-astrid-v2.webp` | "Astrid Sanders beoordeelt een praktisch leefstijlplan aan haar werktafel" | **Done** | Regenerated as a tall, purposeful planning scene with Astrid centred for responsive crops. |
 | Health-check panel (5 sub-pages) | `generated/health-check-call.png` | "Astrid Sanders voert persoonlijk een telefonisch kennismakingsgesprek" | **K?** | Matches the new `PhoneCall` icon and the panel copy. Verify hair. Remember the bottom 34% fades out. |
-| Contact | `generated/contact-hero.png` | "Astrid Sanders schrijft persoonlijk een antwoord op een contactvraag" | **K?** | On-register. Verify hair. |
+| Contact | `generated/contact-hero.png` | "Portret van Astrid Sanders in de buitenlucht aan zee" | **Done** | Replaced 17 Aug 2026 by a client-supplied outdoor portrait at the coast. |
 | Gezondheidscheck | `generated/gratis-gezondheidscheck-hero.png` | "Astrid Sanders voert een persoonlijk telefoongesprek" | **K?** | On-register. Verify hair. |
 | OG / social only | `astrid-portrait-beach.png` | "Portret van Astrid Sanders op het strand" | **K?** | Never rendered on-page — it is only the Open Graph image in `app/layout.tsx`. Low priority. |
 
