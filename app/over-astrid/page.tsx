@@ -244,7 +244,7 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
               </a>
             </Reveal>
 
-            <Reveal className="recognition-media" delay={0.08}>
+            <Reveal className="recognition-media recognition-media--headroom" delay={0.08}>
               <Image
                 src="/images/generated/about-astrid-v2.webp"
                 alt="Astrid Sanders beoordeelt een praktisch leefstijlplan aan haar werktafel"

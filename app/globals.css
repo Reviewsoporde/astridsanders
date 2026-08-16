@@ -1476,6 +1476,11 @@ strong {
   object-fit: cover;
 }
 
+/* Portrait source in a landscape frame: bias the crop upward so the head keeps headroom. */
+.recognition-media--headroom img {
+  object-position: 50% 5%;
+}
+
 .recognition-content {
   min-width: 0;
 }
@@ -3158,8 +3163,14 @@ strong {
 }
 
 .contact-visual {
-  min-height: 320px;
+  min-height: 420px;
   margin-top: 28px;
+}
+
+/* 4:3 source in a landscape frame: bias the crop upward so the head keeps
+   headroom and the surplus is taken off the table instead. */
+.contact-visual img {
+  object-position: 50% 6%;
 }
 
 .contact-details {
