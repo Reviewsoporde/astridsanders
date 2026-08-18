@@ -451,6 +451,7 @@ export function GezondheidsrisicosPageContent({ locale }: { locale: Locale }) {
           locale={locale}
           title="Veelgestelde vragen over leefstijlcoaching en gezondheidsrisico’s"
           faqs={faqs}
+          source="leefstijlcoaching-gezondheidsrisicos"
         />
       </main>
 

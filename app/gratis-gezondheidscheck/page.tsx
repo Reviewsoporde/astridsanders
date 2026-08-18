@@ -64,7 +64,7 @@ export function GezondheidscheckPageContent({
                   contact met je op voor een kort en vrijblijvend telefoongesprek.
                 </p>
               </div>
-              <HealthCheckForm interest={interest} locale={locale} />
+              <HealthCheckForm interest={interest} locale={locale} source="gratis-gezondheidscheck" />
             </Reveal>
 
             <Reveal className="health-check-expectations" delay={0.04}>

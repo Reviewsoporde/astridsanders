@@ -1,8 +1,8 @@
 import { ArrowUpRight, Check, PhoneCall } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ContactForm } from "@/components/contact-form";
 import { EditorialSectionImage } from "@/components/editorial-section-image";
+import { HealthCheckForm } from "@/components/health-check-form";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
@@ -396,7 +396,7 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
                 </p>
                 <p>Vertel kort wat je nodig hebt of hoe ik je kan helpen.</p>
               </div>
-              <ContactForm locale={locale} />
+              <HealthCheckForm locale={locale} source="over-astrid" submitLabel="Bericht versturen" />
               <WhatsAppLink locale={locale} compact className="health-check-panel__whatsapp" />
             </Reveal>
           </div>

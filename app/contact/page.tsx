@@ -2,7 +2,7 @@ import { EnvelopeSimple, MapPin, Phone } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ContactForm } from "@/components/contact-form";
+import { HealthCheckForm } from "@/components/health-check-form";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppLink } from "@/components/whatsapp-link";
@@ -79,7 +79,7 @@ export function ContactPageContent({ locale }: { locale: Locale }) {
               <p>
                 Beschrijf kort je vraag of situatie. Astrid reageert meestal binnen twee werkdagen.
               </p>
-              <ContactForm locale={locale} />
+              <HealthCheckForm locale={locale} source="contact" submitLabel="Bericht versturen" />
             </Reveal>
           </div>
         </section>

@@ -604,6 +604,7 @@ export function ArtrosePageContent({ locale }: { locale: Locale }) {
           title="Veelgestelde vragen over leefstijlcoaching bij artrose"
           faqs={faqs}
           locale={locale}
+          source="leefstijlcoaching-artrose"
         />
       </main>
 

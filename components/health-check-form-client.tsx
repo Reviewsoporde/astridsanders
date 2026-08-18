@@ -3,7 +3,7 @@
 import { Check, CheckCircle, WarningCircle, WhatsappLogo } from "@phosphor-icons/react";
 import { FormEvent, useState } from "react";
 import type { HealthCheckInterest } from "@/lib/form-validation";
-import { translateText, type Locale } from "@/lib/i18n";
+import type { Locale } from "@/lib/i18n";
 import { whatsAppHref } from "@/lib/whatsapp";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
@@ -17,24 +17,25 @@ const copy = {
     badge: ["Gratis", "Telefonisch", "Geen verplichting"],
     name: "Naam",
     namePlaceholder: "Jouw naam",
+    email: "E-mailadres",
+    emailPlaceholder: "jouwnaam@voorbeeld.nl",
     phone: "Telefoonnummer",
     phonePlaceholder: "06 12 34 56 78",
     phoneHint: "Op dit nummer belt Astrid je; een landcode zoals +31 mag ook.",
-    preferredMoment: "Wanneer komt bellen je het beste uit?",
+    preferredMoment: "Wanneer kan ik je het beste bellen?",
     moments: [
       ["ochtend", "Ochtend"],
       ["middag", "Middag"],
       ["avond", "Avond"],
     ],
-    submitting: "Aanvraag versturen...",
+    submitting: "Versturen...",
     submit: "Gratis gezondheidscheck aanvragen",
     privacy: "Je gegevens worden alleen gebruikt om contact met je op te nemen over deze aanvraag.",
-    selectedInterest: "Je gekozen startpunt",
     directContact: "Liever direct contact?",
     emailAction: "Mail Astrid",
     orSeparator: "of",
     whatsappAction: "stuur een WhatsApp-bericht",
-    emailSubject: "Gratis gezondheidscheck aanvragen",
+    emailSubject: "Aanvraag via astridsanders.com",
   },
   en: {
     requestError: "The request could not be sent.",
@@ -44,24 +45,25 @@ const copy = {
     badge: ["Free", "By phone", "No obligation"],
     name: "Name",
     namePlaceholder: "Your name",
+    email: "Email address",
+    emailPlaceholder: "yourname@example.com",
     phone: "Phone number",
     phonePlaceholder: "+31 6 12 34 56 78",
     phoneHint: "Astrid will call you on this number; an international prefix such as +31 is fine.",
-    preferredMoment: "When is calling most convenient for you?",
+    preferredMoment: "When is the best time to call you?",
     moments: [
       ["ochtend", "Morning"],
       ["middag", "Afternoon"],
       ["avond", "Evening"],
     ],
-    submitting: "Sending request...",
+    submitting: "Sending...",
     submit: "Request a free health check",
     privacy: "Your details will only be used to contact you about this request.",
-    selectedInterest: "Your selected starting point",
     directContact: "Prefer direct contact?",
     emailAction: "Email Astrid",
     orSeparator: "or",
     whatsappAction: "send a WhatsApp message",
-    emailSubject: "Request a free health check",
+    emailSubject: "Request via astridsanders.com",
   },
 } satisfies Record<Locale, Record<string, string | string[] | string[][]>>;
 
@@ -69,25 +71,27 @@ type HealthCheckFormClientProps = {
   interest?: HealthCheckInterest;
   locale?: Locale;
   compact?: boolean;
+  /** Page identifier forwarded to the backend so GoHighLevel can see where the lead came from. Never shown in the UI. */
+  source?: string;
+  /** Lets each page keep its own existing submit-button copy while sharing the same field structure. */
+  submitLabel?: string;
 };
 
 export function HealthCheckFormClient({
   interest,
   locale = "nl",
   compact = false,
+  source,
+  submitLabel,
 }: HealthCheckFormClientProps) {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [message, setMessage] = useState("");
   const labels = copy[locale];
   const moments = labels.moments as string[][];
   const badge = labels.badge as string[];
-  const interestLabel = interest ? translateText(interest, locale) : undefined;
-  const emailBody = interest
-    ? `${labels.selectedInterest as string}: ${interestLabel}\n\n`
-    : "";
   const emailHref = `mailto:astrid@astridsanders.com?subject=${encodeURIComponent(
     labels.emailSubject as string,
-  )}${emailBody ? `&body=${encodeURIComponent(emailBody)}` : ""}`;
+  )}`;
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -105,9 +109,11 @@ export function HealthCheckFormClient({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: formData.get("name"),
+          email: formData.get("email"),
           phone: formData.get("phone"),
           preferredMoment: formData.get("preferredMoment"),
           interest,
+          source,
         }),
         signal: controller.signal,
       });
@@ -154,13 +160,6 @@ export function HealthCheckFormClient({
         ))}
       </ul>
 
-      {interest ? (
-        <p className="form-selection">
-          <span>{labels.selectedInterest as string}</span>
-          <strong>{interestLabel}</strong>
-        </p>
-      ) : null}
-
       <div className="field">
         <label htmlFor="name">{labels.name as string}</label>
         <input
@@ -176,6 +175,20 @@ export function HealthCheckFormClient({
       </div>
 
       <div className="field">
+        <label htmlFor="email">{labels.email as string}</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          inputMode="email"
+          autoComplete="email"
+          required
+          maxLength={200}
+          placeholder={labels.emailPlaceholder as string}
+        />
+      </div>
+
+      <div className="field">
         <label htmlFor="phone">{labels.phone as string}</label>
         <input
           id="phone"
@@ -186,7 +199,7 @@ export function HealthCheckFormClient({
           required
           minLength={8}
           maxLength={30}
-          pattern="[+]?[0-9 ().-]{8,30}"
+          pattern="[+]?[0-9 \(\)\.\-]{8,30}"
           aria-describedby={compact ? undefined : "phone-hint"}
           placeholder={labels.phonePlaceholder as string}
         />
@@ -210,7 +223,7 @@ export function HealthCheckFormClient({
       </fieldset>
 
       <button className="button button--solid button--gezondheidscheck health-form__submit" type="submit" disabled={status === "submitting"}>
-        {status === "submitting" ? (labels.submitting as string) : (labels.submit as string)}
+        {status === "submitting" ? (labels.submitting as string) : submitLabel ?? (labels.submit as string)}
       </button>
 
       {compact ? null : <p className="form-privacy">{labels.privacy as string}</p>}

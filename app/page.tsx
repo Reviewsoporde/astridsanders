@@ -335,7 +335,7 @@ export function HomePageContent({ locale }: { locale: Locale }) {
                   fill
                   priority
                   sizes="100vw"
-                  style={{ objectPosition: "78% 22%" }}
+                  style={{ objectPosition: "78% 10%" }}
                 />
               </div>
             </Reveal>
@@ -716,7 +716,7 @@ export function HomePageContent({ locale }: { locale: Locale }) {
                   contact met je op voor een kort en vrijblijvend telefoongesprek.
                 </p>
               </div>
-              <HealthCheckForm locale={locale} />
+              <HealthCheckForm locale={locale} source="home" />
             </Reveal>
           </div>
         </section>

@@ -1,11 +1,18 @@
 import { NextResponse } from "next/server";
-import { getHealthCheckInterest, isValidPhone } from "@/lib/form-validation";
+import {
+  getFormSource,
+  getHealthCheckInterest,
+  isValidEmail,
+  isValidPhone,
+} from "@/lib/form-validation";
 
 type HealthCheckRequest = {
   name?: unknown;
+  email?: unknown;
   phone?: unknown;
   preferredMoment?: unknown;
   interest?: unknown;
+  source?: unknown;
 };
 
 const validMoments = new Set(["ochtend", "middag", "avond"]);
@@ -23,20 +30,23 @@ export async function POST(request: Request) {
   }
 
   const name = typeof body.name === "string" ? body.name.trim() : "";
+  const email = typeof body.email === "string" ? body.email.trim() : "";
   const phone = typeof body.phone === "string" ? body.phone.trim() : "";
   const preferredMoment =
     typeof body.preferredMoment === "string" ? body.preferredMoment : "";
   const interest = getHealthCheckInterest(body.interest);
+  const source = getFormSource(body.source) ?? "gratis-gezondheidscheck";
 
   if (
     name.length < 2 ||
     name.length > 100 ||
+    !isValidEmail(email) ||
     !isValidPhone(phone) ||
     (body.interest !== undefined && !interest) ||
     !validMoments.has(preferredMoment)
   ) {
     return NextResponse.json(
-      { message: "Controleer je naam, telefoonnummer en voorkeursmoment." },
+      { message: "Controleer je naam, e-mailadres, telefoonnummer en voorkeursmoment." },
       { status: 400 },
     );
   }
@@ -59,10 +69,11 @@ export async function POST(request: Request) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         name,
+        email,
         phone,
         preferredMoment,
         interest,
-        source: "astridsanders.com/gratis-gezondheidscheck",
+        source: `astridsanders.com/${source}`,
         submittedAt: new Date().toISOString(),
       }),
       cache: "no-store",

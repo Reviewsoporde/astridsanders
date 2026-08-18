@@ -1258,7 +1258,14 @@ strong {
 
 .hero--full .hero__grid {
   width: 100%;
-  min-height: clamp(560px, calc(100dvh - var(--header-height)), 780px);
+  /*
+   * Raised from 780px so wide desktop viewports (>1387px, where the hero's
+   * width-driven object-fit: cover scale starts cropping the top of the
+   * hero photo) show more of the subject's head/hair and body instead of
+   * zooming in past the frame. Tablet/mobile already had no vertical crop
+   * at 780px and are unaffected in practice.
+   */
+  min-height: clamp(560px, calc(100dvh - var(--header-height)), 900px);
   border-radius: 0;
   box-shadow: none;
 }

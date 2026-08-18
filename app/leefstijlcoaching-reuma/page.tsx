@@ -577,6 +577,7 @@ export function ReumaPageContent({ locale }: { locale: Locale }) {
           locale={locale}
           title="Veelgestelde vragen over leefstijlcoaching bij reuma"
           faqs={faqs}
+          source="leefstijlcoaching-reuma"
         />
       </main>
 

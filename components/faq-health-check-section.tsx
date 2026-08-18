@@ -1,11 +1,10 @@
 import { PhoneCall } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
-import { ContactForm, type ContactFormContext } from "@/components/contact-form";
 import { FAQList } from "@/components/faq-list";
 import { HealthCheckForm } from "@/components/health-check-form";
 import { Reveal } from "@/components/reveal";
-import { WhatsAppLink } from "@/components/whatsapp-link";
 import { localizeReactNode, localizeValue, type Locale } from "@/lib/i18n";
+import type { FormSource } from "@/lib/form-validation";
 
 type FAQ = {
   question: string;
@@ -16,23 +15,23 @@ type FaqHealthCheckSectionProps = {
   title: string;
   faqs: FAQ[];
   locale?: Locale;
-  formKind?: "health-check" | "contact";
+  source: FormSource;
   formTitle?: string;
   formDescription?: string | string[];
   formHeadingLevel?: "h2" | "p";
-  contactContext?: ContactFormContext;
+  submitLabel?: string;
 };
 
 export function FaqHealthCheckSection({
   title,
   faqs,
   locale = "nl",
-  formKind = "health-check",
+  source,
   formTitle = "Gratis gezondheidscheck aanvragen",
   formDescription =
     "Laat je naam, telefoonnummer en voorkeursmoment achter. Astrid neemt persoonlijk contact met je op voor een kort en vrijblijvend telefoongesprek.",
   formHeadingLevel = "p",
-  contactContext = "contact",
+  submitLabel,
 }: FaqHealthCheckSectionProps) {
   const localizedFaqs = localizeValue(faqs, locale);
   const faqSchema = {
@@ -84,15 +83,7 @@ export function FaqHealthCheckSection({
               <p>{formDescription}</p>
             )}
           </div>
-          {formKind === "contact" ? (
-            <>
-              <ContactForm locale={locale} context={contactContext} />
-              {/* The health-check form carries WhatsApp in its own footer; the contact form does not. */}
-              <WhatsAppLink locale={locale} compact className="health-check-panel__whatsapp" />
-            </>
-          ) : (
-            <HealthCheckForm locale={locale} />
-          )}
+          <HealthCheckForm locale={locale} source={source} submitLabel={submitLabel} />
         </Reveal>
       </div>
 

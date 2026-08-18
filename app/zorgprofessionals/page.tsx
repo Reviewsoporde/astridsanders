@@ -710,10 +710,10 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
           locale={locale}
           title="Veelgestelde vragen voor zorgprofessionals"
           faqs={faqs}
-          formKind="contact"
+          source="zorgprofessionals"
           formTitle="Bespreek samenwerking"
           formDescription="Beschrijf kort je vraag over samenwerking of een mogelijke doorverwijzing. Astrid neemt persoonlijk contact met je op."
-          contactContext="zorgprofessionals"
+          submitLabel="Bericht versturen"
         />
       </main>
 

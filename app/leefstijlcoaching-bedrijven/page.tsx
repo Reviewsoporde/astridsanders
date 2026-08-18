@@ -724,10 +724,10 @@ export function BedrijvenPageContent({ locale }: { locale: Locale }) {
           title="Veelgestelde vragen over leefstijlcoaching voor bedrijven"
           faqs={faqs}
           locale={locale}
-          formKind="contact"
+          source="leefstijlcoaching-bedrijven"
           formTitle="Bespreek de mogelijkheden"
           formDescription="Vertel kort wat jouw organisatie nodig heeft. Astrid neemt persoonlijk contact op om de mogelijkheden te bespreken."
-          contactContext="business"
+          submitLabel="Bericht versturen"
         />
       </main>
 
