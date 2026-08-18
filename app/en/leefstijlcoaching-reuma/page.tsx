@@ -4,7 +4,7 @@ import { ReumaPageContent } from "@/app/leefstijlcoaching-reuma/page";
 export const metadata: Metadata = {
   title: "Lifestyle Coaching for Rheumatism",
   description:
-    "Lifestyle coaching for rheumatism in Den Bosch and online. Work practically on nutrition, sleep, stress, movement and lasting habits.",
+    "Lifestyle coaching for rheumatism, throughout the Netherlands and in 's-Hertogenbosch. Work practically on nutrition, sleep, stress, movement and lasting habits.",
   alternates: {
     canonical: "/en/leefstijlcoaching-reuma/",
     languages: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: "/en/leefstijlcoaching-reuma/",
     title: "Lifestyle Coaching for Rheumatism",
     description:
-      "Lifestyle coaching for rheumatism in Den Bosch and online. Work practically on nutrition, sleep, stress, movement and lasting habits.",
+      "Lifestyle coaching for rheumatism, throughout the Netherlands and in 's-Hertogenbosch. Work practically on nutrition, sleep, stress, movement and lasting habits.",
   },
 };
 

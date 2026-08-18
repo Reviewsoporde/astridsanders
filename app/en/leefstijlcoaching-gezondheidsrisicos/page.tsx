@@ -4,7 +4,7 @@ import { GezondheidsrisicosPageContent } from "@/app/leefstijlcoaching-gezondhei
 export const metadata: Metadata = {
   title: "Lifestyle Coaching for Your Health",
   description:
-    "Personal lifestyle coaching for weight, blood pressure, blood sugar, stress and other health risks. Available in Den Bosch and online.",
+    "Personal lifestyle coaching for weight, blood pressure, blood sugar, stress and other health risks. Available throughout the Netherlands and in 's-Hertogenbosch.",
   alternates: {
     canonical: "/en/leefstijlcoaching-gezondheidsrisicos/",
     languages: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: "/en/leefstijlcoaching-gezondheidsrisicos/",
     title: "Lifestyle Coaching for Your Health",
     description:
-      "Personal lifestyle coaching for weight, blood pressure, blood sugar, stress and other health risks. Available in Den Bosch and online.",
+      "Personal lifestyle coaching for weight, blood pressure, blood sugar, stress and other health risks. Available throughout the Netherlands and in 's-Hertogenbosch.",
   },
 };
 

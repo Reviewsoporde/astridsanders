@@ -4,7 +4,7 @@ import { ContactPageContent } from "@/app/contact/page";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Astrid Sanders, lifestyle coach in Den Bosch. Send a message, email or WhatsApp, or request a free health check straight away.",
+    "Get in touch with Astrid Sanders, lifestyle coach for individuals, businesses and healthcare professionals. Send a message, email, or request a free health check.",
   alternates: {
     canonical: "/en/contact/",
     languages: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: "/en/contact/",
     title: "Contact",
     description:
-      "Get in touch with Astrid Sanders, lifestyle coach in Den Bosch. Send a message, email or WhatsApp, or request a free health check straight away.",
+      "Get in touch with Astrid Sanders, lifestyle coach for individuals, businesses and healthcare professionals. Send a message, email, or request a free health check.",
   },
 };
 

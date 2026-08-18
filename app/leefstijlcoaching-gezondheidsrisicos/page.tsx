@@ -12,13 +12,9 @@ import { localizeHref, localizeReactNode, type Locale } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: { absolute: "Leefstijlcoaching voor jouw Gezondheid | Astrid Sanders" },
   description:
-    "Persoonlijke leefstijlcoaching bij overgewicht, hoge bloeddruk, verhoogde bloedsuiker, stress en andere gezondheidsrisico’s. In Den Bosch en online.",
+    "Persoonlijke leefstijlcoaching bij overgewicht, hoge bloeddruk, verhoogde bloedsuiker, stress en andere gezondheidsrisico’s. Landelijk online en in 's-Hertogenbosch.",
   alternates: {
     canonical: "/leefstijlcoaching-gezondheidsrisicos/",
-    languages: {
-      "nl-NL": "/leefstijlcoaching-gezondheidsrisicos/",
-      en: "/en/leefstijlcoaching-gezondheidsrisicos/",
-    },
   },
 };
 
@@ -28,13 +24,15 @@ const recognitionColumns = [
     title: "Gezondheidsvragen en klachten",
     intro: "Leefstijlcoaching kan passend zijn wanneer je bijvoorbeeld:",
     items: [
-      "Overgewicht hebt of moeite hebt met afvallen",
+      "Overgewicht of obesitas hebt, of moeite hebt met afvallen",
       "Leeft met diabetes type 2, hoge bloeddruk of verhoogd cholesterol",
       "Hart- en vaatklachten hebt of na medische revalidatie verder wilt werken aan dagelijkse gewoonten",
+      "Leeft met jicht, reumatoïde artritis of een andere reumatische aandoening",
       "Gewrichts- of rugklachten ervaart in combinatie met overgewicht",
       "Stress, overspannenheid of burn-outklachten ervaart",
       "Leeft met COPD of astma en wilt werken aan conditie en dagelijkse gewoonten",
       "Weinig energie hebt of je niet fit voelt",
+      "Wilt werken aan ongezonde gewoonten of een verslaving, in aanvulling op passende zorg",
     ],
   },
   {
@@ -171,7 +169,7 @@ const processSteps = [
   {
     title: "Persoonlijke coaching",
     paragraphs: [
-      "We stemmen de begeleiding af op jouw situatie, doelen en tempo. Gesprekken kunnen plaatsvinden in Den Bosch, online of in een combinatie daarvan.",
+      "We stemmen de begeleiding af op jouw situatie, doelen en tempo. Gesprekken kunnen online plaatsvinden, persoonlijk in en rond 's-Hertogenbosch, of in een combinatie daarvan.",
       "Je kunt kiezen voor een intake, een los gesprek of een traject van twaalf weken. Daarna bespreken we alleen als dat nodig is een passend vervolg.",
     ],
   },
@@ -244,7 +242,7 @@ const faqs = [
   {
     question: "Kan de coaching online plaatsvinden?",
     answer: [
-      "Ja. Coaching kan online, in Den Bosch of in een combinatie daarvan plaatsvinden.",
+      "Ja. Coaching kan online plaatsvinden, persoonlijk in en rond 's-Hertogenbosch, of in een combinatie daarvan.",
       "Tijdens de gezondheidscheck bespreken we welke vorm praktisch bij jou past.",
     ],
   },
@@ -266,8 +264,8 @@ export function GezondheidsrisicosPageContent({ locale }: { locale: Locale }) {
           title="Leefstijlcoaching voor jouw gezondheid"
           paragraphs={[
             "Overgewicht, hoge bloeddruk, verhoogde bloedsuiker, stress of gewrichtsklachten kunnen veel invloed hebben op je dagelijks leven. Vaak spelen meerdere factoren tegelijk.",
-            "Met persoonlijke leefstijlcoaching onderzoeken we welke haalbare veranderingen in voeding, beweging, slaap, stress en dagelijkse gewoonten bij jouw situatie passen.",
-            "De coaching is aanvullend op reguliere zorg en is beschikbaar in Den Bosch, online of in een combinatie daarvan.",
+            "Met persoonlijke leefstijlcoaching onderzoeken we welke haalbare veranderingen in voeding, beweging, slaap, stress en dagelijkse gewoonten bij jouw situatie passen, gericht op meer energie, minder klachten en een betere kwaliteit van leven.",
+            "De coaching is aanvullend op reguliere zorg en beschikbaar landelijk online, en persoonlijk in en rond 's-Hertogenbosch. Voor de intake kom ik eventueel bij je langs; dat bespreken we tijdens het gratis eerste gesprek.",
           ]}
           image={{
             src: "/images/generated/gezondheidsrisicos-hero.webp",
@@ -325,6 +323,12 @@ export function GezondheidsrisicosPageContent({ locale }: { locale: Locale }) {
             <div className="section-intro-with-media">
               <Reveal className="section-heading section-heading--narrow">
                 <h2 id="influence-title">Welke rol kan leefstijlcoaching spelen?</h2>
+                <p>
+                  Veel chronische aandoeningen, zoals diabetes type 2, hart- en vaatziekten, reuma
+                  en artrose, hebben een gemeenschappelijke factor: chronische laaggradige
+                  ontsteking, oftewel inflammatie. Voeding, beweging, ontspanning en slaap kunnen
+                  invloed hebben op deze processen.
+                </p>
                 <p>
                   Een leefstijlplan brengt voeding, beweging, slaap, herstel en stress samen. Niet
                   als standaardrecept, maar als praktische aanpak die aansluit op jouw doelen,

@@ -11,25 +11,21 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://astridsanders.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Leefstijlcoach Den Bosch bij Reuma & Artrose | Astrid",
+    default: "Leefstijlcoach bij Reuma & Artrose | Astrid",
     template: "%s | Astrid Sanders",
   },
   description:
-    "Persoonlijke leefstijlcoaching in Den Bosch en online voor mensen met reuma en artrose. Vraag een gratis gezondheidscheck aan.",
+    "Persoonlijke leefstijlcoaching door heel Nederland en in 's-Hertogenbosch voor mensen met reuma en artrose. Vraag een gratis gezondheidscheck aan.",
   alternates: {
     canonical: "/",
-    languages: {
-      "nl-NL": "/",
-      en: "/en/",
-    },
   },
   openGraph: {
     type: "website",
     locale: "nl_NL",
     siteName: "Astrid Sanders Leefstijlcoaching",
-    title: "Leefstijlcoach Den Bosch bij Reuma & Artrose | Astrid",
+    title: "Leefstijlcoach bij Reuma & Artrose | Astrid",
     description:
-      "Persoonlijke leefstijlcoaching in Den Bosch en online voor mensen met reuma en artrose. Vraag een gratis gezondheidscheck aan.",
+      "Persoonlijke leefstijlcoaching door heel Nederland en in 's-Hertogenbosch voor mensen met reuma en artrose. Vraag een gratis gezondheidscheck aan.",
     images: [
       {
         url: "/images/astrid-portrait-beach.png",

@@ -22,8 +22,8 @@ export function WhatsAppLink({
     >
       <WhatsappLogo size={compact ? 20 : 22} weight="regular" aria-hidden="true" />
       {locale === "en"
-        ? "Prefer WhatsApp? Send Astrid a message"
-        : "Liever eerst appen? Stuur een WhatsApp-bericht"}
+        ? "Have a question? Get in touch via WhatsApp"
+        : "Heb je vragen? Neem contact met me op via WhatsApp"}
     </a>
   );
 }

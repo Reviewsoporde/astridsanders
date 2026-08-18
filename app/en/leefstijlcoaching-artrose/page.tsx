@@ -4,7 +4,7 @@ import { ArtrosePageContent } from "@/app/leefstijlcoaching-artrose/page";
 export const metadata: Metadata = {
   title: "Lifestyle Coaching for Osteoarthritis",
   description:
-    "Personal lifestyle coaching for osteoarthritis in Den Bosch and online. Work practically on nutrition, movement, sleep and lasting habits.",
+    "Personal lifestyle coaching for osteoarthritis, throughout the Netherlands and in 's-Hertogenbosch. Work practically on nutrition, movement, sleep and lasting habits.",
   alternates: {
     canonical: "/en/leefstijlcoaching-artrose/",
     languages: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: "/en/leefstijlcoaching-artrose/",
     title: "Lifestyle Coaching for Osteoarthritis",
     description:
-      "Personal lifestyle coaching for osteoarthritis in Den Bosch and online. Work practically on nutrition, movement, sleep and lasting habits.",
+      "Personal lifestyle coaching for osteoarthritis, throughout the Netherlands and in 's-Hertogenbosch. Work practically on nutrition, movement, sleep and lasting habits.",
   },
 };
 

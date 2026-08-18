@@ -34,49 +34,6 @@ function getBasePath(pathname: string) {
   return basePath.endsWith("/") ? basePath : `${basePath}/`;
 }
 
-function LanguageToggle({
-  locale,
-  pathname,
-  onNavigate,
-}: {
-  locale: Locale;
-  pathname: string;
-  onNavigate?: () => void;
-}) {
-  const basePath = getBasePath(pathname);
-  const englishPath = localizeHref(basePath, "en");
-  const labels = locale === "en"
-    ? { group: "Choose language", nl: "Switch to Dutch", en: "English selected" }
-    : { group: "Kies taal", nl: "Nederlands geselecteerd", en: "Schakel naar Engels" };
-
-  return (
-    <div className="language-toggle" role="group" aria-label={labels.group}>
-      <Link
-        className={`language-toggle__option ${locale === "nl" ? "is-active" : ""}`}
-        href={basePath}
-        hrefLang="nl"
-        lang="nl"
-        aria-label={labels.nl}
-        aria-current={locale === "nl" ? "page" : undefined}
-        onClick={onNavigate}
-      >
-        NL
-      </Link>
-      <Link
-        className={`language-toggle__option ${locale === "en" ? "is-active" : ""}`}
-        href={englishPath}
-        hrefLang="en"
-        lang="en"
-        aria-label={labels.en}
-        aria-current={locale === "en" ? "page" : undefined}
-        onClick={onNavigate}
-      >
-        EN
-      </Link>
-    </div>
-  );
-}
-
 export function SiteHeader() {
   const pathname = usePathname();
   const locale: Locale = pathname === "/en" || pathname.startsWith("/en/") ? "en" : "nl";
@@ -407,8 +364,6 @@ export function SiteHeader() {
             </Link>
           </nav>
 
-          <LanguageToggle locale={locale} pathname={pathname} />
-
           <button
             ref={menuButtonRef}
             className="menu-button"
@@ -433,13 +388,6 @@ export function SiteHeader() {
             aria-label={labels.mobileNavigation}
           >
             <div className="shell mobile-nav__inner">
-              <div className="mobile-nav__language">
-                <LanguageToggle
-                  locale={locale}
-                  pathname={pathname}
-                  onNavigate={() => setIsOpen(false)}
-                />
-              </div>
               <Link
                 className={activePath === "/" ? "is-active" : undefined}
                 href={homePath}

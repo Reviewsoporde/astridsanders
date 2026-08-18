@@ -14,10 +14,6 @@ export const metadata: Metadata = {
     "Praktische leefstijlcoaching voor bedrijven met workshops, groepscoaching, gezondheidschecks en persoonlijke begeleiding voor medewerkers.",
   alternates: {
     canonical: "/leefstijlcoaching-bedrijven/",
-    languages: {
-      "nl-NL": "/leefstijlcoaching-bedrijven/",
-      en: "/en/leefstijlcoaching-bedrijven/",
-    },
   },
 };
 
@@ -31,7 +27,7 @@ const employeeChallenges = [
   "Veel zitten en weinig bewegen",
   "Slecht slapen of onvoldoende herstel",
   "Een verstoorde balans tussen werk en privé",
-  "Verslavingen en ongezonde gewoonten",
+  "Medewerkers met overgewicht of verslavingen",
   "Gezonde voornemens die snel wegvallen",
   "Gezondheidsklachten die invloed hebben op het dagelijks functioneren",
 ];
@@ -227,10 +223,12 @@ const audienceCards: { title: string; blocks: ContentBlock[] }[] = [
         kind: "list",
         items: [
           "Veel verantwoordelijkheid draagt",
+          "Stress of mentale klachten ervaart door de functie",
+          "Merkt dat werk en privé uit balans raken",
           "Moeite heeft om voldoende te herstellen",
           "Gezondheid structureel ondergeschikt maakt aan werk",
           "Onregelmatig eet of beweegt",
-          "Klachten ervaart die invloed hebben op functioneren",
+          "Fysieke klachten of gezondheidsklachten ervaart die invloed hebben op functioneren",
           "Een persoonlijke en discrete aanpak zoekt",
         ],
       },
@@ -518,7 +516,11 @@ export function BedrijvenPageContent({ locale }: { locale: Locale }) {
                 en organisatie, onder meer door salaris, vervanging, productiviteitsverlies,
                 begeleiding en omzetverlies.
               </p>
-              <p>Leefstijlcoaching garandeert geen lager ziekteverzuim of kostenbesparing.</p>
+              <p>
+                Een preventief leefstijl- of stresstraject is vaak veel goedkoper dan één
+                langdurig verzuimgeval. Leefstijlcoaching garandeert geen lager ziekteverzuim of
+                kostenbesparing, maar draagt bij aan vitalere, gezondere medewerkers.
+              </p>
               <p>
                 Leefstijlcoaching vervangt geen bedrijfsarts, medische behandeling, fysiotherapie of
                 arbeidsdeskundig advies.
@@ -724,7 +726,7 @@ export function BedrijvenPageContent({ locale }: { locale: Locale }) {
           locale={locale}
           formKind="contact"
           formTitle="Bespreek de mogelijkheden"
-          formDescription="Vertel kort wat uw organisatie nodig heeft. Astrid neemt persoonlijk contact op om de mogelijkheden te bespreken."
+          formDescription="Vertel kort wat jouw organisatie nodig heeft. Astrid neemt persoonlijk contact op om de mogelijkheden te bespreken."
           contactContext="business"
         />
       </main>

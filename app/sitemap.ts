@@ -10,15 +10,6 @@ const routes: Array<{ path: string; priority: number }> = [
   { path: "/over-astrid/", priority: 0.7 },
   { path: "/gratis-gezondheidscheck/", priority: 0.9 },
   { path: "/contact/", priority: 0.6 },
-  { path: "/en/", priority: 0.5 },
-  { path: "/en/leefstijlcoaching-reuma/", priority: 0.5 },
-  { path: "/en/leefstijlcoaching-artrose/", priority: 0.5 },
-  { path: "/en/leefstijlcoaching-gezondheidsrisicos/", priority: 0.4 },
-  { path: "/en/leefstijlcoaching-bedrijven/", priority: 0.4 },
-  { path: "/en/zorgprofessionals/", priority: 0.4 },
-  { path: "/en/over-astrid/", priority: 0.4 },
-  { path: "/en/gratis-gezondheidscheck/", priority: 0.5 },
-  { path: "/en/contact/", priority: 0.3 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

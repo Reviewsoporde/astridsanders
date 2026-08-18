@@ -410,8 +410,16 @@ strong {
   justify-content: center;
   gap: var(--space-xs);
   padding: var(--space-sm) var(--space-lg);
+  padding-inline: clamp(26px, 3vw, 36px);
   border: 2px solid currentcolor;
-  border-radius: var(--radius-control);
+  /*
+   * Client-directed exception (2026-08 revision) to the site's default flat,
+   * near-square button language: every button on the site now shares the
+   * same fully rounded "pill" shape (previously only the gezondheidscheck
+   * CTA had this). See CLAUDE.md's zakelijk-lens "never pill radii outside
+   * segmented controls" rule — that rule is intentionally superseded here.
+   */
+  border-radius: 999px;
   background: transparent;
   color: var(--accent-text);
   box-shadow: none;
@@ -483,20 +491,45 @@ strong {
 /*
  * Single source of truth for every "Gratis gezondheidscheck" CTA on the
  * site (nav, footer, hero, inline links, forms), so they all share one
- * lighter tan regardless of which base .button variant they start from.
+ * treatment regardless of which base .button variant they start from.
  * Paired with .button--solid on each usage so the band-context override
- * below (`.button:not(.button--solid)`) still skips it.
+ * above (`.button:not(.button--solid)`) still skips it.
+ *
+ * Client-directed exception (2026-08 revision) to the site's default flat,
+ * near-square button language: this specific CTA gets a rounded, dark
+ * green, gold-glow "premium" treatment site-wide, per explicit client
+ * reference screenshots. No other button on the site uses this style.
  */
 .button--gezondheidscheck {
-  border-color: var(--accent-text);
-  background: var(--accent-light);
-  color: var(--on-accent);
+  border-color: color-mix(in srgb, var(--accent) 65%, transparent);
+  border-radius: 999px;
+  background: var(--brand-deep);
+  color: var(--accent-ink);
+  padding-inline: clamp(28px, 4vw, 44px);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent),
+    0 8px 22px color-mix(in srgb, var(--brand-deep) 38%, transparent),
+    0 0 24px color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
 .button--gezondheidscheck:hover {
-  border-color: var(--accent-text);
-  background: var(--accent-light-hover);
-  color: var(--on-accent);
+  border-color: color-mix(in srgb, var(--accent) 85%, transparent);
+  background: color-mix(in srgb, var(--brand-deep) 90%, black);
+  color: var(--accent-ink);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent) 60%, transparent),
+    0 10px 28px color-mix(in srgb, var(--brand-deep) 42%, transparent),
+    0 0 32px color-mix(in srgb, var(--accent) 42%, transparent);
+}
+
+.button--gezondheidscheck::after {
+  width: 1em;
+  margin-left: 0.6em;
+  opacity: 1;
+}
+
+.button--gezondheidscheck.button--small {
+  padding-inline: clamp(20px, 3vw, 32px);
 }
 
 /* Ghost button sitting on a colour band or on hero photography. */
@@ -526,6 +559,7 @@ strong {
 .button--small {
   min-height: 44px;
   padding: var(--space-sm) var(--space-md);
+  padding-inline: clamp(20px, 3vw, 28px);
   font-size: 0.7rem;
 }
 
@@ -830,11 +864,18 @@ strong {
   min-height: 40px;
   margin-left: 10px;
   padding: 10px 16px;
-  border-radius: var(--radius-control);
-  box-shadow: none;
+  padding-inline: clamp(18px, 2.4vw, 22px);
   font-size: 0.68rem;
   letter-spacing: 0.1em;
   white-space: nowrap;
+}
+
+/* The gezondheidscheck CTA keeps its glow treatment even at nav size. */
+.desktop-nav .button--small.button--gezondheidscheck {
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent),
+    0 6px 16px color-mix(in srgb, var(--brand-deep) 34%, transparent),
+    0 0 16px color-mix(in srgb, var(--accent) 28%, transparent);
 }
 
 .menu-button {
@@ -845,7 +886,7 @@ strong {
   justify-content: center;
   margin-left: 2px;
   border: 1px solid var(--line);
-  border-radius: var(--radius-control);
+  border-radius: 999px;
   background: transparent;
   color: var(--text);
   cursor: pointer;
@@ -961,8 +1002,6 @@ strong {
 
 .mobile-nav__inner > .button {
   margin-top: var(--space-lg);
-  border-radius: var(--radius-control);
-  box-shadow: none;
 }
 
 .mobile-nav__group {
@@ -1226,8 +1265,7 @@ strong {
 
 .hero--full .hero__copy {
   width: var(--shell-width);
-  margin-right: auto;
-  margin-left: 0;
+  margin-inline: auto;
   align-self: start;
   padding: clamp(120px, 30dvh, 300px) 0 clamp(44px, 6vw, 88px) clamp(24px, 4vw, 56px);
 }
@@ -2515,9 +2553,8 @@ strong {
 .price-card .button {
   width: 100%;
   margin-top: auto;
-  padding-inline: 12px;
+  padding-inline: 20px;
   border-color: currentcolor;
-  border-radius: var(--radius-control);
   background: transparent;
   color: var(--brand);
   box-shadow: none;

@@ -1,23 +1,20 @@
 import { ArrowUpRight, Check, PhoneCall } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { ContactForm } from "@/components/contact-form";
 import { EditorialSectionImage } from "@/components/editorial-section-image";
-import { HealthCheckForm } from "@/components/health-check-form";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
+import { WhatsAppLink } from "@/components/whatsapp-link";
 import { localizeReactNode, type Locale } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Over Astrid",
   description:
-    "Lees het persoonlijke verhaal, de professionele achtergrond en de registraties van leefstijlcoach Astrid Sanders in Den Bosch.",
+    "Lees het persoonlijke verhaal, de professionele achtergrond en de registraties van leefstijlcoach Astrid Sanders.",
   alternates: {
     canonical: "/over-astrid/",
-    languages: {
-      "nl-NL": "/over-astrid/",
-      en: "/en/over-astrid/",
-    },
   },
 };
 
@@ -109,7 +106,7 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
               <p>
                 Daarom ging ik zelf op zoek naar oplossingen. Ik probeerde onder andere vasten,
                 acupunctuur, de Wim Hof-methode, orthomoleculaire therapie, supplementen, yoga en
-                verschillende voedingspatronen. Hoewel sommige dingen tijdelijk hielpen, bleef ik
+                verschillende voedingspatronen. Hoewel sommige acties tijdelijk hielpen, bleef ik
                 zoeken naar een aanpak die écht bij mij paste.
               </p>
               <p>
@@ -130,7 +127,8 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
               </p>
               <p className="story-copy__important">
                 Die ervaring veranderde mijn leven. Dit is mijn persoonlijke ervaring en geen
-                garantie dat anderen hetzelfde resultaat bereiken.
+                garantie dat anderen hetzelfde resultaat bereiken. Wel denk ik graag met je mee of
+                een vergelijkbare aanpak ook voor jou kan werken.
               </p>
 
               <h2>Waarom ik leefstijlcoach ben geworden</h2>
@@ -138,6 +136,12 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
                 Tijdens mijn eigen zoektocht merkte ik hoe moeilijk het is om betrouwbare
                 informatie te vinden, ongezonde gewoonten te veranderen én nieuwe keuzes
                 daadwerkelijk vol te houden.
+              </p>
+              <p>
+                Het gangbare pad van huisarts, specialist en medicatie is voor veel mensen
+                belangrijk en noodzakelijk. Tegelijk merkte ik dat dit pad niet altijd het
+                volledige verhaal vertelt: leefstijl kan, naast die zorg, een waardevolle
+                aanvullende rol spelen.
               </p>
               <p>
                 Juist daarom besloot ik mij om te scholen tot leefstijlcoach. Ik volgde de opleiding
@@ -162,8 +166,13 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
 
               <h2>Mijn doel</h2>
               <p>
-                Ik wil mensen helpen om met haalbare keuzes duurzaam te werken aan hun gezondheid,
-                zelfvertrouwen en kwaliteit van leven.
+                Ik wil zoveel mogelijk mensen helpen hun leven gezonder te maken, met als
+                uiteindelijk doel dat zij langer en gelukkiger leven: een langer en gelukkiger
+                leven door nu gezonde, duurzame keuzes te maken.
+              </p>
+              <p>
+                Concreet wil ik mensen helpen om met haalbare keuzes duurzaam te werken aan hun
+                gezondheid, zelfvertrouwen en kwaliteit van leven.
               </p>
             </Reveal>
           </div>
@@ -202,6 +211,11 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
           <div className="shell">
             <Reveal className="section-heading section-heading--narrow">
               <h2 id="why-title">Waarom kiezen voor Astrid?</h2>
+              <p>
+                Naast mijn eigen ervaring beschik ik over een professionele opleiding en
+                uitgebreide werkervaring. Die combinatie van ervaringsdeskundigheid, vakkennis en
+                een zakelijke achtergrond maakt mijn begeleiding persoonlijk én resultaatgericht.
+              </p>
             </Reveal>
 
             <div className="pillar-grid pillar-grid--four">
@@ -229,9 +243,15 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
                 ))}
               </ul>
               <p>
-                Samen kijken we welke leefstijlveranderingen passen bij jouw situatie. Mijn
-                coaching is bedoeld als aanvulling op de reguliere zorg en kan je ondersteunen bij
-                het opbouwen en volhouden van gezonde gewoonten.
+                Samen kijken we welke leefstijlveranderingen passen bij jouw situatie. Onderwerpen
+                zijn onder meer voeding, beweging, slaap, stress, herstel, afvallen,
+                gedragsverandering en het doorbreken van ongezonde gewoontes of verslavingen, waar
+                dat relevant is.
+              </p>
+              <p>
+                Mijn coaching is bedoeld als aanvulling op de reguliere zorg en helpt je bij het
+                opbouwen en volhouden van duurzame gewoonten, met een mooier leven en een betere
+                toekomst als doel.
               </p>
               <a
                 className="text-link"
@@ -262,8 +282,13 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
             </Reveal>
             <Reveal className="story-copy" delay={0.05}>
               <p>
-                Voordat ik leefstijlcoach werd, werkte ik jarenlang in marketing, management,
-                communicatie en klantbeleving bij verschillende organisaties. Daardoor weet ik hoe
+                Voordat ik leefstijlcoach werd, werkte ik jarenlang op het snijvlak van marketing,
+                management, communicatie en klantbeleving. Ik werkte onder andere in de financiële
+                sector, bij Center Parcs en in verschillende interimfuncties.
+              </p>
+              <p>
+                Daarnaast heb ik ruime ervaring als manager en bestuurder: van het aansturen van
+                een callcenter tot bestuurder van de Nijmeegse Vierdaagse. Daardoor weet ik hoe
                 belangrijk persoonlijke aandacht, heldere communicatie, structuur en een praktische
                 aanpak zijn.
               </p>
@@ -342,12 +367,16 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
         <section className="section" aria-labelledby="first-step-title">
           <div className="shell contact-layout">
             <Reveal>
-              <h2 id="first-step-title">Zet vandaag de eerste stap</h2>
-              <p>Ben je benieuwd wat leefstijlcoaching voor jou kan betekenen?</p>
+              <h2 id="first-step-title">Wat kan Astrid voor jou betekenen?</h2>
               <p>
-                Tijdens een <strong>gratis gezondheidscheck</strong> bespreken we jouw situatie en
-                doelen en bekijken we samen welke eerste stap het beste bij jou past. Zo ontdek je
-                vrijblijvend of mijn begeleiding aansluit bij jouw wensen.
+                Of je nu particulier, ondernemer, HR- of vitaliteitsprofessional, of
+                zorgprofessional bent, of Astrid wilt inschakelen voor een presentatie: ik denk
+                graag met je mee.
+              </p>
+              <p>
+                Vertel kort wat je nodig hebt of hoe ik je kan helpen. Ik neem persoonlijk contact
+                met je op. Liever direct een kort telefoongesprek over jouw situatie? Vraag dan de{" "}
+                <strong>gratis gezondheidscheck</strong> aan.
               </p>
             </Reveal>
 
@@ -355,7 +384,7 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
               <div className="health-check-panel__media">
                 <Image
                   src="/images/astrid-portrait-studio.png"
-                  alt="Portret van Astrid Sanders, leefstijlcoach in Den Bosch"
+                  alt="Portret van Astrid Sanders, leefstijlcoach"
                   fill
                   sizes="(max-width: 900px) 100vw, 42vw"
                 />
@@ -363,14 +392,12 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
               <div className="health-check-panel__heading">
                 <PhoneCall size={28} weight="regular" aria-hidden="true" />
                 <p className="health-check-panel__title" id="gezondheidscheck">
-                  Gratis gezondheidscheck aanvragen
+                  Neem contact op
                 </p>
-                <p>
-                  Laat je naam, telefoonnummer en voorkeursmoment achter. Astrid neemt persoonlijk
-                  contact met je op voor een kort en vrijblijvend telefoongesprek.
-                </p>
+                <p>Vertel kort wat je nodig hebt of hoe ik je kan helpen.</p>
               </div>
-              <HealthCheckForm locale={locale} />
+              <ContactForm locale={locale} />
+              <WhatsAppLink locale={locale} compact className="health-check-panel__whatsapp" />
             </Reveal>
           </div>
         </section>

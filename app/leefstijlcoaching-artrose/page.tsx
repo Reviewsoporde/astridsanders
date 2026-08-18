@@ -12,13 +12,9 @@ import { localizeHref, localizeReactNode, type Locale } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: "Leefstijlcoaching bij Artrose",
   description:
-    "Persoonlijke leefstijlcoaching bij artrose in Den Bosch en online. Werk praktisch aan voeding, beweging, slaap en duurzame gewoonten.",
+    "Persoonlijke leefstijlcoaching bij artrose, landelijk online en in 's-Hertogenbosch. Werk praktisch aan voeding, beweging, slaap en duurzame gewoonten.",
   alternates: {
     canonical: "/leefstijlcoaching-artrose/",
-    languages: {
-      "nl-NL": "/leefstijlcoaching-artrose/",
-      en: "/en/leefstijlcoaching-artrose/",
-    },
   },
 };
 
@@ -38,6 +34,14 @@ const dailyChallenges = [
   "Je voelt je onzeker over voeding en leefstijl",
   "Je dagelijkse energie en belastbaarheid wisselen",
   "Je mist begeleiding die rekening houdt met jouw mogelijkheden",
+];
+
+const desiredOutcomes = [
+  "Minder pijn",
+  "Beter en zelfverzekerder bewegen",
+  "Meer energie",
+  "Een gezond gewicht en behoud van spierkracht",
+  "Een betere kwaliteit van leven",
 ];
 
 const lifestylePillars = [
@@ -208,6 +212,13 @@ const processSteps = [
       "Ook na het traject kan aanvullende ondersteuning worden besproken wanneer dat nodig is.",
     ],
   },
+  {
+    title: "Stap 4: Fitter en gezonder verder",
+    paragraphs: [
+      "Je werkt toe naar een leven met meer bewegingsvrijheid, meer energie en een betere kwaliteit van leven, dat je ook op de lange termijn kunt volhouden.",
+    ],
+    items: [],
+  },
 ];
 
 const faqs = [
@@ -289,12 +300,12 @@ export function ArtrosePageContent({ locale }: { locale: Locale }) {
       <main id="main-content">
         <PageHero
           locale={locale}
-          title="Leefstijlcoaching bij artrose in Den Bosch en online"
+          title="Leefstijlcoaching bij artrose"
           paragraphs={[
-            "Artrose kan bewegen, sporten en dagelijkse activiteiten steeds moeilijker maken. Pijn, stijfheid en beperkte mobiliteit kunnen ertoe leiden dat je minder actief wordt en steeds minder vertrouwen krijgt in wat je lichaam aankan.",
+            "Artrose kan bewegen, sporten en dagelijkse activiteiten steeds moeilijker maken. Pijn, stijfheid en beperkte mobiliteit kunnen ertoe leiden dat je minder actief wordt en steeds minder vertrouwen krijgt in wat je lichaam aankan. Met de juiste begeleiding kun je werken aan minder pijn en meer bewegingsvrijheid.",
             "Met persoonlijke leefstijlcoaching onderzoeken we welke praktische veranderingen in voeding, beweging, slaap, stress en dagelijkse gewoonten bij jouw situatie passen.",
             "Ik ben Astrid Sanders, geaccrediteerd leefstijlcoach en ervaringsdeskundige. Ik heb zelf jarenlang artroseklachten in mijn knieën ervaren en weet hoe frustrerend het is wanneer pijn en stijfheid bepalen wat je wel en niet kunt doen.",
-            "De coaching is beschikbaar in Den Bosch en omgeving en online door heel Nederland.",
+            "Ik werk landelijk, online en persoonlijk in en rond 's-Hertogenbosch. Voor de intake kom ik eventueel bij je langs; dat bespreken we tijdens het gratis eerste gesprek.",
           ]}
           image={{
             src: "/images/generated/leefstijlcoaching-artrose-hero-v2.webp",
@@ -320,7 +331,7 @@ export function ArtrosePageContent({ locale }: { locale: Locale }) {
               />
             </div>
 
-            <div className="recognition-lists artrose-recognition-lists">
+            <div className="recognition-lists recognition-lists--three artrose-recognition-lists">
               <Reveal className="artrose-recognition-panel">
                 <div className="artrose-recognition-panel__heading">
                   <span aria-hidden="true">01</span>
@@ -349,6 +360,20 @@ export function ArtrosePageContent({ locale }: { locale: Locale }) {
                   ))}
                 </ul>
               </Reveal>
+              <Reveal className="artrose-recognition-panel" delay={0.1}>
+                <div className="artrose-recognition-panel__heading">
+                  <span aria-hidden="true">03</span>
+                  <h3>Wat wil je bereiken?</h3>
+                </div>
+                <ul className="check-list">
+                  {desiredOutcomes.map((item) => (
+                    <li key={item}>
+                      <Check size={18} weight="bold" aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
             </div>
 
             <Reveal className="section-note artrose-recognition-note">
@@ -358,7 +383,8 @@ export function ArtrosePageContent({ locale }: { locale: Locale }) {
                   werken aan voeding, beweging, slaap, herstel en duurzame gewoonten.
                 </p>
                 <p>
-                  De coaching vervangt geen medische behandeling of fysiotherapie. Het helpt je om
+                  De coaching werkt versterkend op je reguliere medische behandeling of
+                  fysiotherapie, maar vervangt deze niet: 1 + 1 = 3. Het helpt je om
                   leefstijladviezen praktisch toe te passen binnen jouw dagelijks leven.
                 </p>
               </div>
@@ -555,11 +581,13 @@ export function ArtrosePageContent({ locale }: { locale: Locale }) {
                     {step.paragraphs.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
                     ))}
-                    <ul className="compact-list">
-                      {step.items.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
+                    {step.items.length > 0 ? (
+                      <ul className="compact-list">
+                        {step.items.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    ) : null}
                     {step.outro?.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
                     ))}

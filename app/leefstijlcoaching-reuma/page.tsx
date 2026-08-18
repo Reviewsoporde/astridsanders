@@ -12,13 +12,9 @@ import { localizeHref, localizeReactNode, type Locale } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: "Leefstijlcoaching bij Reuma",
   description:
-    "Leefstijlcoaching bij reuma in Den Bosch en online. Werk praktisch aan voeding, slaap, stress, beweging en duurzame gewoonten.",
+    "Leefstijlcoaching bij reuma, landelijk online en in 's-Hertogenbosch. Werk praktisch aan voeding, slaap, stress, beweging en duurzame gewoonten.",
   alternates: {
     canonical: "/leefstijlcoaching-reuma/",
-    languages: {
-      "nl-NL": "/leefstijlcoaching-reuma/",
-      en: "/en/leefstijlcoaching-reuma/",
-    },
   },
 };
 
@@ -40,12 +36,20 @@ const dailyChallenges = [
   "Je wilt meer invloed krijgen op je dagelijkse leefstijl",
 ];
 
+const desiredOutcomes = [
+  "Minder pijn",
+  "Meer energie",
+  "Minder afhankelijk van medicatie",
+  "Meer grip op je dagelijkse leefstijl",
+  "Een betere kwaliteit van leven",
+];
+
 const lifestylePillars = [
   {
     title: "Voeding bij reuma",
     paragraphs: [
       "We kijken naar een gezond en grotendeels plantaardig voedingspatroon dat past bij jouw dagelijks leven.",
-      "Het doel is niet om direct volledig plantaardig te eten. We zoeken naar haalbare aanpassingen die je ook op langere termijn kunt volhouden.",
+      "We zoeken naar haalbare aanpassingen die je ook op langere termijn kunt volhouden.",
       "Onderwerpen kunnen zijn:",
     ],
     items: [
@@ -58,7 +62,7 @@ const lifestylePillars = [
     ],
   },
   {
-    title: "Stress en herstel",
+    title: "Stress en mentale gezondheid",
     paragraphs: [
       "Langdurige stress kan invloed hebben op slaap, energie, herstel en het volhouden van gezonde gewoonten.",
       "We kijken onder andere naar:",
@@ -199,6 +203,13 @@ const processSteps = [
       "Ook na het traject kan aanvullende ondersteuning worden besproken.",
     ],
   },
+  {
+    title: "Stap 4: Fitter en gezonder verder",
+    paragraphs: [
+      "Je werkt toe naar een leven met meer energie, minder klachten en een betere kwaliteit van leven, dat je ook op de lange termijn kunt volhouden.",
+    ],
+    items: [],
+  },
 ];
 
 const faqs = [
@@ -273,12 +284,12 @@ export function ReumaPageContent({ locale }: { locale: Locale }) {
       <main id="main-content">
         <PageHero
           locale={locale}
-          title="Leefstijlcoaching bij reuma in Den Bosch en online"
+          title="Leefstijlcoaching bij reuma"
           paragraphs={[
-            "Leven met reuma kan iedere dag anders zijn. De ene dag lukt er veel, terwijl pijn, stijfheid, vermoeidheid of een opvlamming je de volgende dag opnieuw kan beperken.",
+            "Leven met reuma kan iedere dag anders zijn. De ene dag lukt er veel, terwijl pijn, stijfheid, vermoeidheid of een opvlamming je de volgende dag opnieuw kan beperken. Met de juiste begeleiding kun je werken aan minder pijn, meer energie en een betere kwaliteit van leven.",
             "Met persoonlijke leefstijlcoaching onderzoeken we welke praktische veranderingen in voeding, stress, slaap, beweging en dagelijkse gewoonten bij jouw situatie passen.",
             "Ik ben Astrid Sanders, geaccrediteerd leefstijlcoach en ervaringsdeskundige. Ik weet uit eigen ervaring hoe ingrijpend reumatische klachten kunnen zijn en hoe moeilijk het kan zijn om leefstijlveranderingen zelfstandig vol te houden.",
-            "Mijn begeleiding is beschikbaar in Den Bosch en omgeving en online door heel Nederland.",
+            "Ik werk landelijk, online en persoonlijk in en rond 's-Hertogenbosch. Voor de intake kom ik eventueel bij je langs; dat bespreken we tijdens het gratis eerste gesprek.",
           ]}
           image={{
             // The -wide variant extends the source photo's left edge so the
@@ -306,7 +317,7 @@ export function ReumaPageContent({ locale }: { locale: Locale }) {
               />
             </div>
 
-            <div className="recognition-lists">
+            <div className="recognition-lists recognition-lists--three">
               <Reveal>
                 <h3>Lichamelijke klachten</h3>
                 <ul className="check-list">
@@ -319,9 +330,20 @@ export function ReumaPageContent({ locale }: { locale: Locale }) {
                 </ul>
               </Reveal>
               <Reveal delay={0.05}>
-                <h3>Wat dit met je kan doen</h3>
+                <h3>Wat dit in het dagelijks leven kan betekenen</h3>
                 <ul className="check-list">
                   {dailyChallenges.map((item) => (
+                    <li key={item}>
+                      <Check size={18} weight="bold" aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <h3>Wat wil je bereiken?</h3>
+                <ul className="check-list">
+                  {desiredOutcomes.map((item) => (
                     <li key={item}>
                       <Check size={18} weight="bold" aria-hidden="true" />
                       <span>{item}</span>
@@ -337,8 +359,10 @@ export function ReumaPageContent({ locale }: { locale: Locale }) {
                 wilt werken aan voeding, beweging, slaap, stress en duurzame gewoonten.
               </p>
               <p>
-                De coaching vervangt geen medische behandeling, maar helpt je om leefstijladviezen
-                praktisch toe te passen in je dagelijks leven.
+                De coaching werkt versterkend op je reguliere medische behandeling, maar vervangt
+                deze niet: 1 + 1 = 3. Zo help ik je om leefstijladviezen praktisch toe te passen in
+                je dagelijks leven, gericht op minder klachten, meer energie en een betere
+                kwaliteit van leven.
               </p>
               <Link className="button cta-inline" href="#gezondheidscheck">
                 Bespreek jouw situatie tijdens een gratis gezondheidscheck
@@ -357,9 +381,13 @@ export function ReumaPageContent({ locale }: { locale: Locale }) {
                   reumatoloog, fysiotherapeut of andere zorgprofessional.
                 </p>
                 <p>
-                  Voeding, slaap, stress, beweging en dagelijkse gewoonten kunnen wel invloed hebben
-                  op je energie, herstel, belastbaarheid en het vermogen om gezonde keuzes vol te
-                  houden.
+                  Voeding, slaap, stress, beweging en dagelijkse gewoonten hebben invloed op je
+                  energie, herstel, belastbaarheid en het vermogen om gezonde keuzes vol te houden.
+                </p>
+                <p>
+                  Onderzoek toont aan dat de juiste voeding, beweging, ontspanning en slaap
+                  ontstekingen kunnen verlagen. Minder klachten, minder progressie, vaak minder
+                  medicijnen: mijn persoonlijke programma helpt je precies daarmee.
                 </p>
                 <p>Tijdens de coaching bekijken we deze onderdelen in samenhang.</p>
               </Reveal>
@@ -397,7 +425,7 @@ export function ReumaPageContent({ locale }: { locale: Locale }) {
                   Iedere persoon met reuma heeft een andere medische situatie, belastbaarheid,
                   leefstijl en persoonlijke doelen.
                 </p>
-                <p>Daarom werk ik niet met één standaardplan dat iedereen moet volgen.</p>
+                <p>Daarom werk ik niet met één standaard aanpak die iedereen moet volgen.</p>
               </Reveal>
               <EditorialSectionImage
                 src="/images/generated/reuma-personal-coaching.png"
@@ -526,11 +554,13 @@ export function ReumaPageContent({ locale }: { locale: Locale }) {
                     {step.paragraphs.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
                     ))}
-                    <ul className="compact-list">
-                      {step.items.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
+                    {step.items.length > 0 ? (
+                      <ul className="compact-list">
+                        {step.items.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    ) : null}
                     {step.outro?.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
                     ))}

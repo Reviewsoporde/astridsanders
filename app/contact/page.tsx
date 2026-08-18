@@ -12,13 +12,9 @@ import { phoneDisplayNumber, phoneHref } from "@/lib/whatsapp";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Neem contact op met Astrid Sanders, leefstijlcoach in Den Bosch. Stuur een bericht, mail of app, of vraag direct een gratis gezondheidscheck aan.",
+    "Neem contact op met Astrid Sanders, leefstijlcoach voor particulieren, bedrijven en zorgprofessionals. Stuur een bericht, mail of vraag een gratis gezondheidscheck aan.",
   alternates: {
     canonical: "/contact/",
-    languages: {
-      "nl-NL": "/contact/",
-      en: "/en/contact/",
-    },
   },
 };
 
@@ -31,14 +27,14 @@ export function ContactPageContent({ locale }: { locale: Locale }) {
             <Reveal>
               <h1 id="contact-title">Contact</h1>
               <p className="page-lead">
-                Heb je een vraag over leefstijlcoaching, of wil je eerst iets meer vertellen over
-                jouw situatie? Stuur een bericht via het formulier, dan neemt Astrid persoonlijk
-                contact met je op.
+                Of je nu particulier bent, een organisatie vertegenwoordigt, als zorgprofessional
+                wilt doorverwijzen of samenwerken, of Astrid wilt vragen voor een presentatie: stuur
+                een bericht via het formulier en Astrid neemt persoonlijk contact met je op.
               </p>
               <p>
-                Wil je liever direct een kort en vrijblijvend telefoongesprek? Vraag dan de gratis
-                gezondheidscheck aan. Je laat alleen je naam, telefoonnummer en voorkeursmoment
-                achter.
+                Wil je liever direct een kort en vrijblijvend telefoongesprek over jouw persoonlijke
+                situatie? Vraag dan de gratis gezondheidscheck aan. Je laat alleen je naam,
+                telefoonnummer en voorkeursmoment achter.
               </p>
               <Link
                 className="button button--solid button--gezondheidscheck cta-inline"

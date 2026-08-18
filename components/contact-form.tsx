@@ -60,22 +60,22 @@ const contextCopy: Record<
     contact: {},
     business: {
       success:
-        "Dank u wel voor uw aanvraag. Astrid neemt zo snel mogelijk contact met u op.",
-      message: "Wat kan Astrid voor uw organisatie betekenen?",
+        "Dank je wel voor je aanvraag. Astrid neemt zo snel mogelijk contact met je op.",
+      message: "Wat kan Astrid voor jouw organisatie betekenen?",
       messagePlaceholder:
-        "Beschrijf kort uw organisatie, vraag en de gewenste vorm van begeleiding.",
+        "Beschrijf kort je organisatie, vraag en de gewenste vorm van begeleiding.",
       privacy:
-        "Uw gegevens worden alleen gebruikt om contact met u op te nemen over uw aanvraag.",
+        "Je gegevens worden alleen gebruikt om contact met je op te nemen over je aanvraag.",
       emailSubject: "Zakelijke aanvraag via astridsanders.com",
     },
     zorgprofessionals: {
       success:
-        "Dank u wel voor uw bericht. Astrid neemt zo snel mogelijk contact met u op.",
-      message: "Welke samenwerking of doorverwijzing wilt u bespreken?",
+        "Dank je wel voor je bericht. Astrid neemt zo snel mogelijk contact met je op.",
+      message: "Welke samenwerking of doorverwijzing wil je bespreken?",
       messagePlaceholder:
-        "Beschrijf kort uw vraag. Deel geen medische of persoonlijke informatie zonder toestemming van de patiënt.",
+        "Beschrijf kort je vraag. Deel geen medische of persoonlijke informatie zonder toestemming van de patiënt.",
       privacy:
-        "Uw gegevens worden alleen gebruikt om contact met u op te nemen over uw bericht.",
+        "Je gegevens worden alleen gebruikt om contact met je op te nemen over je bericht.",
       emailSubject: "Samenwerking of doorverwijzing via astridsanders.com",
     },
   },

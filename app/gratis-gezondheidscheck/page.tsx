@@ -13,10 +13,6 @@ export const metadata: Metadata = {
     "Vraag een gratis gezondheidscheck aan: een kort en vrijblijvend telefoongesprek over jouw situatie, leefstijl en een passende eerste stap.",
   alternates: {
     canonical: "/gratis-gezondheidscheck/",
-    languages: {
-      "nl-NL": "/gratis-gezondheidscheck/",
-      en: "/en/gratis-gezondheidscheck/",
-    },
   },
 };
 
@@ -24,6 +20,8 @@ const expectations = [
   "Je vertelt wat er speelt, welke klachten of uitdagingen je ervaart en wat je al hebt geprobeerd",
   "Astrid legt uit hoe haar begeleiding werkt",
   "Samen bekijken jullie of leefstijlcoaching een passende volgende stap kan zijn",
+  "Het gesprek duurt ongeveer 15 tot 20 minuten en blijft vertrouwelijk",
+  "Na afloop bepaal je zelf of je een vervolg wilt: er is geen verplichting",
 ];
 
 export function GezondheidscheckPageContent({
@@ -76,8 +74,8 @@ export function GezondheidscheckPageContent({
                 toe.
               </p>
               <p>
-                Je hoeft hiervoor niet direct een afspraak in een agenda te boeken. Laat je naam,
-                telefoonnummer en voorkeursmoment achter, dan neem ik persoonlijk contact met je op.
+                Laat hieronder je naam, telefoonnummer en voorkeursmoment achter, dan neem ik
+                persoonlijk contact met je op om het gesprek in te plannen.
               </p>
 
               <h2>Wat kun je verwachten?</h2>
@@ -91,9 +89,10 @@ export function GezondheidscheckPageContent({
               </ul>
 
               <p className="section-note">
-                Leefstijlcoaching vervangt geen medische behandeling. De coaching is aanvullende
-                begeleiding naast de zorg van je huisarts, reumatoloog, fysiotherapeut of andere
-                behandelaar.
+                Leefstijlcoaching vervangt geen medische behandeling, maar werkt versterkend naast
+                de zorg van je huisarts, reumatoloog, fysiotherapeut of andere behandelaar. Waar
+                relevant werk ik samen met je zorgverleners. Zo bouw je stap voor stap aan minder
+                klachten, meer energie en een gezonder, beter leven.
               </p>
             </Reveal>
           </div>

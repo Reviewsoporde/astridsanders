@@ -23,9 +23,9 @@ import {
 } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Leefstijlcoach Den Bosch bij Reuma & Artrose | Astrid",
+  title: "Leefstijlcoach bij Reuma & Artrose | Astrid",
   description:
-    "Persoonlijke leefstijlcoaching in Den Bosch en online voor mensen met reuma en artrose. Vraag een gratis gezondheidscheck aan.",
+    "Persoonlijke leefstijlcoaching door heel Nederland en in 's-Hertogenbosch voor mensen met reuma en artrose. Vraag een gratis gezondheidscheck aan.",
 };
 
 const trustPoints = [
@@ -40,6 +40,7 @@ const trustPoints = [
     paragraphs: [
       "Ik weet hoe het is wanneer pijn, stijfheid en vermoeidheid steeds meer invloed krijgen op je dagelijks leven. Ik heb zelf jarenlang geleefd met artrose en ernstige reumatische klachten.",
       "Mijn ervaring helpt mij om niet alleen naar de theorie te kijken, maar ook te begrijpen hoe moeilijk het kan zijn om veranderingen daadwerkelijk toe te passen en vol te houden.",
+      "Mijn energie nam toe en mijn klachten verminderden. Inmiddels ben ik, in overleg met mijn reumatoloog, van mijn medicatie af. Die ervaring vormt een belangrijke basis voor mijn begeleiding.",
     ],
     links: [
       {
@@ -53,9 +54,9 @@ const trustPoints = [
     title: "Geaccrediteerd leefstijlcoach",
     icon: Certificate,
     paragraphs: [
-      "Naast mijn persoonlijke ervaring heb ik de opleiding tot leefstijlcoach afgerond bij Sonnevelt Opleidingen.",
+      "Naast mijn persoonlijke ervaring heb ik de opleiding tot leefstijlcoach afgerond bij Sonnevelt Opleidingen en ben ik geregistreerd bij KABIZ.",
       "Daarnaast ben ik aangesloten bij de BLCN, de Beroepsvereniging Leefstijlcoaches Nederland.",
-      "Mijn begeleiding combineert professionele leefstijlkennis met praktische ondersteuning rondom voeding, stress, slaap, beweging en dagelijkse gewoonten.",
+      "Voor mijn werk als leefstijlcoach had ik een carrière als senior manager, onder andere in de financiële dienstverlening. Die achtergrond in marketing, management, communicatie en klantbeleving helpt mij gestructureerd en resultaatgericht te begeleiden.",
     ],
     links: [
       {
@@ -66,6 +67,11 @@ const trustPoints = [
       {
         label: "Bekijk de BLCN",
         href: "https://blcn.nl/",
+        external: true,
+      },
+      {
+        label: "Raadpleeg het KABIZ-register",
+        href: "https://www.kabiz.nl/raadplegenregister/default.aspx",
         external: true,
       },
     ],
@@ -234,8 +240,8 @@ const faqs = [
   {
     question: "Wat doet een leefstijlcoach?",
     answer: [
-      "Een leefstijlcoach helpt je om gezondere en beter vol te houden gewoonten te ontwikkelen.",
-      "Samen werk je aan onderwerpen zoals voeding, beweging, slaap, stress, herstel en gedragsverandering. De begeleiding wordt afgestemd op jouw persoonlijke situatie en doelen.",
+      "Een leefstijlcoach begeleidt je bij het duurzaam veranderen van leefgewoontes, met als doel gezondheidsrisico's te verminderen en je algehele welzijn te verbeteren.",
+      "Samen werk je aan onderwerpen zoals voeding, beweging, slaap, stress, herstel en gedragsverandering, gericht op meer energie, vaak minder medicatie en een beter leven. De begeleiding wordt afgestemd op jouw persoonlijke situatie en doelen.",
     ],
   },
   {
@@ -243,7 +249,7 @@ const faqs = [
     answer: [
       "Ja. Leefstijlcoaching kan naast bestaande medicatie en reguliere medische behandeling plaatsvinden.",
       "Je verandert of stopt medicatie nooit zelfstandig. Beslissingen over medicatie bespreek je altijd met je huisarts, specialist of behandelend arts.",
-      "Het doel van coaching is om je leefstijl en dagelijkse gewoonten te ondersteunen. Een eventuele wijziging in medicatie is een medische beslissing en geen gegarandeerd resultaat van het coachingstraject.",
+      "Een eventuele wijziging in medicatie is een medische beslissing en geen gegarandeerd resultaat van het coachingstraject.",
     ],
   },
   {
@@ -278,7 +284,7 @@ const faqs = [
     question: "Vervangt leefstijlcoaching medische behandeling?",
     answer: [
       "Nee. Leefstijlcoaching vervangt geen medische diagnostiek, behandeling of advies.",
-      "De coaching is aanvullende begeleiding naast de zorg van je huisarts, reumatoloog, fysiotherapeut of andere behandelaar.",
+      "De coaching is aanvullende begeleiding naast de zorg van je huisarts, reumatoloog, fysiotherapeut of andere behandelaar. De combinatie van medische behandeling en leefstijlcoaching kan tot goede en duurzame resultaten leiden.",
     ],
   },
 ];
@@ -306,8 +312,9 @@ export function HomePageContent({ locale }: { locale: Locale }) {
             <Reveal className="hero__copy">
               <h1 id="hero-title">Leefstijlcoach bij reuma en artrose</h1>
               <p className="hero__lead">
-                Geen snelle oplossing of standaardplan, maar begeleiding die aansluit op jouw
-                situatie, mogelijkheden en doelen.
+                Minder pijn, meer energie en een betere kwaliteit van leven: daar werken we samen
+                naartoe. Geen standaard aanpak, maar begeleiding die past bij jouw situatie,
+                mogelijkheden en doelen.
               </p>
               <div className="hero__actions">
                 <Link
@@ -323,12 +330,12 @@ export function HomePageContent({ locale }: { locale: Locale }) {
             <Reveal className="hero__visual-wrap" delay={0.08}>
               <div className="hero__visual">
                 <Image
-                  src="/images/generated/home-hero-v4.webp"
+                  src="/images/hero_new_astrid.png"
                   alt="Astrid Sanders in haar praktijk voor leefstijlcoaching"
                   fill
                   priority
                   sizes="100vw"
-                  style={{ objectPosition: "78% 25%" }}
+                  style={{ objectPosition: "78% 22%" }}
                 />
               </div>
             </Reveal>
@@ -471,19 +478,44 @@ export function HomePageContent({ locale }: { locale: Locale }) {
               </div>
 
               <Reveal className="recognition-note">
-                <p className="recognition-note__lead">Spreken deze punten je aan?</p>
+                <p className="recognition-note__lead">
+                  Herken je dit in je dagelijks leven, maar wil je dit niet meer?
+                </p>
                 <p>
-                  Dan gaan we samen met een persoonlijk traject aan de slag. We starten met de
-                  gratis gezondheidscheck en bepalen van daaruit welke begeleiding bij jou past.
+                  Leefstijlcoaching werkt versterkend op je reguliere medische behandeling, maar
+                  vervangt deze niet: 1 + 1 = 3. Samen werken we toe naar minder pijn, meer energie
+                  en een betere kwaliteit van leven.
                 </p>
                 <p className="term-note">
-                  Leefstijlcoaching vervangt geen medische behandeling. Beslissingen over medicatie
-                  bespreek je altijd met je behandelend arts.
+                  Beslissingen over medicatie bespreek je altijd met je behandelend arts.
                 </p>
-                <Link className="button button--solid button--gezondheidscheck" href="#gezondheidscheck">
-                  Gratis gezondheidscheck aanvragen
+                <Link className="button button--solid" href={localizedPath("/contact/")}>
+                  Neem contact op
                 </Link>
               </Reveal>
+            </div>
+          </div>
+        </section>
+
+        <section className="section process-section" aria-labelledby="process-title">
+          <div className="shell">
+            <Reveal className="section-heading section-heading--narrow">
+              <p className="eyebrow">Zo werkt het</p>
+              <h2 id="process-title">Van kennismaking naar een leefstijl die bij je past</h2>
+            </Reveal>
+
+            <div className="process-steps process-steps--compact">
+              {homeProcessSteps.map((step, index) => (
+                <Reveal key={step.title} className="process-step" delay={index * 0.05}>
+                  <span className="process-step__number" aria-hidden="true">
+                    {index + 1}
+                  </span>
+                  <div>
+                    <h3>{step.title}</h3>
+                    <p>{step.description}</p>
+                  </div>
+                </Reveal>
+              ))}
             </div>
           </div>
         </section>
@@ -517,26 +549,21 @@ export function HomePageContent({ locale }: { locale: Locale }) {
           </div>
         </section>
 
-        <section className="section process-section" aria-labelledby="process-title">
+        <section className="section inflammation-section" aria-labelledby="inflammation-title">
           <div className="shell">
             <Reveal className="section-heading section-heading--narrow">
-              <p className="eyebrow">Zo werkt het</p>
-              <h2 id="process-title">Van gezondheidscheck naar een leefstijl die bij je past</h2>
+              <h2 id="inflammation-title">Leefstijl en inflammatie</h2>
+              <p>
+                Veel chronische aandoeningen, zoals reuma, artrose, diabetes type 2 en hart- en
+                vaatziekten, hebben een gemeenschappelijke factor: chronische laaggradige
+                ontsteking, oftewel inflammatie.
+              </p>
+              <p>
+                Voeding, beweging, ontspanning en slaap kunnen invloed hebben op deze processen.
+                Dat kan zich vertalen in minder klachten, een betere belastbaarheid, meer energie,
+                beter herstel en vaak minder medicatie.
+              </p>
             </Reveal>
-
-            <div className="process-steps process-steps--compact">
-              {homeProcessSteps.map((step, index) => (
-                <Reveal key={step.title} className="process-step" delay={index * 0.05}>
-                  <span className="process-step__number" aria-hidden="true">
-                    {index + 1}
-                  </span>
-                  <div>
-                    <h3>{step.title}</h3>
-                    <p>{step.description}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -556,7 +583,9 @@ export function HomePageContent({ locale }: { locale: Locale }) {
               Achtergrond en erkenning
             </p>
             <p className="positioning__statement">
-              Mensen met reuma en artrose weer grip laten krijgen op hun energie en welzijn.
+              Mensen met reuma en artrose helpen om weer grip te krijgen op hun energie en
+              gezondheid, met als uiteindelijk doel: een langer en gelukkiger leven door nu
+              gezonde, duurzame keuzes te maken.
             </p>
             <ul className="credential-strip">
               {credentials.map((item) => (

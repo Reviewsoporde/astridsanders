@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { HomePageContent } from "@/app/page";
 
 export const metadata: Metadata = {
-  title: "Lifestyle Coach in Den Bosch for Rheumatism & Osteoarthritis | Astrid",
+  title: "Lifestyle Coach for Rheumatism & Osteoarthritis | Astrid",
   description:
-    "Personal lifestyle coaching in Den Bosch and online for people with rheumatism and osteoarthritis. Request a free health check.",
+    "Personal lifestyle coaching throughout the Netherlands and in 's-Hertogenbosch for people with rheumatism and osteoarthritis. Request a free health check.",
   alternates: {
     canonical: "/en/",
     languages: {
@@ -15,9 +15,9 @@ export const metadata: Metadata = {
   openGraph: {
     locale: "en_GB",
     url: "/en/",
-    title: "Lifestyle Coach in Den Bosch for Rheumatism & Osteoarthritis | Astrid",
+    title: "Lifestyle Coach for Rheumatism & Osteoarthritis | Astrid",
     description:
-      "Personal lifestyle coaching in Den Bosch and online for people with rheumatism and osteoarthritis. Request a free health check.",
+      "Personal lifestyle coaching throughout the Netherlands and in 's-Hertogenbosch for people with rheumatism and osteoarthritis. Request a free health check.",
   },
 };
 

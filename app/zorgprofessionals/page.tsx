@@ -12,13 +12,9 @@ export const metadata: Metadata = {
   // The SEO doc specifies the short "| Astrid" suffix for this page, so bypass the layout template.
   title: { absolute: "Patiënt Doorverwijzen naar Leefstijlcoach | Astrid" },
   description:
-    "Verwijs patiënten met reuma of artrose naar aanvullende leefstijlcoaching van Astrid Sanders in Den Bosch of online door heel Nederland.",
+    "Verwijs patiënten met reuma of artrose naar aanvullende leefstijlcoaching van Astrid Sanders, landelijk online of in 's-Hertogenbosch.",
   alternates: {
     canonical: "/zorgprofessionals/",
-    languages: {
-      "nl-NL": "/zorgprofessionals/",
-      en: "/en/zorgprofessionals/",
-    },
   },
 };
 
@@ -83,7 +79,7 @@ const coachingPillars = [
       "Bij medische voedingsvragen, allergieën, tekorten of een medische dieetbehandeling blijft begeleiding door een arts of diëtist noodzakelijk.",
   },
   {
-    title: "Stress en herstel",
+    title: "Stress en mentale gezondheid",
     paragraphs: ["De begeleiding kan cliënten helpen om:"],
     items: [
       "Stresssignalen eerder te herkennen",
@@ -123,8 +119,23 @@ const scopeStatements = [
   "Geeft geen medisch behandeladvies",
   "Vervangt geen fysiotherapie",
   "Vervangt geen medische dieetbehandeling",
-  "Garandeert geen vermindering van klachten",
   "Garandeert geen vermindering van medicatie",
+];
+
+const referralExclusions = [
+  "Ernstige psychische aandoeningen",
+  "Eetstoornissen",
+  "Verslavingsproblematiek die specialistische behandeling vraagt",
+  "Acute of instabiele medische situaties",
+  "Ongereguleerde diabetes",
+  "Acute hartklachten",
+  "Ongecontroleerde hoge bloeddruk",
+  "Ernstig nier- of leverfalen",
+  "Zwangerschap",
+  "Kinderen",
+  "Kanker",
+  "Neurologische aandoeningen",
+  "Ernstige COPD",
 ];
 
 const professionalAudiences = [
@@ -289,7 +300,7 @@ const faqs = [
     question: "Kan Astrid online begeleiden?",
     answer: [
       "Ja. De begeleiding kan online door heel Nederland plaatsvinden.",
-      "Persoonlijke gesprekken in Den Bosch of omgeving kunnen in overleg worden gepland.",
+      "Persoonlijke gesprekken in en rond 's-Hertogenbosch kunnen in overleg worden gepland.",
     ],
   },
   {
@@ -328,7 +339,7 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
           locale={locale}
           title="Patiënten doorverwijzen naar aanvullende leefstijlcoaching"
           paragraphs={[
-            "Begeleidt u patiënten die naast uw reguliere behandeling ondersteuning nodig hebben bij duurzame leefstijlverandering?",
+            "Begeleid je patiënten die naast hun reguliere behandeling ondersteuning nodig hebben bij duurzame leefstijlverandering?",
             "Astrid Sanders biedt persoonlijke leefstijlcoaching rondom:",
             [
               "Voeding",
@@ -340,7 +351,7 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
             ],
             "De begeleiding helpt patiënten om algemene leefstijladviezen te vertalen naar haalbare dagelijkse gewoonten.",
             "Leefstijlcoaching is aanvullend op reguliere zorg. Astrid stelt geen diagnose, wijzigt geen medicatie en neemt de rol van huisarts, reumatoloog, fysiotherapeut of diëtist niet over.",
-            "De begeleiding is beschikbaar in Den Bosch en omgeving en online door heel Nederland.",
+            "De begeleiding is beschikbaar landelijk online, en persoonlijk in en rond 's-Hertogenbosch.",
           ]}
           image={{
             src: "/images/generated/zorgprofessionals-hero.png",
@@ -497,6 +508,12 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
 
             <Reveal className="section-note professional-scope-card">
               <h2>Professionele afbakening</h2>
+              <p>
+                Een leefstijlcoach werkt het beste bij mensen die medisch stabiel zijn en bij wie
+                het risico vooral leefstijlgerelateerd en gedragsmatig is. Bij twijfel over
+                medische stabiliteit is doorverwijzing naar de huisarts of specialist de juiste
+                stap.
+              </p>
               <p>Leefstijlcoaching door Astrid:</p>
               <ul className="compact-list">
                 {scopeStatements.map((item) => (
@@ -507,6 +524,20 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
                 Beslissingen over medicatie en behandeling blijven bij de cliënt en de betrokken
                 behandelend arts.
               </p>
+            </Reveal>
+
+            <Reveal className="section-note professional-scope-card">
+              <h2>Wanneer is doorverwijzing naar Astrid niet passend?</h2>
+              <p>
+                Astrid stelt geen medische diagnoses en schrijft geen medicatie voor. Bij de
+                volgende situaties blijft directe medische of specialistische zorg de juiste
+                eerste stap, eventueel later aangevuld met leefstijlcoaching:
+              </p>
+              <ul className="compact-list">
+                {referralExclusions.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </Reveal>
           </div>
         </section>
@@ -681,7 +712,7 @@ export function ZorgprofessionalsPageContent({ locale }: { locale: Locale }) {
           faqs={faqs}
           formKind="contact"
           formTitle="Bespreek samenwerking"
-          formDescription="Beschrijf kort uw vraag over samenwerking of een mogelijke doorverwijzing. Astrid neemt persoonlijk contact met u op."
+          formDescription="Beschrijf kort je vraag over samenwerking of een mogelijke doorverwijzing. Astrid neemt persoonlijk contact met je op."
           contactContext="zorgprofessionals"
         />
       </main>
