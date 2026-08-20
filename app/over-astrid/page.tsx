@@ -302,8 +302,8 @@ export function OverAstridPageContent({ locale }: { locale: Locale }) {
             <Reveal className="section-heading section-heading--narrow">
               <h2 id="norway-title">Mijn andere liefde: Noorwegen</h2>
               <p>
-                Naast leefstijlcoaching heb ik een grote liefde voor Noorwegen. Samen met Britt
-                verhuur ik in Vrådal twee vakantiehuizen via Furuheim Lodge.
+                Naast leefstijlcoaching heb ik een grote liefde voor Noorwegen. Ik verhuur in het
+                dorpje Vrådal twee vakantiehuizen.
               </p>
               <p>
                 Ik ben er graag buiten en in beweging en geniet van de natuur en de verschillende

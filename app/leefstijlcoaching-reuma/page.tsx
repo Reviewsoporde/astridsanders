@@ -216,8 +216,8 @@ const faqs = [
   {
     question: "Kan leefstijlcoaching reuma genezen?",
     answer: [
-      "Nee. Leefstijlcoaching geneest reuma niet en vervangt geen medische behandeling.",
-      "De begeleiding helpt je om praktisch te werken aan voeding, beweging, slaap, stress en gezonde gewoonten.",
+      "Nee, leefstijlcoaching geneest reuma niet, maar het kan je wel helpen om beter met reuma te leven.",
+      "Door te kijken naar onder andere beweging, voeding en dagelijkse gewoonten werken we aan meer energie, een betere kwaliteit van leven en, in sommige gevallen, een lagere behoefte aan medicatie: altijd in overleg met je behandelend arts.",
     ],
   },
   {
@@ -251,8 +251,8 @@ const faqs = [
   {
     question: "Is bewegen verstandig wanneer ik reuma heb?",
     answer: [
-      "Beweging kan waardevol zijn wanneer deze past bij je belastbaarheid en medische situatie.",
-      "Bij specifieke beperkingen of twijfel overleg je met je arts of fysiotherapeut.",
+      "Ja, bewegen is juist erg belangrijk wanneer je reuma hebt. Regelmatig bewegen helpt om je spieren en gewrichten zo sterk en soepel mogelijk te houden en kan bijdragen aan minder klachten en meer energie.",
+      "Wel kijken we altijd naar wat past bij jouw persoonlijke situatie en medische mogelijkheden. Samen kijken we naar een vorm van beweging die verantwoord, haalbaar en prettig is voor jouw lichaam.",
     ],
   },
   {

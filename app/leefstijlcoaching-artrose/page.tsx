@@ -225,8 +225,8 @@ const faqs = [
   {
     question: "Kan leefstijl artrose verminderen?",
     answer: [
-      "Leefstijl kan artrose niet genezen of beschadigd kraakbeen herstellen.",
-      "Een passende leefstijl kan je wel ondersteunen bij beweging, lichaamsgewicht, spierkracht, herstel, energie en het omgaan met dagelijkse beperkingen.",
+      "Leefstijlcoaching kan zeker helpen om beter met artrose te leven en kan bijdragen aan minder klachten, meer energie en een betere kwaliteit van leven.",
+      "Door te kijken naar onder andere beweging, voeding, slaap en dagelijkse gewoonten zoeken we naar wat jouw lichaam ondersteunt. Leefstijlcoaching kan echter geen beschadigd of verdwenen kraakbeen herstellen.",
     ],
   },
   {

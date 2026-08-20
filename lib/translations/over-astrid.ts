@@ -129,8 +129,8 @@ export const overAstridTranslations: Record<string, string> = {
     "Before becoming a lifestyle coach, I worked for many years in marketing, management, communications and customer experience at various organisations. That taught me the importance of personal attention, clear communication, structure and a practical approach.",
 
   "Mijn andere liefde: Noorwegen": "My other love: Norway",
-  "Naast leefstijlcoaching heb ik een grote liefde voor Noorwegen. Samen met Britt verhuur ik in Vrådal twee vakantiehuizen via Furuheim Lodge.":
-    "Alongside lifestyle coaching, I have a great love of Norway. Together with Britt, I rent out two holiday homes in Vrådal through Furuheim Lodge.",
+  "Naast leefstijlcoaching heb ik een grote liefde voor Noorwegen. Ik verhuur in het dorpje Vrådal twee vakantiehuizen.":
+    "Alongside lifestyle coaching, I have a great love of Norway. I rent out two holiday homes in the village of Vrådal.",
   "Ik ben er graag buiten en in beweging en geniet van de natuur en de verschillende seizoenen. Die praktische, actieve manier van leven past bij wat ik ook in mijn coaching belangrijk vind: keuzes die in het dagelijks leven vol te houden zijn.":
     "I enjoy being outdoors and active there, surrounded by nature and the changing seasons. That practical, active way of life reflects what matters in my coaching too: choices that can be maintained in daily life.",
   "Bekijk Furuheim Lodge": "Visit Furuheim Lodge",

@@ -429,7 +429,7 @@ export function BedrijvenPageContent({ locale }: { locale: Locale }) {
             "Online begeleiding is beschikbaar door heel Nederland. Workshops en andere zakelijke sessies kunnen in overleg op locatie plaatsvinden.",
           ]}
           image={{
-            src: "/images/generated/leefstijlcoaching-bedrijven-hero.png",
+            src: "/images/generated/bedrijven_hero_new.png",
             alt: "Astrid Sanders begeleidt een praktische leefstijlworkshop voor medewerkers",
           }}
           ctaLabel="Bespreek de mogelijkheden"
@@ -516,7 +516,7 @@ export function BedrijvenPageContent({ locale }: { locale: Locale }) {
                 en organisatie, onder meer door salaris, vervanging, productiviteitsverlies,
                 begeleiding en omzetverlies.
               </p>
-              <p>
+              <p className="absence-cost-card__highlight">
                 Een preventief leefstijl- of stresstraject is vaak veel goedkoper dan één
                 langdurig verzuimgeval. Leefstijlcoaching garandeert geen lager ziekteverzuim of
                 kostenbesparing, maar draagt bij aan vitalere, gezondere medewerkers.
@@ -610,7 +610,7 @@ export function BedrijvenPageContent({ locale }: { locale: Locale }) {
                 </p>
               </Reveal>
               <EditorialSectionImage
-                src="/images/generated/business-walking-meeting.png"
+                src="/images/generated/walking_image.png"
                 alt="Zakelijke professionals voeren buiten een ontspannen walking meeting"
               />
             </div>

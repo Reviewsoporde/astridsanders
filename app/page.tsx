@@ -639,11 +639,6 @@ export function HomePageContent({ locale }: { locale: Locale }) {
                 Mijn bloedwaarden verbeterden in de maanden daarna. Onder begeleiding van mijn
                 reumatoloog kon mijn medicatie vervolgens stap voor stap worden afgebouwd.
               </p>
-              <p className="story-copy__important">
-                Dit is mijn persoonlijke ervaring en geen garantie dat anderen hetzelfde resultaat
-                bereiken. Het liet mij wel zien hoeveel invloed dagelijkse gewoonten kunnen hebben
-                en hoe waardevol persoonlijke begeleiding kan zijn.
-              </p>
               <p>
                 Daarom heb ik de opleiding tot leefstijlcoach gevolgd. Nu combineer ik mijn eigen
                 ervaring met professionele kennis om anderen te helpen meer grip te krijgen op hun

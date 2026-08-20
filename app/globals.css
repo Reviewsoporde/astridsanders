@@ -1634,6 +1634,16 @@ strong {
   font-weight: 400;
 }
 
+.absence-cost-card__highlight {
+  margin-block: var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
+  border-left: 3px solid var(--accent-text);
+  border-radius: var(--radius-card);
+  background: color-mix(in srgb, var(--accent) 16%, var(--surface));
+  color: var(--text);
+  font-weight: 600;
+}
+
 .absence-cost-card__sources {
   margin-top: var(--space-lg);
   padding-top: var(--space-md);

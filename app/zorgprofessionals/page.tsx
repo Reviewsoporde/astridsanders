@@ -132,7 +132,6 @@ const referralExclusions = [
   "Ongecontroleerde hoge bloeddruk",
   "Ernstig nier- of leverfalen",
   "Zwangerschap",
-  "Kinderen",
   "Kanker",
   "Neurologische aandoeningen",
   "Ernstige COPD",
